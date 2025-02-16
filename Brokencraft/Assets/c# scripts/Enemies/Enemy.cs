@@ -5,7 +5,7 @@ using System.IO;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField]private float health = 10;
+    [SerializeField]protected float health = 10;
     public static GameObject target;
     private Renderer renderer;
     private Color initColor;
@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour
                 burnClock = 0;
             }
         }
-
+        Save();
     }
     public void Damage(float damage)
     {

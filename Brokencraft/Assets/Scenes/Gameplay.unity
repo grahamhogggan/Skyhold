@@ -4081,6 +4081,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1401238848640861479, guid: 45a50af9425d503448c7219d7cc6ce8b,
+        type: 3}
+      propertyPath: buildLayers.m_Bits
+      value: 311
+      objectReference: {fileID: 0}
+    - target: {fileID: 3292108504279784823, guid: 45a50af9425d503448c7219d7cc6ce8b,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 383
+      objectReference: {fileID: 0}
     - target: {fileID: 3415576590464986513, guid: 45a50af9425d503448c7219d7cc6ce8b,
         type: 3}
       propertyPath: inventoryPanel
@@ -6618,6 +6628,7 @@ MonoBehaviour:
   - {fileID: 7949785740573415645, guid: 893acfe3065ca964ba0afc56121a5b47, type: 3}
   - {fileID: 221501362939491790, guid: 9b99abfb5b078c74ebc9fcdec890b92b, type: 3}
   - {fileID: 7949785740573415645, guid: 195adc891318f6f4bbd862767d75b9a8, type: 3}
+  - {fileID: 9118556671615801782, guid: 6d40533af9603da43aa256f0dbae20b8, type: 3}
   spawnRate: 10
 --- !u!1 &1676099840
 GameObject:

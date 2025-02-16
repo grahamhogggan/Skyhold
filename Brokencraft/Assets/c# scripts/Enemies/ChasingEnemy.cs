@@ -86,7 +86,6 @@ public class ChasingEnemy : Enemy
             jetPackFlames.SetActive(false);
             jumping = false;
         }
-        Save();
     }
     void OnTriggerEnter(Collider coll)
     {

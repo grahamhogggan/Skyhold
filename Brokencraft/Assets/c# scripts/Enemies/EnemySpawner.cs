@@ -8,7 +8,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] enemies;
     public float spawnRate = 5f;
     private float spawnDelay = 0;
-    private int difficulty = 3;
+    private int difficulty = 4;
     public static int enemyNumber;
     
     // Start is called before the first frame update
