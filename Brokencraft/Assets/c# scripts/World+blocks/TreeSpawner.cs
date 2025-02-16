@@ -1,0 +1,72 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class TreeSpawner : MonoBehaviour
+{
+    private static int spacing = 14;
+    private static int seed = 1729;
+    public static Spawner world;
+    // Start is called before the first frame update
+    public static void Do()
+    {
+        for(int x = 2; x<world.chunksX*5-2; x+=Random.Range(2,4))
+        {
+            for(int y = 2;y<world.chunksZ*5-2;y+= Random.Range(2, 4))
+            {
+                int heightAtValue = (int)ChunkBlocks.GetPerlinValue(x, y);
+                Block currentBlock = world.GetBlock(x, heightAtValue+1, y);
+                
+                if(heightAtValue < ChunkBlocks.snowPeak - 1 && heightAtValue >ChunkBlocks.waterLevel+2&&Random.Range(0,spacing) == 1)
+                {
+                    SpawnTree(currentBlock);
+                }
+                else if((heightAtValue <= ChunkBlocks.waterLevel + 1 && heightAtValue >ChunkBlocks.waterLevel&&Random.Range(0,spacing) == 1))
+                {
+                    SpawnPalmTree(currentBlock);
+                }
+            }
+        }
+    }
+    private static void SpawnTree(Block origin)
+    {
+        BlockChange change = StructureManager.GetStructure("tree");
+        Chunk c = origin.getChunk();
+        Vector3 offset = origin.GetLocalPos()+new Vector3(-2,0,-2);
+        c.ApplyAlternateChanges(change,offset,0);
+        BlockChange part2 =  StructureManager.GetStructure("tree pt 2");
+        c.GetNearChunk(new Vector3(0,-1,0)).ApplyAlternateChanges(part2,offset,0);
+
+    }
+    private static void SpawnPalmTree(Block origin)
+    {
+        
+        int rot = Random.Range(0,4);
+        BlockChange change = StructureManager.GetStructure("palm tree 1");
+        Chunk c = origin.getChunk();
+        Vector3 offset = origin.GetLocalPos()+new Vector3(-2,0,-2);
+        
+        switch(rot)
+        {
+            case 0:
+            offset +=new Vector3(0,0,-1);
+            break;
+            case 1:
+            offset +=new Vector3(-1,0,0);
+            break;
+            case 2:
+            offset +=new Vector3(0,0,1);
+            break;
+            case 3:
+            offset +=new Vector3(1,0,0);
+            break;
+
+        }
+        
+        c.ApplyAlternateChanges(change,offset,rot);
+        BlockChange part2 =  StructureManager.GetStructure("palm tree 2");
+        c.GetNearChunk(new Vector3(0,-1,0)).ApplyAlternateChanges(part2,offset,rot);
+        
+    }
+   
+}

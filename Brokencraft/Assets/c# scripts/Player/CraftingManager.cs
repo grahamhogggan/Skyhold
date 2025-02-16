@@ -1,0 +1,166 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class CraftingManager : MonoBehaviour
+{
+    private static List<string> items = new List<string>();
+    private static int maxItems = 5;
+    static TMP_Text display;
+    [SerializeField] private TMP_Text itemsDisplayText;
+    [SerializeField] private TMP_Text craftedItemText;
+    private static Dictionary<string, string> craftingRecipes;
+    // Start is called before the first frame update
+    void Start()
+    {
+        display = itemsDisplayText;
+        Recipize();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        string total = string.Empty ;
+        foreach (string item in items)
+        {
+            total += item + "\n";
+        }
+        display.text = total;
+        string[] hypotheticalResult = CraftingResult();
+        if(hypotheticalResult!=null)
+        {
+            craftedItemText.text = hypotheticalResult[0] + " x" + hypotheticalResult[1];
+            if(Input.GetKeyDown("e"))
+            {
+                if(Input.GetKey("left shift"))
+                {
+                RepeatCraft();
+
+                }
+                else
+                {
+                    Craft();
+                }
+            }
+
+        }
+        else
+        {
+            craftedItemText.text = "Invalid";
+        }
+                    if(Input.GetKeyDown("q"))
+            {
+                RemoveLatest();
+            }
+    }
+    public static bool AddItemToCrafting(string name)
+    {
+        if(items.Count<maxItems)
+        {
+            items.Add(name);
+            return true;
+        }
+        return false;
+    }
+    public static void RemoveLatest()
+    {
+        if(items.Count>0)
+        {
+            string removed = items[items.Count - 1];
+            items.RemoveAt(items.Count - 1);
+            PlayerInventory.StaticAddItem(removed);
+            PlayerInventory.StaticRefresh();
+        }
+
+    }
+    public static void Craft()
+    {
+        string[] result = CraftingResult();
+        if (result != null)
+        {
+            int quantity = int.Parse(result[1]);
+            items.Clear();
+            for(int i = 0; i < quantity; i++)
+            {
+                PlayerInventory.StaticAddItem(result[0]);
+
+            }
+            PlayerInventory.StaticRefresh();
+        }
+        
+        
+    }
+    public void RepeatCraft()
+    {
+        string[] result = CraftingResult();
+        if (result != null)
+        {
+            int quantity = int.Parse(result[1]);
+            List<string> itemsN = new List<string>();
+            for(int i = 0; i<items.Count; i++)
+            {
+                string item  = items[i];
+                if(PlayerInventory.ContainsItem(item))
+                {
+                    PlayerInventory.StaticRemoveItem(item);
+                    itemsN.Add(item);
+
+                }
+            }
+            items = itemsN;
+            for(int i = 0; i < quantity; i++)
+            {
+                PlayerInventory.StaticAddItem(result[0]);
+
+            }
+            PlayerInventory.StaticRefresh();
+        }
+
+    }
+    private static string[] CraftingResult()
+    {
+        string key = string.Empty;
+        List<string> init = new List<string>(items);
+        items.Sort();
+        foreach (string item in items)
+        {
+            key += item+",";
+        }
+        items = init;
+        if(key.Length>0)
+        {
+        key = key.Substring(0,key.Length-1);
+
+        }
+
+        if (craftingRecipes.ContainsKey(key))
+        {
+            string[] result = craftingRecipes[key].Split('/');
+            return result;
+        }
+        return null;
+    }
+    private void Recipize()
+    {
+        craftingRecipes = new Dictionary<string, string>();
+        craftingRecipes.Add("stone,stone", "stone slab/2");
+        craftingRecipes.Add("dirt,water", "clay/1");
+        craftingRecipes.Add("snow", "water/3");
+        craftingRecipes.Add("planks", "stick/3");
+        craftingRecipes.Add("wood", "planks/2");
+        craftingRecipes.Add("planks,planks,stick,stick", "pickaxe/1");
+        craftingRecipes.Add("leaves,leaves,leaves,leaves,leaves", "dirt/1");
+        craftingRecipes.Add("metal,metal,stick", "sword/1");
+        craftingRecipes.Add("metal,metal,stick,wires,wires", "extracter/1");
+        craftingRecipes.Add("metal,stick,wires", "torch/2");
+        craftingRecipes.Add("pebble,pebble,pebble,pebble,pebble","stone/1");
+        craftingRecipes.Add("metal,metal,torch,wires,wires","score pump/1");
+        craftingRecipes.Add("stone slab,stone slab","ramp/1");
+        craftingRecipes.Add("palm wood","planks/2");
+        craftingRecipes.Add("stick,stone,stone","mace/1");
+
+    }
+    public static int Cnt()
+    {return items.Count; }
+}
