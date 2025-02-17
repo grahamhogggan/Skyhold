@@ -5,7 +5,7 @@ using System.IO;
 
 public class PlayerInventory : MonoBehaviour
 {
-    Inventory inventory;
+    public Inventory inventory;
     [SerializeField] private GameObject inventoryPanel;
 
     public List<Sprite> blockPreviews;
@@ -221,6 +221,14 @@ public class PlayerInventory : MonoBehaviour
         }
         clickedItemIndex = -1;
         RefreshInventory();
+    }
+    public static void AddItemToCrafting(string item)
+    {
+        if(CraftingManager.AddItemToCrafting(item))
+        {
+            instance.RemoveItem(item);
+        }
+        StaticRefresh();
     }
     
 }

@@ -91,6 +91,10 @@ public class CraftingManager : MonoBehaviour
         
         
     }
+    public static int RecipeCount()
+    {
+        return craftingRecipes.Count;
+    }
     public void RepeatCraft()
     {
         string[] result = CraftingResult();
@@ -141,24 +145,52 @@ public class CraftingManager : MonoBehaviour
         }
         return null;
     }
+
+    public static string[] GetRecipe(int index)
+    {
+        if(index>=craftingRecipes.Count||index<0)
+        {
+            return null;
+        }
+        string[] results = new string[2];
+        string[] k = new string[craftingRecipes.Count];
+        string[] v = new string[craftingRecipes.Count];
+        craftingRecipes.Keys.CopyTo(k,0);
+        craftingRecipes.Values.CopyTo(v,0);
+        results[0] = k[index];
+        results[1] = v[index];
+        return results;
+    }
     private void Recipize()
     {
         craftingRecipes = new Dictionary<string, string>();
+        craftingRecipes.Add("wood", "planks/2");
+        craftingRecipes.Add("palm wood","planks/1");
+        craftingRecipes.Add("planks", "stick/3");
+        craftingRecipes.Add("pebble,pebble,pebble,pebble,pebble","stone/1");
         craftingRecipes.Add("stone,stone", "stone slab/2");
+        craftingRecipes.Add("stone slab,stone slab","ramp/1");
+        craftingRecipes.Add("planks,planks,stick,stick", "pickaxe/1");
+        craftingRecipes.Add("stick,stone,stone","mace/1");
         craftingRecipes.Add("dirt,water", "clay/1");
         craftingRecipes.Add("snow", "water/3");
-        craftingRecipes.Add("planks", "stick/3");
-        craftingRecipes.Add("wood", "planks/2");
-        craftingRecipes.Add("planks,planks,stick,stick", "pickaxe/1");
-        craftingRecipes.Add("leaves,leaves,leaves,leaves,leaves", "dirt/1");
         craftingRecipes.Add("metal,metal,stick", "sword/1");
-        craftingRecipes.Add("metal,metal,stick,wires,wires", "extracter/1");
         craftingRecipes.Add("metal,stick,wires", "torch/2");
-        craftingRecipes.Add("pebble,pebble,pebble,pebble,pebble","stone/1");
+        craftingRecipes.Add("leaves,leaves,leaves,leaves,leaves", "dirt/1");
+        
+        craftingRecipes.Add("metal,metal,stick,wires,wires", "extracter/1");
         craftingRecipes.Add("metal,metal,torch,wires,wires","score pump/1");
-        craftingRecipes.Add("stone slab,stone slab","ramp/1");
-        craftingRecipes.Add("palm wood","planks/2");
-        craftingRecipes.Add("stick,stone,stone","mace/1");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
     }
     public static int Cnt()
