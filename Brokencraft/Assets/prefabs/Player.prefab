@@ -197,6 +197,7 @@ MonoBehaviour:
   - {fileID: 3189495928652548006, guid: c16d5af814501ad4a8e899e53682f36a, type: 3}
   - {fileID: 3189495928652548006, guid: c2cbadf26949f0648a3c216aaa181e1d, type: 3}
   - {fileID: 3189495928652548006, guid: 54ec15b7a0861f34b8e2defc0f872c69, type: 3}
+  - {fileID: 3189495928652548006, guid: ba1cc6bdc5795484fa3025e9424ae1ad, type: 3}
   equippedObjectViewer: {fileID: 6317429509564419225}
   buildLayers:
     serializedVersion: 2
@@ -403,6 +404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70050303ab4cfb4ba4c34c6235bc71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory:
+    items: []
   inventoryPanel: {fileID: 0}
   blockPreviews:
   - {fileID: 21300000, guid: 93c4795a82acb36478b9a7afa04481ff, type: 3}
@@ -429,6 +432,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a5d7ada51779f0d47bbe671d92c86324, type: 3}
   - {fileID: 21300000, guid: b77f8efe696a9ca449c559c652b70343, type: 3}
   - {fileID: 21300000, guid: af84fc6b96400814da999cf3bda5d6f0, type: 3}
+  - {fileID: 21300000, guid: 9b48f7a8c1f04e444bee6818729e7c20, type: 3}
   offset: 0
 --- !u!114 &-1547767812270346647
 MonoBehaviour:

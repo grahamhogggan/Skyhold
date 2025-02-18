@@ -172,14 +172,15 @@ public class CraftingManager : MonoBehaviour
         craftingRecipes.Add("stone slab,stone slab","ramp/1");
         craftingRecipes.Add("planks,planks,stick,stick", "pickaxe/1");
         craftingRecipes.Add("stick,stone,stone","mace/1");
+        craftingRecipes.Add("metal,metal,metal","beam/1");
         craftingRecipes.Add("dirt,water", "clay/1");
         craftingRecipes.Add("snow", "water/3");
-        craftingRecipes.Add("metal,metal,stick", "sword/1");
+        craftingRecipes.Add("beam,metal,stick", "sword/1");
         craftingRecipes.Add("metal,stick,wires", "torch/2");
         craftingRecipes.Add("leaves,leaves,leaves,leaves,leaves", "dirt/1");
         
-        craftingRecipes.Add("metal,metal,stick,wires,wires", "extracter/1");
-        craftingRecipes.Add("metal,metal,torch,wires,wires","score pump/1");
+        craftingRecipes.Add("beam,metal,metal,wires,wires", "extracter/1");
+        craftingRecipes.Add("beam,metal,torch,wires,wires","score pump/1");
         
         
         
