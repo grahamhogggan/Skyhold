@@ -173,6 +173,7 @@ public class CraftingManager : MonoBehaviour
         craftingRecipes.Add("planks,planks,stick,stick", "pickaxe/1");
         craftingRecipes.Add("stick,stone,stone","mace/1");
         craftingRecipes.Add("metal,metal,metal","beam/1");
+        craftingRecipes.Add("beam,beam,beam,beam","truss/1");
         craftingRecipes.Add("dirt,water", "clay/1");
         craftingRecipes.Add("snow", "water/3");
         craftingRecipes.Add("beam,metal,stick", "sword/1");
