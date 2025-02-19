@@ -28,25 +28,73 @@ public class Meteor : MonoBehaviour
         GameObject hitObj = coll.gameObject;
         Collide(hitObj);
     }
-    void Bomb(Block block, int depth)
+    public static void Bomb(Block block, int depth)
     {
-        if(block==null||!block.gameObject.activeSelf) return;
-        if(depth == 0)
+        if(block==null||!block.gameObject.activeSelf) return;  
+        if(block.gameObject.GetComponentInChildren<Durable>())
         {
-            block.Mine();
+            depth-= block.gameObject.GetComponentInChildren<Durable>().bonusStrength;
         }
-        else
+            List<Block> nextLayer = new List<Block>();
+            List<Block> lastLayer = new List<Block>();
+            lastLayer.Add(block);
+        for(int i = 0; i<depth; i++)
         {
+            foreach(Block b in lastLayer)
+            {
+            nextLayer.AddRange(BombShell(b));
 
-        Bomb(block.GetAdjacent(new Vector3(0,0,1)),depth-1);
-        Bomb(block.GetAdjacent(new Vector3(0,0,-1)),depth-1);
-        Bomb(block.GetAdjacent(new Vector3(0,1,0)),depth-1);
-        Bomb(block.GetAdjacent(new Vector3(0,-1,0)),depth-1);
-        Bomb(block.GetAdjacent(new Vector3(1,0,0)),depth-1);
-        Bomb(block.GetAdjacent(new Vector3(-1,0,0)),depth-1);
+            }
+            lastLayer = nextLayer;
+            nextLayer =  new List<Block>();
+        }
+
+
+    }
+    private static List<Block> BombShell(Block block)
+    {
         
+        if(block.gameObject.activeSelf)
+        {
             block.Mine();
         }
+        List<Block> adjacents = new List<Block>();
+        Block b = block.GetAdjacent(new Vector3(0,0,1));
+        if(b!=null)
+        {
+            adjacents.Add(b);
+        }
+        b = (block.GetAdjacent(new Vector3(0,0,-1)));
+                if(b!=null&&b.gameObject.activeSelf)
+        {
+            adjacents.Add(b);
+        }
+        b = (block.GetAdjacent(new Vector3(0,1,0)));
+                if(b!=null&&b.gameObject.activeSelf)
+        {
+            adjacents.Add(b);
+        }
+        b = (block.GetAdjacent(new Vector3(0,-1,0)));
+                if(b!=null&&b.gameObject.activeSelf)
+        {
+            adjacents.Add(b);
+        }
+        b = (block.GetAdjacent(new Vector3(1,0,0)));
+                if(b!=null&&b.gameObject.activeSelf)
+        {
+            adjacents.Add(b);
+        }
+        b = (block.GetAdjacent(new Vector3(-1,0,0)));
+            if(b!=null&&b.gameObject.activeSelf)
+        {
+            adjacents.Add(b);
+        }        if(b!=null&&b.gameObject.activeSelf)
+        {
+            adjacents.Add(b);
+        }
+        return adjacents;
+
+        
     }
     void Collide(GameObject hitObj)
     {
