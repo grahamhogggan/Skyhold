@@ -65,30 +65,30 @@ public class Meteor : MonoBehaviour
             adjacents.Add(b);
         }
         b = (block.GetAdjacent(new Vector3(0,0,-1)));
-                if(b!=null&&b.gameObject.activeSelf)
+                if(b!=null&&b.gameObject.activeSelf&&!b.gameObject.GetComponent<Durable>())
         {
             adjacents.Add(b);
         }
         b = (block.GetAdjacent(new Vector3(0,1,0)));
-                if(b!=null&&b.gameObject.activeSelf)
+                if(b!=null&&b.gameObject.activeSelf&&!b.gameObject.GetComponent<Durable>())
         {
             adjacents.Add(b);
         }
         b = (block.GetAdjacent(new Vector3(0,-1,0)));
-                if(b!=null&&b.gameObject.activeSelf)
+                if(b!=null&&b.gameObject.activeSelf&&!b.gameObject.GetComponent<Durable>())
         {
             adjacents.Add(b);
         }
         b = (block.GetAdjacent(new Vector3(1,0,0)));
-                if(b!=null&&b.gameObject.activeSelf)
+                if(b!=null&&b.gameObject.activeSelf&&!b.gameObject.GetComponent<Durable>())
         {
             adjacents.Add(b);
         }
         b = (block.GetAdjacent(new Vector3(-1,0,0)));
-            if(b!=null&&b.gameObject.activeSelf)
+            if(b!=null&&b.gameObject.activeSelf&&!b.gameObject.GetComponent<Durable>())
         {
             adjacents.Add(b);
-        }        if(b!=null&&b.gameObject.activeSelf)
+        }        if(b!=null&&b.gameObject.activeSelf&&!b.gameObject.GetComponent<Durable>())
         {
             adjacents.Add(b);
         }

@@ -206,7 +206,7 @@ public class PlayerInventory : MonoBehaviour
     {
         inventory.SwitchItems(index,clickedItemIndex);
         RefreshInventory();
-        Debug.Log("Switched items "+index+" and "+clickedItemIndex);
+       // Debug.Log("Switched items "+index+" and "+clickedItemIndex);
     }
     public void ToCrafting()
     {

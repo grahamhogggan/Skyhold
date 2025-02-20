@@ -125,8 +125,6 @@ public class Inventory
             index++;
         }
         index = ti2;
-        UnityEngine.Debug.Log("ti1: "+ti1);
-        UnityEngine.Debug.Log("ti2: "+ti2);
 
         string str = GetItem(index2);
         while(index<items.Count&&items[index]==str)
@@ -143,7 +141,6 @@ public class Inventory
         {
         while(index<items.Count&&index<ti2)
         {
-            UnityEngine.Debug.Log(index+"/"+items.Count);
             newItems.Add(items[index]);
             index++;
         }

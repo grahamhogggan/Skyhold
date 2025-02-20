@@ -149,7 +149,7 @@ MonoBehaviour:
   DayDeath: 1
   drops:
   - wires
-  - wires
+  - fan
   floatDist: 5
   speed: 5
 --- !u!143 &8829495890887818557
