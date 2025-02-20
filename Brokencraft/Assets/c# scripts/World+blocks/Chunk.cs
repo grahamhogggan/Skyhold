@@ -102,7 +102,6 @@ public class Chunk : MonoBehaviour
     }
     public void ApplyAlternateChanges(BlockChange changes, Vector3 offset,int rotationalOffset)
     {
-        Debug.Log("Applying . . . ");
         exposed = changes.exposed;
         foreach (string change in changes.changeCodes)
         {
