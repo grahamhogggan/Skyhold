@@ -7,6 +7,7 @@ public class Water : MonoBehaviour
     [SerializeField] private float density;
     private FirstPersonMovement person;
     // Start is called before the first frame update
+    public bool isExposed = true;
     static List<Water> blocks = new List<Water>();
     void Start()
     {
@@ -18,7 +19,7 @@ public class Water : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(1f, 5f)); // Random delay for smooth spreading
+            yield return new WaitForSeconds(Random.Range(0.25f, 1f)); // Random delay for smooth spreading
 
             WaterTick();
         }
@@ -70,6 +71,7 @@ public class Water : MonoBehaviour
     }
     void WaterTick()
 {
+    if(isExposed == false) return;
     Block block = GetComponentInParent<Block>();
     if (block == null) return;
 
@@ -77,7 +79,7 @@ public class Water : MonoBehaviour
     Vector3[] directions = 
     {
         new Vector3(0, 0, 1),  // Forward
-                new Vector3(1, 0, 0), // Right
+        new Vector3(1, 0, 0), // Right
 
         new Vector3(0, 0, -1),  // Backward
         new Vector3(-1, 0, 0), // Left
@@ -124,9 +126,11 @@ public class Water : MonoBehaviour
         else if(dir.y == -1 && adjacent!=null&&block.typeName == "small water"&&adjacent.typeName == "small water")
         {
                             adjacent.Place("water");
-    return;
+        return;
         }
     }
+            isExposed = false;
+
 }
 }
 

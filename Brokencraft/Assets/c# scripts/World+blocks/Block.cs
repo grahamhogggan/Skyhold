@@ -60,6 +60,26 @@ public class Block : MonoBehaviour
             
             parentChunk.Hide();
         }
+
+        Vector3[] directions = 
+        {
+         new Vector3(0, 0, 1),  // Forward
+        new Vector3(1, 0, 0), // Right
+
+        new Vector3(0, 0, -1),  // Backward
+        new Vector3(-1, 0, 0), // Left
+        new Vector3(0, -1, 0), // up
+
+
+        };
+        foreach(Vector3 dir in directions)
+        {
+            Block a = GetAdjacent(dir);
+            if(a!=null&&a.gameObject.activeSelf&&a.typeName == "water")
+            {
+                a.GetComponentInChildren<Water>().isExposed = true;
+            }
+        }
     }
     public void Place(string type,int rotation)
     {
@@ -71,6 +91,7 @@ public class Block : MonoBehaviour
         transform.root.GetComponent<Chunk>().Expose();
 
         transform.rotation = Quaternion.Euler(new Vector3(0,rotation,0));
+        
     }
     public void Place(string type)
     {
