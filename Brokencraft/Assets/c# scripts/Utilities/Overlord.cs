@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class Overlord : MonoBehaviour
+public class Overlord : MonoBehaviour,PeriodicSaver
 {
     public static bool paused = false;
     public static bool OverwriteMode = false;
@@ -17,11 +17,14 @@ public class Overlord : MonoBehaviour
     public DropData dropData;
 
     public static Player player;
+    
+    public int saveCount{get;set;}
     void Awake()
     {
     instance = this;
         DropSavePath = Application.persistentDataPath + "/drops.randomFileExtension";
         ReadDrops();
+        saveCount = 0;
     }
     public static void Pause()
     {
@@ -60,7 +63,7 @@ public class Overlord : MonoBehaviour
 
             
         }
-        SaveDrops();
+       ((PeriodicSaver)this).TrySave();
     }
     public static bool IsNight() { return instance.isNight; }
     public static float GetRawTime()
@@ -82,13 +85,13 @@ public class Overlord : MonoBehaviour
         instance.dropData.nextID++;
         instance.dropData.items.Add(item);
         instance.dropData.positions.Add(position);
-        instance.SaveDrops();
+        instance.Save();
     }
     public static void DeleteDrop(int ID)
     {
         instance.dropData.items[ID] = "deleted";
     }
-    private void SaveDrops()
+    public void Save()
     {
         string data = JsonUtility.ToJson(dropData);
         File.WriteAllText(DropSavePath,data);

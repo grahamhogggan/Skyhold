@@ -9926,6 +9926,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2076361220}
   - component: {fileID: 2076361219}
+  - component: {fileID: 2076361221}
+  - component: {fileID: 2076361222}
   m_Layer: 0
   m_Name: Game Overlord
   m_TagString: Untagged
@@ -9969,6 +9971,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2076361221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076361218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f54ae9137fa65cf468fa8b180400cbc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2076361222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076361218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a515de0c58a8664582050ef09463020, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2111174332
 GameObject:
   m_ObjectHideFlags: 0

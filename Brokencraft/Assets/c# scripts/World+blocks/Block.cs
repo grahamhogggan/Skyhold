@@ -107,32 +107,32 @@ public class Block : MonoBehaviour
         Chunk currentChunk = parentChunk;
         if(x<0)
         {
-            currentChunk = currentChunk.GetNearChunk(new Vector3(-1, 0, 0));
+            currentChunk = currentChunk.GetNearOtherChunk(new Vector3(-1, 0, 0));
             x = 4;
         }
         if (z < 0)
         {
-            currentChunk = currentChunk.GetNearChunk(new Vector3(0, 0, -1));
+            currentChunk = currentChunk.GetNearOtherChunk(new Vector3(0, 0, -1));
             z = 4;
         }
         if (y < 0)
         {
-            currentChunk = currentChunk.GetNearChunk(new Vector3(0, 1, 0));
+            currentChunk = currentChunk.GetNearOtherChunk(new Vector3(0, 1, 0));
             y = 4;
         }
         if (x > 4)
         {
-            currentChunk = currentChunk.GetNearChunk(new Vector3(1, 0, 0));
+            currentChunk = currentChunk.GetNearOtherChunk(new Vector3(1, 0, 0));
             x = 0;
         }
         if (z > 4)
         {
-            currentChunk = currentChunk.GetNearChunk(new Vector3(0, 0, 1));
+            currentChunk = currentChunk.GetNearOtherChunk(new Vector3(0, 0, 1));
             z = 0;
         }
         if (y > 4)
         {
-            currentChunk = currentChunk.GetNearChunk(new Vector3(0, -1, 0));
+            currentChunk = currentChunk.GetNearOtherChunk(new Vector3(0, -1, 0));
             y = 0;
         }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour,PeriodicSaver
 {
     [SerializeField]protected float health = 10;
     public static GameObject target;
@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public bool DayDeath = true;
     private float burnClock = 0;
     [SerializeField] private string[] drops;
+
+    public int saveCount{get;set;}
     // Start is called before the first frame update
     protected void Start()
     {
@@ -49,7 +51,7 @@ public class Enemy : MonoBehaviour
                 burnClock = 0;
             }
         }
-        Save();
+        ((PeriodicSaver)this).TrySave();
     }
     public void Damage(float damage)
     {

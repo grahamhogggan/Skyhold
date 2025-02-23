@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using Unity.Jobs;
+using Unity.Collections;
 
 public class Chunk : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class Chunk : MonoBehaviour
     private static int renderDist = 60;
     private static int closeRenderDist = 20;
     private static int playerFOV = 90;
-    [SerializeField] private GameObject blocks;
+            [SerializeField] private GameObject blocks;
     private Block[] chunk;
     //private int index = 0;
     private BlockChange changeLog;
@@ -28,21 +30,16 @@ public class Chunk : MonoBehaviour
     public bool exposed = false;
 
     private bool disabled = false;
+
+    JobHandle visibilityCheckHandle;
+        NativeArray<bool> visibilityCheckResult;
+
     // Start is called before the first frame update
     // Update is called once per frame
-    
     void Update()
     {
-        if ((transform.position-mainCamera.transform.position).sqrMagnitude > renderDist*renderDist)
-        {
-            if(!disabled)
-            {
-                Disable();
 
-            }
-        }
-        
-        else if(IsVisibleChunk())
+        if(IsVisibleChunk())
         {
             if (disabled)
             {
@@ -59,9 +56,7 @@ public class Chunk : MonoBehaviour
             }
         }
         
-
     }
-    
     public void RecordChange(string change, Block block)
     {
         string saveCode = block.transform.localPosition.x + "/" + block.transform.localPosition.y + "/" + block.transform.localPosition.z + "/" + change;

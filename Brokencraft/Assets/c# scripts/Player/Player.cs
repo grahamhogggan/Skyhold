@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour,PeriodicSaver
 {
     [SerializeField] private int health;
     private int maxHealth;
@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int minY;
 
     [SerializeField] private HitEffect hitEffect;
+    public int saveCount{get;set;}
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Save();
+        ((PeriodicSaver)this).TrySave();
         if(health <=0)
         {
             SceneManager.LoadScene(1);
@@ -38,6 +39,7 @@ public class Player : MonoBehaviour
     {
         health -= damage;
         hitEffect.Hit();
+        Save();
     }
     public void Heal(int amount)
     {
@@ -49,7 +51,7 @@ public class Player : MonoBehaviour
     }
     public int GetHealth()
     {return health; }
-    void Save()
+    public void Save()
     {
         data.position = transform.position;
         data.health = health;
