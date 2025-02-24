@@ -106,11 +106,11 @@ public class Water : MonoBehaviour
                 if(below!=null&&(below.typeName!="water"&&below.typeName!="small water"&&below.gameObject.activeSelf))
                 {
                 adjacent.Place("small water",90*i);
-                Debug.Log("case 1");
+                //Debug.Log("case 1");
                 }
                 else if(belowTarget!=null&&belowTarget.gameObject.activeSelf&&belowTarget.typeName!="small water")
                 {
-                    Debug.Log("case 2");
+                    //Debug.Log("case 2");
                                     adjacent.Place("small water",90*i);
 
                 }
@@ -119,7 +119,7 @@ public class Water : MonoBehaviour
         }
         else if(adjacent !=null &&adjacent.typeName == "small water"&&block.typeName != "small water"&&!(adjacent.transform.rotation.eulerAngles.y==90*i))
         {
-                Debug.Log(adjacent.transform.rotation.eulerAngles.y+"/"+90*i);
+                //Debug.Log(adjacent.transform.rotation.eulerAngles.y+"/"+90*i);
                             adjacent.Place("water");
                         return;
         }

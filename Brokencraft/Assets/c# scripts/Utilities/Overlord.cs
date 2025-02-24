@@ -4,36 +4,37 @@ using UnityEngine;
 using System.IO;
 using UnityEditor;
 
-public class Overlord : MonoBehaviour,PeriodicSaver
+public class Overlord : MonoBehaviour, PeriodicSaver
 {
-    
+
     public static bool paused = false;
     public static bool OverwriteMode = false;
     [Header("Day/Night Cycle")]
     public float secondsPerDay;
     public float secondsPerNight;
-    
+
     public float minSecondsPerDay;
     public Light sun;
     private bool isNight;
     public static Overlord instance;
     [Header("Other")]
-
+    public static int difficulty = -1;
     [SerializeField] public GameObject dropPrefab;
-    
+
     private string DropSavePath;
     public DropData dropData;
     private string infoSavePath;
     public static string saveDirectory;
     public static Player player;
-    
+
     private bool wasNight;
-    public int saveCount{get;set;}
+    public int saveCount { get; set; }
     void Awake()
     {
+        difficulty = 0;
         saveDirectory = Application.persistentDataPath;
-    instance = this;
-        DropSavePath =saveDirectory + "/drops.randomFileExtension";
+        instance = this;
+        DropSavePath = saveDirectory + "/drops.randomFileExtension";
         infoSavePath = saveDirectory + "/gameInfo.potato";
         ReadDrops();
         ReadInfo();
@@ -49,13 +50,13 @@ public class Overlord : MonoBehaviour,PeriodicSaver
     {
         Time.timeScale = 1;
         MouseLook.active = true;
-        paused=false;
+        paused = false;
     }
     void Update()
     {
         if (!paused)
         {
-            if(sun.transform.rotation.eulerAngles.x>180)
+            if (sun.transform.rotation.eulerAngles.x > 180)
             {
                 sun.transform.Rotate(360 / secondsPerNight * Time.deltaTime, 0, 0);
                 isNight = true;
@@ -67,22 +68,21 @@ public class Overlord : MonoBehaviour,PeriodicSaver
             else
             {
                 sun.transform.Rotate(360 / secondsPerDay * Time.deltaTime, 0, 0);
-                isNight=false;
-                if(sun.intensity<2)
+                isNight = false;
+                if (sun.intensity < 2)
                 {
                     sun.intensity += Time.deltaTime;
                 }
             }
 
-            
+
         }
        ((PeriodicSaver)this).TrySave();
-       if(isNight&&!wasNight&&secondsPerDay>minSecondsPerDay)
-       {
-            secondsPerDay-=30;
-            secondsPerNight+=30;
-       }
-       wasNight = isNight;
+        if (isNight && !wasNight)
+        {
+            OnNightStart();
+        }
+        wasNight = isNight;
     }
     public static bool IsNight() { return instance.isNight; }
     public static float GetRawTime()
@@ -92,11 +92,11 @@ public class Overlord : MonoBehaviour,PeriodicSaver
     }
     public static void SetRawTime(float timeTo)
     {
-        
-        instance.sun.transform.rotation = Quaternion.Euler(timeTo,instance.sun.transform.eulerAngles.y,instance.sun.transform.eulerAngles.z);
+
+        instance.sun.transform.rotation = Quaternion.Euler(timeTo, instance.sun.transform.eulerAngles.y, instance.sun.transform.eulerAngles.z);
 
     }
-    public static void Drop(string item,Vector3 position)
+    public static void Drop(string item, Vector3 position)
     {
         DroppedItem d = Instantiate(instance.dropPrefab, position, Quaternion.identity).GetComponent<DroppedItem>();
         d.item = item;
@@ -113,19 +113,19 @@ public class Overlord : MonoBehaviour,PeriodicSaver
     public void Save()
     {
         string data = JsonUtility.ToJson(dropData);
-        File.WriteAllText(DropSavePath,data);
+        File.WriteAllText(DropSavePath, data);
         string thisData = JsonUtility.ToJson(new GameInformation(this));
-        File.WriteAllText(infoSavePath,thisData);
+        File.WriteAllText(infoSavePath, thisData);
     }
     private void ReadDrops()
     {
-        if(File.Exists(DropSavePath)&&!OverwriteMode)
+        if (File.Exists(DropSavePath) && !OverwriteMode)
         {
-            string data = File.ReadAllText(DropSavePath); 
-            dropData = JsonUtility.FromJson<DropData> (data);
-            for(int i = 0; i < dropData.items.Count; i++)
+            string data = File.ReadAllText(DropSavePath);
+            dropData = JsonUtility.FromJson<DropData>(data);
+            for (int i = 0; i < dropData.items.Count; i++)
             {
-                if (dropData.items[i]!="deleted")
+                if (dropData.items[i] != "deleted")
                 {
                     DroppedItem d = Instantiate(dropPrefab, dropData.positions[i], Quaternion.identity).GetComponent<DroppedItem>();
                     d.item = dropData.items[i];
@@ -141,16 +141,26 @@ public class Overlord : MonoBehaviour,PeriodicSaver
         }
     }
     private void ReadInfo()
-{
-    if(File.Exists(infoSavePath)&&!OverwriteMode)
+    {
+        if (File.Exists(infoSavePath) && !OverwriteMode)
         {
-            string data = File.ReadAllText(infoSavePath); 
-            GameInformation info = JsonUtility.FromJson<GameInformation> (data);
+            string data = File.ReadAllText(infoSavePath);
+            GameInformation info = JsonUtility.FromJson<GameInformation>(data);
             this.secondsPerDay = info.secondsPerDay;
             this.secondsPerNight = info.secondsPerNight;
             this.minSecondsPerDay = info.minSecondsPerDay;
+            difficulty = info.difficulty;
         }
-}
+    }
+    private void OnNightStart()
+    {
+        if (secondsPerDay > minSecondsPerDay)
+        {
+            secondsPerDay -= 30;
+            secondsPerNight += 30;
+        }
+        difficulty++;
+    }
 }
 
 [System.Serializable]
@@ -159,10 +169,12 @@ class GameInformation
     public float secondsPerDay;
     public float secondsPerNight;
     public float minSecondsPerDay;
+    public int difficulty;
     public GameInformation(Overlord o)
     {
         this.secondsPerDay = o.secondsPerDay;
         this.secondsPerNight = o.secondsPerNight;
         this.minSecondsPerDay = o.minSecondsPerDay;
+        this.difficulty = Overlord.difficulty;
     }
 }

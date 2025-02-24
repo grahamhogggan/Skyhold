@@ -8,7 +8,6 @@ public class EnemySpawner : MonoBehaviour
     public GameObject[] enemies;
     public float spawnRate = 5f;
     private float spawnDelay = 0;
-    private int difficulty = 4;
     public static int enemyNumber;
     
     // Start is called before the first frame update
@@ -35,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
     {
         float xPos = Random.Range(0, Spawner.instance.chunksX * 5);
         float zPos = Random.Range(0,Spawner.instance.chunksZ * 5);
-        int enemyToSpawn = Random.Range(0,difficulty);
+        int enemyToSpawn = Random.Range(0,Mathf.Min(Overlord.difficulty+1,enemies.Length));
         float yPos = (int)ChunkBlocks.GetPerlinValue(xPos, zPos)-Spawner.instance.chunksY*5+2;
         Vector3 spawnPosition = new Vector3(xPos, yPos, zPos);
         if(!Physics.CheckBox(spawnPosition,new Vector3(0.4f,0.9f,0.4f)))
