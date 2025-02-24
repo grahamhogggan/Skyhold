@@ -68,13 +68,22 @@ public class Enemy : MonoBehaviour,PeriodicSaver
     {
         if(Overlord.IsNight())
         {
-        for(int y = 0; y<drops.Length;  y++)
-        {
-            Overlord.Drop(drops[y],transform.position+new Vector3(Random.Range(-0.1f,0.1f),y,Random.Range(-0.1f,0.1f)));
-        }
+            Dropstuff();
+
         }
 
         Destroy(gameObject);
+    }
+    private void Dropstuff()
+    {
+        for(int y = 0; y<drops.Length;  y++)
+        {
+            Overlord.Drop(drops[y],transform.position+new Vector3(Random.Range(-0.1f,0.1f),y,Random.Range(-0.1f,0.1f)));
+            if(Random.Range(0.0f,1f)<0.5f)
+            {
+                return;
+            }
+        }
     }
     public void Save()
     {

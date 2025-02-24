@@ -37,7 +37,7 @@ public class Meteor : MonoBehaviour
         Block hitBlock = hitObj.GetComponentInParent<Block>();
         if(hitBlock!=null)
         {
-            TerroristManager.Bomb(hitBlock,6);
+            TerroristManager.Bomb(hitBlock,Mathf.Min(3+(int)Overlord.difficulty/3,6));
 
 
         }

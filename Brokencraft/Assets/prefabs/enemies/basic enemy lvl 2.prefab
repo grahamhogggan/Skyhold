@@ -766,6 +766,8 @@ MonoBehaviour:
   DayDeath: 1
   drops:
   - metal
+  - beam
+  - processor
   body: {fileID: 0}
   speed: 1
   inWater: 0

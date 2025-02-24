@@ -766,6 +766,8 @@ MonoBehaviour:
   DayDeath: 1
   drops:
   - wires
+  - wires
+  - wires
   body: {fileID: 0}
   speed: 0.5
   inWater: 0
