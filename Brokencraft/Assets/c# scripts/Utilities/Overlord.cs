@@ -2,28 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEditor;
 
 public class Overlord : MonoBehaviour,PeriodicSaver
 {
+    
     public static bool paused = false;
     public static bool OverwriteMode = false;
+    [Header("Day/Night Cycle")]
     public float secondsPerDay;
     public float secondsPerNight;
+    
+    public float minSecondsPerDay;
     public Light sun;
     private bool isNight;
     public static Overlord instance;
+    [Header("Other")]
+
     [SerializeField] public GameObject dropPrefab;
+    
     private string DropSavePath;
     public DropData dropData;
-
+    private string infoSavePath;
+    public static string saveDirectory;
     public static Player player;
     
+    private bool wasNight;
     public int saveCount{get;set;}
     void Awake()
     {
+        saveDirectory = Application.persistentDataPath;
     instance = this;
-        DropSavePath = Application.persistentDataPath + "/drops.randomFileExtension";
+        DropSavePath =saveDirectory + "/drops.randomFileExtension";
+        infoSavePath = saveDirectory + "/gameInfo.potato";
         ReadDrops();
+        ReadInfo();
         saveCount = 0;
     }
     public static void Pause()
@@ -64,6 +77,12 @@ public class Overlord : MonoBehaviour,PeriodicSaver
             
         }
        ((PeriodicSaver)this).TrySave();
+       if(isNight&&!wasNight&&secondsPerDay>minSecondsPerDay)
+       {
+            secondsPerDay-=30;
+            secondsPerNight+=30;
+       }
+       wasNight = isNight;
     }
     public static bool IsNight() { return instance.isNight; }
     public static float GetRawTime()
@@ -95,6 +114,8 @@ public class Overlord : MonoBehaviour,PeriodicSaver
     {
         string data = JsonUtility.ToJson(dropData);
         File.WriteAllText(DropSavePath,data);
+        string thisData = JsonUtility.ToJson(new GameInformation(this));
+        File.WriteAllText(infoSavePath,thisData);
     }
     private void ReadDrops()
     {
@@ -118,5 +139,30 @@ public class Overlord : MonoBehaviour,PeriodicSaver
             dropData = new DropData();
 
         }
+    }
+    private void ReadInfo()
+{
+    if(File.Exists(infoSavePath)&&!OverwriteMode)
+        {
+            string data = File.ReadAllText(infoSavePath); 
+            GameInformation info = JsonUtility.FromJson<GameInformation> (data);
+            this.secondsPerDay = info.secondsPerDay;
+            this.secondsPerNight = info.secondsPerNight;
+            this.minSecondsPerDay = info.minSecondsPerDay;
+        }
+}
+}
+
+[System.Serializable]
+class GameInformation
+{
+    public float secondsPerDay;
+    public float secondsPerNight;
+    public float minSecondsPerDay;
+    public GameInformation(Overlord o)
+    {
+        this.secondsPerDay = o.secondsPerDay;
+        this.secondsPerNight = o.secondsPerNight;
+        this.minSecondsPerDay = o.minSecondsPerDay;
     }
 }

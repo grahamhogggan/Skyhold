@@ -9947,8 +9947,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d64f1b6b42d7be45b9a1e50ce7f36c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsPerDay: 120
-  secondsPerNight: 120
+  secondsPerDay: 300
+  secondsPerNight: 60
+  minSecondsPerDay: 30
   sun: {fileID: 410087040}
   dropPrefab: {fileID: 7862753109487569369, guid: fb7cb3912b621224999f2ede2ba17089,
     type: 3}
