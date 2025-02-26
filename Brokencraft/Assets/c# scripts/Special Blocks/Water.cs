@@ -120,6 +120,11 @@ public class Water : MonoBehaviour
                 below.Place("water" + belowAmt);
             }
         }
+        else if(amount == 1&&(below.typeName == "dirt"||below.typeName == "grass"||below.typeName == "clay"))
+        {
+            below.Place("clay");
+            block.Mine();
+        }
         else
         {
             foreach (Vector3 dir in directions)
