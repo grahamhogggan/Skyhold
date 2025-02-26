@@ -73,7 +73,7 @@ public class Water : MonoBehaviour
     }
     void WaterTick()
     {
-        //if (isExposed == false) return;
+        if (isExposed == false) return;
         Block block = GetComponentInParent<Block>();
         if (block == null) return;
 
@@ -92,11 +92,14 @@ public class Water : MonoBehaviour
         if (below == null)
         {
             block.Mine();
+            return;
         }
         else if (!below.gameObject.activeSelf)
         {
+            Debug.Log("dropped water to empty block");
             below.Place(block.typeName);
             block.Mine();
+            return;
         }
         else if (below.GetComponentInChildren<Water>() && below.GetComponentInChildren<Water>().amount < 4)
         {
@@ -119,11 +122,14 @@ public class Water : MonoBehaviour
                 block.Mine();
                 below.Place("water" + belowAmt);
             }
+            return;
         }
         else if(amount == 1&&(below.typeName == "dirt"||below.typeName == "grass"||below.typeName == "clay"))
         {
+            Debug.Log("created clay");
             below.Place("clay");
             block.Mine();
+            return;
         }
         else
         {
@@ -151,7 +157,7 @@ public class Water : MonoBehaviour
                 }
             }
         }
-
+        isExposed = false;
         /*
         for(int i = directions.Length-1;i>=0; i--)
         {
