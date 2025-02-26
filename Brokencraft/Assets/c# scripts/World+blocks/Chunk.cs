@@ -71,13 +71,18 @@ public class Chunk : MonoBehaviour
             changeLog.changeCodes.Add(saveCode);
 
         }
-        SaveDataToFile(savepath,changeLog);
+        //SaveDataToFile(savepath,changeLog);
         //index++;
     }
     void SaveDataToFile(string filePath,BlockChange change)
     {
         string jsonData = JsonUtility.ToJson(change);
         File.WriteAllText(filePath, jsonData);
+    }
+    void SaveDataToFile()
+    {
+        string jsonData = JsonUtility.ToJson(changeLog);
+        File.WriteAllText(savepath, jsonData);
     }
     void ReadData(string path)
     {
@@ -191,7 +196,8 @@ public class Chunk : MonoBehaviour
     
     public void Initialize()
     {
-        savepath = Application.persistentDataPath+"/worldSaves/";
+        SaveManager.Register(SaveDataToFile);
+        savepath = Overlord.saveDirectory+"/worldSaves/";
         Directory.CreateDirectory(savepath);
         savepath += identifier + ".savedata";
         Init(5, 5, 5);

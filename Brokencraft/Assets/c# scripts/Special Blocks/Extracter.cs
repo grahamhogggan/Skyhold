@@ -28,9 +28,10 @@ public class Extracter : MonoBehaviour
         indicatorPosition = indicator.transform.position;
         indicatorY = indicator.transform.localScale.y;
         keyCode = "EXTR_" + (int)transform.position.x + (int)transform.position.y + (int)transform.position.z;
-        Directory.CreateDirectory(Application.persistentDataPath+"/Extracters");
+        Directory.CreateDirectory(Overlord.saveDirectory+"/Extracters");
         Load();
         UpdateDisp();
+        SaveManager.Register(Save);
     }
 
     // Update is called once per frame
@@ -48,7 +49,7 @@ public class Extracter : MonoBehaviour
             indicator.transform.localScale = new Vector3(indicator.transform.localScale.x, indicatorY * delay / spawnTime, indicator.transform.localScale.z);
             indicator.transform.position = indicatorPosition + indicator.transform.up * (-indicatorY / 2 + indicator.transform.localScale.y / 2);
         }
-        Save();
+        
     }
     public void SetItem()
     {
@@ -60,7 +61,7 @@ public class Extracter : MonoBehaviour
     }
     void Load()
     {
-        dataPath = Application.persistentDataPath + "/Extracters/" + keyCode;
+        dataPath = Overlord.saveDirectory + "/Extracters/" + keyCode;
         if(File.Exists(dataPath)&&!Overlord.OverwriteMode)
         {
             string read = File.ReadAllText(dataPath);

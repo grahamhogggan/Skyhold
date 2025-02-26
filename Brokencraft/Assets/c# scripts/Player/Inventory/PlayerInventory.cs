@@ -21,7 +21,7 @@ public class PlayerInventory : MonoBehaviour
     {
         clickedItemIndex = -1;
         instance = this;
-        inventorySavePath = Application.persistentDataPath + "/inventoryData.inventoryData";
+        inventorySavePath = Overlord.saveDirectory + "/inventoryData.inventoryData";
         if (!File.Exists(inventorySavePath)||Overlord.OverwriteMode)
         {
             inventory = new Inventory();
@@ -30,7 +30,7 @@ public class PlayerInventory : MonoBehaviour
         {
             LoadInventory();
         }
-        SaveInventory();
+        SaveManager.Register(SaveInventory);
         offset = 0;
     }
 
@@ -131,12 +131,12 @@ public class PlayerInventory : MonoBehaviour
     public void AddItem(string name)
     {
         this.inventory.AddItem(name);
-        SaveInventory();
+        //SaveInventory();
     }
     public void RemoveItem(string name)
     {
         this.inventory.RemoveItem(name);
-        SaveInventory();
+        //SaveInventory();
     }
     public string GetItem(int index)
     {
@@ -156,12 +156,12 @@ public class PlayerInventory : MonoBehaviour
     public static void StaticAddItem(string name)
     {
         instance.inventory.AddItem(name);
-        instance.SaveInventory();
+        //instance.SaveInventory();
     }
     public static void StaticRemoveItem(string name)
     {
         instance.inventory.RemoveItem(name);
-        instance.SaveInventory();
+        //instance.SaveInventory();
     }
     public static void ClearCrafting()
     {

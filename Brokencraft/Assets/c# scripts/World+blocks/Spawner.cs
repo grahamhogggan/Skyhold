@@ -37,7 +37,7 @@ public class Spawner : MonoBehaviour
         instance = this;
         world = new Chunk[chunksX * chunksY * chunksZ];
         PlayerMinerComponent.Start();
-        savePath = Application.persistentDataPath+"/worldInfo.chicken";
+        savePath = Overlord.saveDirectory+"/worldInfo.chicken";
         CreateChunks();
         
     }
@@ -72,6 +72,7 @@ public class Spawner : MonoBehaviour
         {
             Random.InitState((int)(Time.deltaTime*Time.time*Random.Range(0,10000)));
             seed = Random.Range(100,100000);
+            File.WriteAllText(savePath,seed.ToString());
         }
         else
         {
@@ -79,7 +80,7 @@ public class Spawner : MonoBehaviour
         }
         //Debug.Log("Generating . . .");
         Random.InitState(seed);
-        File.WriteAllText(savePath,seed.ToString());
+
         for (int i = 0; i < chunksX; i++)
         {
             for (int k = 0; k < chunksZ; k++)

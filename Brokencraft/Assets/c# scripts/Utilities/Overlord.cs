@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 using UnityEditor;
 
-public class Overlord : MonoBehaviour, PeriodicSaver
+public class Overlord : MonoBehaviour
 {
 
     public static bool paused = false;
@@ -32,13 +32,15 @@ public class Overlord : MonoBehaviour, PeriodicSaver
     void Awake()
     {
         difficulty = -1;
-        saveDirectory = Application.persistentDataPath;
+        saveDirectory = Application.persistentDataPath; // ifmodifying this, also note GameStarter.cs has its own field fo rreasons.
+        Debug.Log("initialized directory");
         instance = this;
         DropSavePath = saveDirectory + "/drops.randomFileExtension";
         infoSavePath = saveDirectory + "/gameInfo.potato";
         ReadDrops();
         ReadInfo();
         saveCount = 0;
+        SaveManager.Register(Save);
     }
     public static void Pause()
     {
@@ -77,7 +79,7 @@ public class Overlord : MonoBehaviour, PeriodicSaver
 
 
         }
-       ((PeriodicSaver)this).TrySave();
+       
         if (isNight && !wasNight)
         {
             OnNightStart();

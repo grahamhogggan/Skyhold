@@ -11,7 +11,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        savePath = Application.persistentDataPath+"/score_data";
+        savePath = Overlord.saveDirectory+"/score_data";
         if((!Overlord.OverwriteMode)&&File.Exists(savePath)&&Int32.TryParse(File.ReadAllText(savePath), out int res))
         {
         score = res;
@@ -21,7 +21,7 @@ public class ScoreManager : MonoBehaviour
         {
             score = 0;
         }
-        Save();
+        SaveManager.Register(Save);
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class ScoreManager : MonoBehaviour
     public static void AddScore(int number)
     {
         score+=number;
-        Save();
+        
     }
     public static int GetScore()
     {

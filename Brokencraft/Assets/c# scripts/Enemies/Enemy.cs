@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-public class Enemy : MonoBehaviour,PeriodicSaver
+public class Enemy : MonoBehaviour
 {
     [SerializeField]protected float health = 10;
     public static GameObject target;
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour,PeriodicSaver
     {
         renderer = GetComponentInChildren<Renderer>();
         initColor = renderer.material.color;
-        dataPath = Application.persistentDataPath + "/enemies";
+        dataPath = Overlord.saveDirectory + "/enemies";
         Directory.CreateDirectory(dataPath);
         dataPath += "/enemy_" + EnemySpawner.enemyNumber+".enemyData";
         EnemySpawner.enemyNumber++;
@@ -51,13 +51,13 @@ public class Enemy : MonoBehaviour,PeriodicSaver
                 burnClock = 0;
             }
         }
-        ((PeriodicSaver)this).TrySave();
+        SaveManager.Register(Save);
     }
     public void Damage(float damage)
     {
         health -= damage;
         renderer.material.color = Color.red;
-        Save();
+        
     }
     public void PlayerDamage(float damage)
     {

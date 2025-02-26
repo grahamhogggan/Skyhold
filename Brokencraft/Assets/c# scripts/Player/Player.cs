@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
-public class Player : MonoBehaviour,PeriodicSaver
+public class Player : MonoBehaviour
 {
     [SerializeField] private int health;
     private int maxHealth;
@@ -16,16 +16,16 @@ public class Player : MonoBehaviour,PeriodicSaver
     // Start is called before the first frame update
     void Start()
     {
-        dataPath = Application.persistentDataPath + "/PlayerData.savedata";
+        dataPath = Overlord.saveDirectory + "/PlayerData.savedata";
         maxHealth = health;
         Load();
-        
+        SaveManager.Register(Save);
     }
 
     // Update is called once per frame
     void Update()
     {
-        ((PeriodicSaver)this).TrySave();
+        
         if(health <=0)
         {
             SceneManager.LoadScene(1);
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour,PeriodicSaver
     {
         health -= damage;
         hitEffect.Hit();
-        Save();
+        
     }
     public void Heal(int amount)
     {
@@ -58,6 +58,7 @@ public class Player : MonoBehaviour,PeriodicSaver
         data.time = Overlord.GetRawTime();
         string ToSave = JsonUtility.ToJson(data);
         File.WriteAllText(dataPath, ToSave);
+        Debug.Log("save time");
     }
     void Load()
     {
