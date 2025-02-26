@@ -2783,7 +2783,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 20
   DayDeath: 1
-  drops: []
+  drops:
+  - wires
+  - beam
   floatDist: 3
   speed: 5
 --- !u!135 &3732090611817509705

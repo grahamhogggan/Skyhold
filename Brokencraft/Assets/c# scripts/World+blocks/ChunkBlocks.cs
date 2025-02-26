@@ -42,7 +42,7 @@ public class ChunkBlocks : MonoBehaviour
                     {
                         if (blockY <= waterLevel)
                         {
-                            spawned.SetBlock("water");
+                            spawned.SetBlock("water4");
                         }
                         else
                         {

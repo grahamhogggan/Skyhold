@@ -141,7 +141,10 @@ public class Miner : MonoBehaviour
                         string alt = hitBlock.GetComponentInChildren<BlockDetails>().alternate;
                         if(alt.Length>0)
                         {
-                            inventory.AddItem(alt);
+                            if(alt !="none")
+                            {
+                                 inventory.AddItem(alt);
+                            }
                         }
                         else
                         {

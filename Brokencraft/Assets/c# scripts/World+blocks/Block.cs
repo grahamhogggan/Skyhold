@@ -68,14 +68,14 @@ public class Block : MonoBehaviour
 
         new Vector3(0, 0, -1),  // Backward
         new Vector3(-1, 0, 0), // Left
-        new Vector3(0, -1, 0), // up
+        new Vector3(0, 1, 0), // up
 
 
         };
         foreach(Vector3 dir in directions)
         {
             Block a = GetAdjacent(dir);
-            if(a!=null&&a.gameObject.activeSelf&&a.typeName == "water")
+            if(a!=null&&a.gameObject.activeSelf&&(a.typeName == "water"||a.typeName == "small water"))
             {
                 a.GetComponentInChildren<Water>().isExposed = true;
             }

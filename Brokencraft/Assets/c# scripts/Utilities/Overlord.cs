@@ -31,7 +31,7 @@ public class Overlord : MonoBehaviour, PeriodicSaver
     public int saveCount { get; set; }
     void Awake()
     {
-        difficulty = 0;
+        difficulty = -1;
         saveDirectory = Application.persistentDataPath;
         instance = this;
         DropSavePath = saveDirectory + "/drops.randomFileExtension";

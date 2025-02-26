@@ -71,6 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   density: 2
+  isExposed: 1
 --- !u!114 &-8130351029386363366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
-  alternate: water
+  alternate: none
 --- !u!1 &4191774412472035675
 GameObject:
   m_ObjectHideFlags: 0
