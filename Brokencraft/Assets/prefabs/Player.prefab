@@ -207,6 +207,7 @@ MonoBehaviour:
   - {fileID: 3189495928652548006, guid: 0b93df20542db754d88849b0e06b098e, type: 3}
   - {fileID: 3189495928652548006, guid: 2f3a2a4ebc907d6489c710f5e55d18f2, type: 3}
   - {fileID: 3189495928652548006, guid: e25aa2e5e1db10940844a7731bd39c68, type: 3}
+  - {fileID: 3189495928652548006, guid: 11aa1c807cff0984e8c3edf447f50880, type: 3}
   equippedObjectViewer: {fileID: 6317429509564419225}
   buildLayers:
     serializedVersion: 2

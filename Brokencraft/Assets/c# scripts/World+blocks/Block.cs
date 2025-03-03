@@ -91,7 +91,7 @@ public class Block : MonoBehaviour
         transform.root.GetComponent<Chunk>().Expose();
 
         transform.rotation = Quaternion.Euler(new Vector3(0,rotation,0));
-        if(type.Substring(0,5)=="water")
+        if(type.Length>=5&&type.Substring(0,5)=="water")
         {
         Vector3[] directions = 
         {
