@@ -768,6 +768,7 @@ MonoBehaviour:
   - metal
   - beam
   - processor
+  - qubit
   body: {fileID: 0}
   speed: 1
   inWater: 0
