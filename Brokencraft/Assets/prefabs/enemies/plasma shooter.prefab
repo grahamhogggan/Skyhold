@@ -942,6 +942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
+  renderer: {fileID: 2488661328617973114}
   DayDeath: 1
   drops:
   - qubit

@@ -16,6 +16,8 @@ public class ResourceUser : MonoBehaviour
     private float delay;
     private string savePath;
     private string keyCode;
+        private bool savedAlready = false;
+
     void Start()
     {
         
@@ -29,19 +31,24 @@ public class ResourceUser : MonoBehaviour
         Refresh();
 
         SaveManager.Register(Save);
+        savedAlready = false;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(stored.Count>0)
+        {
         delay+=Time.deltaTime;
-        if(delay>useRate&&stored.Count>0)
+        if(delay>useRate)
         {
             delay = 0;
             stored.RemoveAt(0);
             Refresh();
         }
+        }
+
     }
     public void AddTo()
     {
@@ -82,6 +89,8 @@ public class ResourceUser : MonoBehaviour
         data.delay = this.delay;
         string jsonData = JsonUtility.ToJson(data);
         File.WriteAllText(savePath,jsonData);
+                savedAlready = true;
+
     }
     void Load()
     {
@@ -98,6 +107,15 @@ public class ResourceUser : MonoBehaviour
             stored = new List<string>();
         }
         
+    }
+        void OnDisable()
+    {
+        SaveManager.Withdraw(Save);
+        if(File.Exists(savePath)&&!savedAlready)
+        {
+        File.Delete(savePath);
+
+        }
     }
 }
 [System.Serializable]

@@ -22,6 +22,11 @@ public class SaveManager : MonoBehaviour
     {
         saveCommands.Add(saver);
     }
+    public static void Withdraw(Save saver)
+    {
+        saveCommands.Remove(saver);
+        Debug.Log("removed");
+    }
     void OnApplicationQuit()
     {
        SaveAll(false);

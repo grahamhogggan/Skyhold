@@ -19,6 +19,8 @@ public class Extracter : MonoBehaviour
 
     [SerializeField] private GameObject dispLoc;
     private GameObject dispMesh;
+
+    private bool savedAlready = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class Extracter : MonoBehaviour
         Load();
         UpdateDisp();
         SaveManager.Register(Save);
+        savedAlready = false;
     }
 
     // Update is called once per frame
@@ -78,6 +81,7 @@ public class Extracter : MonoBehaviour
         data.spawnTime = spawnTime;
         string saveData = JsonUtility.ToJson(data);
         File.WriteAllText(dataPath, saveData);
+        savedAlready = true;
     }
     void UpdateDisp()
     {
@@ -89,5 +93,14 @@ public class Extracter : MonoBehaviour
         dispMesh = Instantiate(disp,dispLoc.transform.position,Quaternion.identity);
         dispMesh.transform.localScale /=5;
         dispMesh.transform.SetParent(dispLoc.transform);
+    }
+    void OnDisable()
+    {
+        SaveManager.Withdraw(Save);
+        if(File.Exists(dataPath)&&!savedAlready)
+        {
+        File.Delete(dataPath);
+
+        }
     }
 }

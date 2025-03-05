@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField]protected float health = 10;
     public static GameObject target;
-    private Renderer renderer;
+    [SerializeField]private Renderer renderer;
     private Color initColor;
     private string dataPath;
     public bool DayDeath = true;
@@ -18,12 +18,14 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     protected void Start()
     {
-        renderer = GetComponentInChildren<Renderer>();
+        if(renderer==null) renderer = GetComponentInChildren<Renderer>();
         initColor = renderer.material.color;
         dataPath = Overlord.saveDirectory + "/enemies";
         Directory.CreateDirectory(dataPath);
         dataPath += "/enemy_" + EnemySpawner.enemyNumber+".enemyData";
         EnemySpawner.enemyNumber++;
+        SaveManager.Register(Save);
+
     }
 
     // Update is called once per frame
@@ -51,7 +53,6 @@ public class Enemy : MonoBehaviour
                 burnClock = 0;
             }
         }
-        SaveManager.Register(Save);
     }
     public void Damage(float damage)
     {
@@ -71,7 +72,8 @@ public class Enemy : MonoBehaviour
             Dropstuff();
 
         }
-
+        SaveManager.Withdraw(Save);
+        Save();
         Destroy(gameObject);
     }
     private void Dropstuff()
@@ -89,6 +91,7 @@ public class Enemy : MonoBehaviour
     {
         EnemyData data = new EnemyData();
         data.health = health;
+        Debug.Log(transform.position);
         data.position = transform.position;
         data.type = gameObject.name;
         string save = JsonUtility.ToJson(data);
