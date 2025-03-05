@@ -182,7 +182,7 @@ public class CraftingManager : MonoBehaviour
         craftingRecipes.Add("beam,metal,processor,wires,wires", "extracter/1");
         craftingRecipes.Add("beam,metal,processor,torch,wires","score pump/1");
         craftingRecipes.Add("beam,fan,processor,truss,wires","turbine/1");
-        
+        craftingRecipes.Add("beam,processor,truss,qubit,wires","reactor/1");
         
         
         

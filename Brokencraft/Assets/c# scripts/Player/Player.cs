@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
         
         if(health <=0)
         {
+            SaveManager.SaveAll(true);
             SceneManager.LoadScene(1);
         }
         if(transform.position.y<minY)
