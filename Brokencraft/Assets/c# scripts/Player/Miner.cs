@@ -19,9 +19,11 @@ public class Miner : MonoBehaviour
     [SerializeField] private float scrollSpeed = 2;
 
     private float timeSinceLastAttack = 0;
+    private float cooldown = 0;
     private static Miner instance;
 
     public LayerMask handLayer;
+    public Rotator crosshairRotator;
     
     // Start is called before the first frame update
     public void Start()
@@ -52,6 +54,10 @@ public class Miner : MonoBehaviour
     void Update()
     {
         timeSinceLastAttack += Time.deltaTime;
+        if(timeSinceLastAttack>cooldown)
+        {
+            crosshairRotator.rot = new Vector3(0,0,0);
+        }
         if (Overlord.paused) return;
         if(inventory.GetItemCount()==0)
         {
@@ -126,9 +132,12 @@ public class Miner : MonoBehaviour
                 GameObject held = GetBlock(equippedItem);
                 weaponStats = held.GetComponent<Weapon>().GetStats();
             }
-            if(timeSinceLastAttack > weaponStats.z)
+            if(timeSinceLastAttack > cooldown)
             {
                 timeSinceLastAttack = 0;
+                cooldown = weaponStats.z;
+                crosshairRotator.transform.rotation = Quaternion.Euler(0,0,0);
+                crosshairRotator.rot = new Vector3(0,180/weaponStats.z,0);
                 equippedObjectViewer.GetComponent<HeldObject>().Attack();
 
                 RaycastHit hit;
