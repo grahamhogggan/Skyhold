@@ -29,6 +29,14 @@ public class Overlord : MonoBehaviour
 
     private bool wasNight;
     public int saveCount { get; set; }
+
+    public enum WorldType
+    {
+        Countryside = 1,
+        Mountain = 2,
+
+    }
+    public static WorldType type;
     void Awake()
     {
         difficulty = -1;
@@ -152,6 +160,7 @@ public class Overlord : MonoBehaviour
             this.secondsPerNight = info.secondsPerNight;
             this.minSecondsPerDay = info.minSecondsPerDay;
             difficulty = info.difficulty;
+            type = info.type;
         }
     }
     private void OnNightStart()
@@ -172,6 +181,8 @@ class GameInformation
     public float secondsPerNight;
     public float minSecondsPerDay;
     public int difficulty;
+
+    public Overlord.WorldType type;
     public GameInformation(Overlord o)
     {
         this.secondsPerDay = o.secondsPerDay;

@@ -219,6 +219,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   crosshairRotator: {fileID: 0}
+  interactableText: {fileID: 0}
 --- !u!114 &5735373940546311553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,7 +375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87909282c817df249ac86143769a4465, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 3
   jumpForce: 4.5
   Vvelocity: 0
   gravity: -9.8

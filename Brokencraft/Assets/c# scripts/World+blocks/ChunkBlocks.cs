@@ -7,11 +7,11 @@ public class ChunkBlocks : MonoBehaviour
 
     [SerializeField] private GameObject cube;
     private Chunk chunk;
-    private static int ground = 10;
+    private static int ground = 20;
     private static int scale = 30;
     private static float size = 0.05f;
-    public readonly static float waterLevel = 23;
-    public readonly static float snowPeak = 33;
+    public readonly static float waterLevel = 33;
+    public readonly static float snowPeak = 50;
 
     private List<Vector2> trees = new List<Vector2>();
     // Start is called before the first frame update
@@ -35,7 +35,7 @@ public class ChunkBlocks : MonoBehaviour
                     Block spawned = b.GetComponent<Block>();
                     spawned.parentChunk = chunk;
                     spawned.localPos = pos-transform.position;
-                    spawned.typeName = "dirt";
+                    spawned.typeName = "stone";
                     chunk.addBlock(b.GetComponent<Block>(), i, j, k);
                     int blockY = j + (int)((Spawner.instance.chunksY - chunk.GetLocation().y) * 5);
                     if (blockY > h)
@@ -72,18 +72,18 @@ public class ChunkBlocks : MonoBehaviour
                     }
 
 
-                    if(blockY<ground)
+                    if(perlin-blockY>3)
                     {
                         if(Random.Range(0,50)==25)
                         {
                             spawned.SetBlock("metal");
                         }
                         else
-                        {
-                            spawned.SetBlock("stone");
-
-                        }
+                    {
+                        spawned.SetBlock("stone");
                     }
+                    }
+                    
                     
                 }
             }
@@ -92,11 +92,33 @@ public class ChunkBlocks : MonoBehaviour
     public static float GetPerlinValue(float x, float y)
     {
         
+        if(Overlord.type == Overlord.WorldType.Countryside)
+        {
+        return RegularGen(x,y);
+
+        }
+        else if(Overlord.type == Overlord.WorldType.Mountain)
+        {
+        return MountainGen(x,y);
+
+        }
+        
+        
+        //for building structures
+        return ground+20;
+    }
+    public static float RegularGen(float x, float y)
+    {
         float perlin1 = Mathf.PerlinNoise(Spawner.seed + x * size, Spawner.seed + y * size) * scale;
         float perlin15 = Mathf.PerlinNoise(Mathf.Pow(Spawner.seed,0.7f) + x * size, Mathf.Pow(Spawner.seed,0.7f) + y * size) * scale;
         float perlin2 = Mathf.PerlinNoise(Mathf.Pow(Spawner.seed,0.5f) + x * size*2,Mathf.Pow(Spawner.seed,0.5f) + y * size*2) * scale*0.5f;
         return (perlin1+perlin2+perlin15)/2.5f+ground;
-        //for building structures
-        //return ground+20;
+    }
+    public static float MountainGen(float x, float y)
+    {
+        float perlin1 = Mathf.PerlinNoise(Spawner.seed + x * size*2, Spawner.seed + y * size*2) * scale*1.3f;
+        //float perlin15 = Mathf.PerlinNoise(Mathf.Pow(Spawner.seed,0.7f) + x * size, Mathf.Pow(Spawner.seed,0.7f) + y * size) * scale;
+        //float perlin2 = Mathf.PerlinNoise(Mathf.Pow(Spawner.seed,0.5f) + x * size*2,Mathf.Pow(Spawner.seed,0.5f) + y * size*2) * scale*0.5f;
+        return (perlin1)+ground;
     }
 }

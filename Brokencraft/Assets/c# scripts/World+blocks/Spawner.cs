@@ -48,7 +48,13 @@ public class Spawner : MonoBehaviour
     }
     public Chunk GetChunk(int x, int y, int z)
     {
-        return world[x+chunksX*y+chunksY*chunksX*z];
+        if(x+chunksX*y+chunksY*chunksX*z<world.Length&&x+chunksX*y+chunksY*chunksX*z>=0)
+        {
+            Debug.Log("index value: "+(x+chunksX*y+chunksY*chunksX*z));
+             return world[x+chunksX*y+chunksY*chunksX*z];
+        }
+        else return null;
+       
     }
     public void setChunk(Chunk c, int x, int y, int z)
     {
@@ -56,7 +62,10 @@ public class Spawner : MonoBehaviour
     }
     public Block GetBlock(int x, int y, int z)
     {
+        Debug.Log("requested Block Y: "+y);
+        Debug.Log("Requested Chunk Y of "+(chunksY-(int)(y / 5)));
         Chunk chunk = GetChunk((int)(x / 5), chunksY-(int)(y / 5), (int)(z / 5));
+        if(chunk == null) return null;
         int rX = x % 5;
         int rY = y % 5;
         int rZ = z % 5;

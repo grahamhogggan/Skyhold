@@ -16,6 +16,7 @@ public class TreeSpawner : MonoBehaviour
             {
                 int heightAtValue = (int)ChunkBlocks.GetPerlinValue(x, y);
                 Block currentBlock = world.GetBlock(x, heightAtValue+1, y);
+                if(currentBlock == null) continue;
                 
                 if(heightAtValue < ChunkBlocks.snowPeak - 1 && heightAtValue >ChunkBlocks.waterLevel+2&&Random.Range(0,spacing/3) == 1)
                 {
@@ -44,7 +45,7 @@ public class TreeSpawner : MonoBehaviour
     }
     private static void SpawnBush(Block origin)
     {
-        origin.Place("bush",Random.Range(0,4)*90);
+        origin.SetBlock("bush");
     }
     private static void SpawnPalmTree(Block origin)
     {

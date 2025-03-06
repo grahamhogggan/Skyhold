@@ -9,6 +9,7 @@ public class GameStarter : MonoBehaviour
 {
     [SerializeField] private int sceneIndex;
     [SerializeField] private GameObject continueButton;
+    [SerializeField] private Overlord.WorldType type;
     public void LoadLoadingScene()
     {
         Overlord.OverwriteMode = false;
@@ -18,6 +19,7 @@ public class GameStarter : MonoBehaviour
     public void LoadLoadingSceneAndReset()
     {
         Overlord.OverwriteMode = true;
+        Overlord.type = type;
         SceneManager.LoadScene(sceneIndex);
     }
     public void LoadRegularScene(int buildIndex)

@@ -446,7 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunk: {fileID: 7534378150607360969, guid: 2a9047fab1fda954bac9b3537d8de457, type: 3}
   chunksX: 10
-  chunksY: 7
+  chunksY: 10
   chunksZ: 10
   atmosphereLayers: 2
   PlayerMinerComponent: {fileID: 1018543820}
@@ -2721,7 +2721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &565425281
 RectTransform:
   m_ObjectHideFlags: 0
