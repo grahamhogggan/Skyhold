@@ -2721,7 +2721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &565425281
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4039,12 +4039,12 @@ PrefabInstance:
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
       propertyPath: m_fontSize
-      value: 29.8
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
       propertyPath: m_margin.z
-      value: -36.839195
+      value: 32.081123
       objectReference: {fileID: 0}
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
@@ -4240,12 +4240,12 @@ PrefabInstance:
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
       propertyPath: m_fontSize
-      value: 29.8
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
       propertyPath: m_margin.z
-      value: -36.839195
+      value: 30.139679
       objectReference: {fileID: 0}
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
@@ -6910,12 +6910,12 @@ PrefabInstance:
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
       propertyPath: m_fontSize
-      value: 29.8
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
       propertyPath: m_margin.z
-      value: -36.839195
+      value: 30.902878
       objectReference: {fileID: 0}
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
@@ -8875,7 +8875,7 @@ PrefabInstance:
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
       propertyPath: m_margin.z
-      value: -36.839195
+      value: 28.198296
       objectReference: {fileID: 0}
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
@@ -10537,12 +10537,12 @@ PrefabInstance:
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
       propertyPath: m_fontSize
-      value: 29.8
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
       propertyPath: m_margin.z
-      value: -36.839195
+      value: 27.273834
       objectReference: {fileID: 0}
     - target: {fileID: 4107312639815372479, guid: eb0c1e848761d0445ade305c3741e7a3,
         type: 3}
