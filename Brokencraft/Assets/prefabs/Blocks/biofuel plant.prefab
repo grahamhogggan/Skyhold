@@ -500,6 +500,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactMessage: E to add fuel
 --- !u!1 &4757423424136599430
 GameObject:
   m_ObjectHideFlags: 0

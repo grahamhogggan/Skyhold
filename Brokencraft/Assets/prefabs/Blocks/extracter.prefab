@@ -300,6 +300,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactMessage: E to set extraction
 --- !u!114 &5857881335311884728
 MonoBehaviour:
   m_ObjectHideFlags: 0

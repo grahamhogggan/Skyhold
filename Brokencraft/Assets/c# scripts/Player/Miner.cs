@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 public class Miner : MonoBehaviour
 {
     private static List<GameObject> blocks;
@@ -24,6 +25,7 @@ public class Miner : MonoBehaviour
 
     public LayerMask handLayer;
     public Rotator crosshairRotator;
+    public TMP_Text interactableText;
     
     // Start is called before the first frame update
     public void Start()
@@ -117,7 +119,28 @@ public class Miner : MonoBehaviour
         
         //Debug.Log("inventorySlot:" + equippedValue);
 
-
+        //check interactions
+        RaycastHit interactionHit;
+        if(Physics.Raycast(transform.position,transform.forward,out interactionHit, 10, buildLayers, QueryTriggerInteraction.Collide))
+        {
+            Block hit = interactionHit.transform.gameObject.GetComponentInParent<Block>();
+            if(hit!=null)
+            {
+                Interactable thing = hit.transform.gameObject.GetComponentInChildren<Interactable>();
+                if(thing!=null)
+                {
+                    interactableText.text = thing.interactMessage;
+                }
+                else 
+                {
+                    interactableText.text = "";
+                }
+            }
+        }
+        else
+        {
+            interactableText.text = "";
+        }
 
         SwitchEquippedItem();
         if (Input.GetMouseButton(0))
