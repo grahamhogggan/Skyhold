@@ -446,7 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneIndex: 2
   continueButton: {fileID: 0}
-  type: 1
+  type: 0
 --- !u!114 &202106176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2369,7 +2369,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneIndex: 2
   continueButton: {fileID: 0}
-  type: 2
+  type: 1
 --- !u!114 &1942747336
 MonoBehaviour:
   m_ObjectHideFlags: 0

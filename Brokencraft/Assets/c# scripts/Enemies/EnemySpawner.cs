@@ -5,7 +5,7 @@ using System.IO;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject[] enemies;
+    public EnemySet[] sets;
     public float spawnRate = 5f;
     private float spawnDelay = 0;
     public static int enemyNumber;
@@ -34,12 +34,12 @@ public class EnemySpawner : MonoBehaviour
     {
         float xPos = Random.Range(0, Spawner.instance.chunksX * 5);
         float zPos = Random.Range(0,Spawner.instance.chunksZ * 5);
-        int enemyToSpawn = Random.Range(0,Mathf.Min(Overlord.difficulty+1,enemies.Length));
+        int enemyToSpawn = Random.Range(0,Mathf.Min(Overlord.difficulty+1,sets[(int)Overlord.type].enemies.Length));
         float yPos = (int)ChunkBlocks.GetPerlinValue(xPos, zPos)-Spawner.instance.chunksY*5+2;
         Vector3 spawnPosition = new Vector3(xPos, yPos, zPos);
         if(!Physics.CheckBox(spawnPosition,new Vector3(0.4f,0.9f,0.4f)))
         {
-            Instantiate(enemies[enemyToSpawn], spawnPosition, Quaternion.identity).name = enemies[enemyToSpawn].gameObject.name;
+            Instantiate(sets[(int)Overlord.type].enemies[enemyToSpawn], spawnPosition, Quaternion.identity).name = sets[(int)Overlord.type].enemies[enemyToSpawn].gameObject.name;
 
         }
     }
@@ -70,7 +70,7 @@ public class EnemySpawner : MonoBehaviour
     }
     GameObject GetEnemy(string name)
     {
-        foreach(GameObject enemy in enemies)
+        foreach(GameObject enemy in sets[(int)Overlord.type].enemies)
         {
             if(enemy.name == name)
             {
@@ -79,4 +79,9 @@ public class EnemySpawner : MonoBehaviour
         }
         return null;
     }
+}
+[System.Serializable]
+public struct EnemySet
+{
+    public GameObject[] enemies;
 }

@@ -32,8 +32,8 @@ public class Overlord : MonoBehaviour
 
     public enum WorldType
     {
-        Countryside = 1,
-        Mountain = 2,
+        Countryside = 0,
+        Mountain = 1,
 
     }
     public static WorldType type;
@@ -189,5 +189,6 @@ class GameInformation
         this.secondsPerNight = o.secondsPerNight;
         this.minSecondsPerDay = o.minSecondsPerDay;
         this.difficulty = Overlord.difficulty;
+        this.type = Overlord.type;
     }
 }

@@ -30,6 +30,8 @@ public class Spawner : MonoBehaviour
     public static bool finishedLoading;
 
     private string savePath;
+    public Camera camera;
+    public Camera loadingCam;
     // Start is called before the first frame update
     void Start()
     {
@@ -77,6 +79,8 @@ public class Spawner : MonoBehaviour
 
     IEnumerator GenerateWorld()
     {
+        camera.enabled = false;
+        loadingCam.enabled = true;
         if(Overlord.OverwriteMode)
         {
             Random.InitState((int)(Time.deltaTime*Time.time*Random.Range(0,10000)));
@@ -120,6 +124,7 @@ public class Spawner : MonoBehaviour
                 }
                 yield return null;
 
+
             }
         }
         TreeSpawner.world = this;
@@ -132,5 +137,7 @@ public class Spawner : MonoBehaviour
         finishedLoading = true;
         //re-randomize randomness
         Random.InitState((int)(Time.deltaTime*12838));
+        camera.enabled = true;
+        loadingCam.enabled = false;
     }
 }
