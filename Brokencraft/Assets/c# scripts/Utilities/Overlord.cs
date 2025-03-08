@@ -34,6 +34,8 @@ public class Overlord : MonoBehaviour
     {
         Countryside = 0,
         Mountain = 1,
+        Desert = 2,
+        
 
     }
     public static WorldType type;

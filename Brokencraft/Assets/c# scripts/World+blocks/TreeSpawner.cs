@@ -7,28 +7,37 @@ public class TreeSpawner : MonoBehaviour
     private static int spacing = 14;
     private static int seed = 1729;
     public static Spawner world;
+    public TreeProfile[] TheTreeProfiles;
+    private static TreeProfile[] treeProfiles;
+    void Awake()
+    {
+        treeProfiles = TheTreeProfiles;
+    }
     // Start is called before the first frame update
     public static void Do()
     {
+        TreeProfile profile = treeProfiles[(int)Overlord.type];
+        spacing = profile.spacing;
         for(int x = 2; x<world.chunksX*5-2; x+=Random.Range(2,4))
         {
             for(int y = 2;y<world.chunksZ*5-2;y+= Random.Range(2, 4))
             {
                 int heightAtValue = (int)ChunkBlocks.GetPerlinValue(x, y);
-                Block currentBlock = world.GetBlock(x, heightAtValue+1, y);
+                Block currentBlock = world.GetBlock(x, heightAtValue, y);
+                Block originBlock = world.GetBlock(x, heightAtValue+1, y);
                 if(currentBlock == null) continue;
                 
-                if(heightAtValue < ChunkBlocks.snowPeak - 1 && heightAtValue >ChunkBlocks.waterLevel+2&&Random.Range(0,spacing/3) == 1)
+                if(currentBlock.typeName == "grass"&&Random.Range(0,spacing) == 1)
                 {
                     if(Random.Range(0,3)!=1)
                     {
-                        SpawnBush(currentBlock);
+                        if(profile.bushes) SpawnBush(originBlock);
                     }
-                    else SpawnTree(currentBlock);
+                    else if(profile.trees) SpawnTree(originBlock);
                 }
-                else if((heightAtValue <= ChunkBlocks.waterLevel + 1 && heightAtValue >ChunkBlocks.waterLevel&&Random.Range(0,spacing) == 1))
+                else if((currentBlock.typeName == "sand"&&originBlock.typeName!="water4"&&Random.Range(0,spacing) == 1))
                 {
-                    SpawnPalmTree(currentBlock);
+                    if(profile.palms) SpawnPalmTree(originBlock);
                 }
             }
         }
@@ -78,4 +87,13 @@ public class TreeSpawner : MonoBehaviour
         
     }
    
+}
+[System.Serializable]
+public struct TreeProfile
+{
+    public int spacing;
+    public bool trees;
+    public bool bushes;
+    public bool palms;
+    
 }
