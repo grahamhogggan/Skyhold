@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4011036332807626747}
   - component: {fileID: 5355930975921942375}
   - component: {fileID: 7459906580539136084}
+  - component: {fileID: 8973072504303291611}
   m_Layer: 0
   m_Name: palm wood
   m_TagString: Untagged
@@ -99,6 +100,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 2
   alternate: 
+--- !u!114 &8973072504303291611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189495928652548006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0925b6fe8beaeb4ea7435a7ccfedb60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 1.2
 --- !u!1001 &1720563087890770448
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 3713191609114991956}
   - component: {fileID: 2479197127988799828}
   - component: {fileID: 5708174604004818017}
+  - component: {fileID: 8966279274623634979}
   m_Layer: 0
   m_Name: truss
   m_TagString: Untagged
@@ -196,6 +197,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bonusStrength: 7
+--- !u!114 &8966279274623634979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189495928652548006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0925b6fe8beaeb4ea7435a7ccfedb60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  multiplier: 5
 --- !u!1 &3242023424632109926
 GameObject:
   m_ObjectHideFlags: 0

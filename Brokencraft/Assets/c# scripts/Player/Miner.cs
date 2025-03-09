@@ -26,7 +26,7 @@ public class Miner : MonoBehaviour
     public LayerMask handLayer;
     public Rotator crosshairRotator;
     public TMP_Text interactableText;
-    
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -44,7 +44,7 @@ public class Miner : MonoBehaviour
         //if (blocks == null) return null;
         foreach (GameObject block in blocks)
         {
-            if(block.name == name)
+            if (block.name == name)
             {
                 return block;
             }
@@ -56,13 +56,13 @@ public class Miner : MonoBehaviour
     void Update()
     {
         timeSinceLastAttack += Time.deltaTime;
-        if(timeSinceLastAttack>cooldown)
+        if (timeSinceLastAttack > cooldown)
         {
-            crosshairRotator.rot = new Vector3(0,0,0);
+            crosshairRotator.rot = new Vector3(0, 0, 0);
             crosshairRotator.gameObject.transform.rotation = Quaternion.identity;
         }
         if (Overlord.paused) return;
-        if(inventory.GetItemCount()==0)
+        if (inventory.GetItemCount() == 0)
         {
             equippedItem = "null";
         }
@@ -77,62 +77,62 @@ public class Miner : MonoBehaviour
             {
                 equippedValue = inventory.GetItemCount() - 1;
             }
-            
-            if(Input.GetKeyDown("1"))
+
+            if (Input.GetKeyDown("1"))
             {
-                equippedValue= 0;
+                equippedValue = 0;
             }
-            if(Input.GetKeyDown("2"))
+            if (Input.GetKeyDown("2"))
             {
-                equippedValue= 1;
+                equippedValue = 1;
             }
-            if(Input.GetKeyDown("3"))
+            if (Input.GetKeyDown("3"))
             {
-                equippedValue= 2;
+                equippedValue = 2;
             }
-            if(Input.GetKeyDown("4"))
+            if (Input.GetKeyDown("4"))
             {
-                equippedValue= 3;
+                equippedValue = 3;
             }
-            if(Input.GetKeyDown("5"))
+            if (Input.GetKeyDown("5"))
             {
-                equippedValue= 4;
+                equippedValue = 4;
             }
-            if(Input.GetKeyDown("6"))
+            if (Input.GetKeyDown("6"))
             {
-                equippedValue= 5;
+                equippedValue = 5;
             }
-            if(Input.GetKeyDown("7"))
+            if (Input.GetKeyDown("7"))
             {
-                equippedValue= 6;
+                equippedValue = 6;
             }
-            if(Input.GetKeyDown("8"))
+            if (Input.GetKeyDown("8"))
             {
-                equippedValue= 7;
+                equippedValue = 7;
             }
-            if(Input.GetKeyDown("9"))
+            if (Input.GetKeyDown("9"))
             {
-                equippedValue= 8;
+                equippedValue = 8;
             }
             equippedItem = inventory.GetItem((int)equippedValue);
 
         }
-        
+
         //Debug.Log("inventorySlot:" + equippedValue);
 
         //check interactions
         RaycastHit interactionHit;
-        if(Physics.Raycast(transform.position,transform.forward,out interactionHit, 10, buildLayers, QueryTriggerInteraction.Collide))
+        if (Physics.Raycast(transform.position, transform.forward, out interactionHit, 10, buildLayers, QueryTriggerInteraction.Collide))
         {
             Block hit = interactionHit.transform.gameObject.GetComponentInParent<Block>();
-            if(hit!=null)
+            if (hit != null)
             {
                 Interactable thing = hit.transform.gameObject.GetComponentInChildren<Interactable>();
-                if(thing!=null)
+                if (thing != null)
                 {
                     interactableText.text = thing.interactMessage;
                 }
-                else 
+                else
                 {
                     interactableText.text = "";
                 }
@@ -156,13 +156,11 @@ public class Miner : MonoBehaviour
                 GameObject held = GetBlock(equippedItem);
                 weaponStats = held.GetComponent<Weapon>().GetStats();
             }
-            if(timeSinceLastAttack > cooldown)
+            if (timeSinceLastAttack > cooldown)
             {
                 timeSinceLastAttack = 0;
                 cooldown = weaponStats.z;
-                crosshairRotator.transform.rotation = Quaternion.Euler(0,0,0);
-                crosshairRotator.gameObject.transform.rotation = Quaternion.Euler(0,90,0);
-                crosshairRotator.rot = new Vector3(0,90/weaponStats.z,0);
+
                 equippedObjectViewer.GetComponent<HeldObject>().Attack();
 
                 RaycastHit hit;
@@ -171,18 +169,25 @@ public class Miner : MonoBehaviour
                     Block hitBlock = hit.transform.gameObject.GetComponentInParent<Block>();
                     if (hitBlock != null)
                     {
+                        Dense density = hitBlock.GetComponentInChildren<Dense>();
+                        if (density != null) cooldown *= density.multiplier;
+
+                        crosshairRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
+                        crosshairRotator.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
+                        crosshairRotator.rot = new Vector3(0, 90 / cooldown, 0);
+
                         hitBlock.Mine();
                         string alt = hitBlock.GetComponentInChildren<BlockDetails>().alternate;
-                        if(alt.Length>0)
+                        if (alt.Length > 0)
                         {
-                            if(alt !="none")
+                            if (alt != "none")
                             {
-                                 inventory.AddItem(alt);
+                                inventory.AddItem(alt);
                             }
                         }
                         else
                         {
-                        inventory.AddItem(hitBlock.typeName);
+                            inventory.AddItem(hitBlock.typeName);
 
                         }
 
@@ -198,9 +203,9 @@ public class Miner : MonoBehaviour
                     }
                 }
             }
-            
+
         }
-        if (Input.GetMouseButtonDown(1)&&equippedItem!="null")
+        if (Input.GetMouseButtonDown(1) && equippedItem != "null")
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, 10, buildLayers, QueryTriggerInteraction.Collide))
@@ -223,18 +228,18 @@ public class Miner : MonoBehaviour
                     if (build != null && build.IsCellClear())
                     {
                         inventory.RemoveItem(equippedItem);
-                        Quaternion lookRot = Quaternion.LookRotation(transform.position-build.transform.position);
+                        Quaternion lookRot = Quaternion.LookRotation(transform.position - build.transform.position);
                         double rot = lookRot.eulerAngles.y;
-                        int rotation = ((int)rot+45)/90;
-                        rotation*=90;
-                        build.Place(equippedItem,rotation);
+                        int rotation = ((int)rot + 45) / 90;
+                        rotation *= 90;
+                        build.Place(equippedItem, rotation);
                     }
 
 
                 }
             }
         }
-        if(Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("e"))
         {
             RaycastHit hit;
             if (Physics.Raycast(transform.position, transform.forward, out hit, 10, buildLayers, QueryTriggerInteraction.Collide))
@@ -249,7 +254,7 @@ public class Miner : MonoBehaviour
     }
     void SwitchEquippedItem()
     {
-        if (equippedItem=="null")
+        if (equippedItem == "null")
         {
             equippedObjectViewer.gameObject.SetActive(false);
             return;
@@ -263,7 +268,7 @@ public class Miner : MonoBehaviour
         equippedObjectMeshes = Instantiate(meshes, equippedObjectViewer.transform.position, equippedObjectViewer.transform.rotation);
         equippedObjectMeshes.transform.SetParent(equippedObjectViewer.transform);
         equippedObjectMeshes.transform.localScale /= 4;
-        foreach(Transform potato in equippedObjectMeshes.GetComponentsInChildren<Transform>())
+        foreach (Transform potato in equippedObjectMeshes.GetComponentsInChildren<Transform>())
         {
             potato.gameObject.layer = LayerMask.NameToLayer("Hand");
         }
@@ -276,5 +281,5 @@ public class Miner : MonoBehaviour
     {
         return instance.equippedItem;
     }
-    
+
 }
