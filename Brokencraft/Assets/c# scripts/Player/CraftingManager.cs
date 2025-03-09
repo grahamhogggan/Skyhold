@@ -172,7 +172,7 @@ public class CraftingManager : MonoBehaviour
         craftingRecipes.Add("stone slab,stone slab","ramp/1");
         craftingRecipes.Add("planks,planks,stick,stick", "pickaxe/1");
         craftingRecipes.Add("stick,stone,stone","mace/1");
-        craftingRecipes.Add("metal,metal,metal","beam/1");
+        craftingRecipes.Add("metal,metal,metal","beam/2");
         craftingRecipes.Add("beam,beam,beam,beam","truss/1");
         craftingRecipes.Add("beam,metal,stick", "sword/1");
         craftingRecipes.Add("metal,stick,wires", "torch/2");
@@ -184,6 +184,9 @@ public class CraftingManager : MonoBehaviour
         craftingRecipes.Add("beam,fan,processor,truss,wires","turbine/1");
         craftingRecipes.Add("beam,leaves,processor,truss,wires","biofuel plant/1");
         craftingRecipes.Add("beam,processor,qubit,truss,wires","reactor/1");
+        craftingRecipes.Add("beam,gold,metal,wires","electric sword/1");
+        craftingRecipes.Add("beam,gold,gold,gold","gold pick/1");
+
         
         
         

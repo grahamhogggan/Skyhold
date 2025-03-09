@@ -5154,6 +5154,11 @@ PrefabInstance:
       propertyPath: hitEffect
       value: 
       objectReference: {fileID: 1676099844}
+    - target: {fileID: 8602003917074663592, guid: 45a50af9425d503448c7219d7cc6ce8b,
+        type: 3}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 8985875929150128993, guid: 45a50af9425d503448c7219d7cc6ce8b,
         type: 3}
       propertyPath: m_LocalPosition.y

@@ -26,6 +26,7 @@ public class Miner : MonoBehaviour
     public LayerMask handLayer;
     public Rotator crosshairRotator;
     public TMP_Text interactableText;
+    private string lastItemEquipped;
 
     // Start is called before the first frame update
     public void Start()
@@ -259,6 +260,8 @@ public class Miner : MonoBehaviour
             equippedObjectViewer.gameObject.SetActive(false);
             return;
         }
+        if(equippedItem==lastItemEquipped) return;
+        lastItemEquipped = equippedItem;
         equippedObjectViewer.gameObject.SetActive(true);
 
         GameObject newBlock = GetBlock(equippedItem);
