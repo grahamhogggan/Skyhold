@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private string[] drops;
 
     public int saveCount{get;set;}
+    public Color DamageColor = Color.red;
     // Start is called before the first frame update
     protected void Start()
     {
@@ -57,7 +58,7 @@ public class Enemy : MonoBehaviour
     public void Damage(float damage)
     {
         health -= damage;
-        renderer.material.color = Color.red;
+        renderer.material.color = DamageColor;
         
     }
     public void PlayerDamage(float damage)

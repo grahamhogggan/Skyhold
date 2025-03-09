@@ -59,6 +59,7 @@ public class Miner : MonoBehaviour
         if(timeSinceLastAttack>cooldown)
         {
             crosshairRotator.rot = new Vector3(0,0,0);
+            crosshairRotator.gameObject.transform.rotation = Quaternion.identity;
         }
         if (Overlord.paused) return;
         if(inventory.GetItemCount()==0)
@@ -160,7 +161,8 @@ public class Miner : MonoBehaviour
                 timeSinceLastAttack = 0;
                 cooldown = weaponStats.z;
                 crosshairRotator.transform.rotation = Quaternion.Euler(0,0,0);
-                crosshairRotator.rot = new Vector3(0,180/weaponStats.z,0);
+                crosshairRotator.gameObject.transform.rotation = Quaternion.Euler(0,90,0);
+                crosshairRotator.rot = new Vector3(0,90/weaponStats.z,0);
                 equippedObjectViewer.GetComponent<HeldObject>().Attack();
 
                 RaycastHit hit;

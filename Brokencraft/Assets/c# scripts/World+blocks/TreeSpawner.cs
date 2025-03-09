@@ -55,6 +55,7 @@ public class TreeSpawner : MonoBehaviour
     private static void SpawnBush(Block origin)
     {
         origin.SetBlock("bush");
+        origin.gameObject.SetActive(true);
     }
     private static void SpawnPalmTree(Block origin)
     {

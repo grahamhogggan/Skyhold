@@ -6,5 +6,5 @@ public class PlayerData
 {
     public Vector3 position;
     public int health;
-    public float time;
+    public Vector3 time;
 }

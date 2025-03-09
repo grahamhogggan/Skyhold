@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
     {
         data.position = transform.position;
         data.health = health;
-        data.time = Overlord.GetRawTime();
+        data.time = Overlord.GetRawTimeVector();
         string ToSave = JsonUtility.ToJson(data);
         File.WriteAllText(dataPath, ToSave);
         Debug.Log("save time");

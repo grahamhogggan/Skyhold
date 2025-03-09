@@ -35,7 +35,7 @@ public class Overlord : MonoBehaviour
         Countryside = 0,
         Mountain = 1,
         Desert = 2,
-        
+
 
     }
     public static WorldType type;
@@ -89,7 +89,7 @@ public class Overlord : MonoBehaviour
 
 
         }
-       
+
         if (isNight && !wasNight)
         {
             OnNightStart();
@@ -102,10 +102,14 @@ public class Overlord : MonoBehaviour
 
         return instance.sun.transform.rotation.eulerAngles.x;
     }
-    public static void SetRawTime(float timeTo)
+    public static Vector3 GetRawTimeVector()
+    {
+        return instance.sun.transform.rotation.eulerAngles;
+    }
+    public static void SetRawTime(Vector3 timeTo)
     {
 
-        instance.sun.transform.rotation = Quaternion.Euler(timeTo, instance.sun.transform.eulerAngles.y, instance.sun.transform.eulerAngles.z);
+        instance.sun.transform.rotation = Quaternion.Euler(timeTo);
 
     }
     public static void Drop(string item, Vector3 position)
