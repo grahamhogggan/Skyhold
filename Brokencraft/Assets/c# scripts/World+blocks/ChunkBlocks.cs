@@ -97,6 +97,10 @@ public class ChunkBlocks : MonoBehaviour
             {
                 spawned.SetBlock("metal");
             }
+            else if (Random.Range(0, 200) == 25)
+            {
+                spawned.SetBlock("gold");
+            }
             else
             {
                 spawned.SetBlock("stone");
@@ -124,6 +128,10 @@ public class ChunkBlocks : MonoBehaviour
             if (Random.Range(0, 50) == 25)
             {
                 spawned.SetBlock("metal");
+            }
+                        else if (Random.Range(0, 200) == 25)
+            {
+                spawned.SetBlock("gold");
             }
             else
             {

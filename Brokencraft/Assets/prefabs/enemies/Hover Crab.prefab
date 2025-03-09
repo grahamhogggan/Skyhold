@@ -50,7 +50,10 @@ MonoBehaviour:
   health: 50
   renderer: {fileID: 5546449164343039274}
   DayDeath: 1
-  drops: []
+  drops:
+  - wires
+  - gold
+  - gold
   DamageColor: {r: 1, g: 1, b: 1, a: 1}
   floatDist: 1
   speed: 3

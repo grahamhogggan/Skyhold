@@ -176,7 +176,7 @@ public class CraftingManager : MonoBehaviour
         craftingRecipes.Add("beam,beam,beam,beam","truss/1");
         craftingRecipes.Add("beam,metal,stick", "sword/1");
         craftingRecipes.Add("metal,stick,wires", "torch/2");
-        craftingRecipes.Add("metal,wires,wires,wires","processor/1");
+        craftingRecipes.Add("gold,metal,wires,wires","processor/1");
         craftingRecipes.Add("leaves,leaves,leaves,leaves,leaves", "dirt/1");
         
         craftingRecipes.Add("beam,metal,processor,wires,wires", "extracter/1");
