@@ -184,8 +184,8 @@ public class CraftingManager : MonoBehaviour
         craftingRecipes.Add("beam,fan,processor,truss,wires","turbine/1");
         craftingRecipes.Add("beam,leaves,processor,truss,wires","biofuel plant/1");
         craftingRecipes.Add("beam,processor,qubit,truss,wires","reactor/1");
-        craftingRecipes.Add("beam,gold,metal,wires","electric sword/1");
-        craftingRecipes.Add("beam,gold,gold,gold","gold pick/1");
+        craftingRecipes.Add("battery,beam,gold,metal,wires","electric sword/1");
+        craftingRecipes.Add("battery,beam,gold,gold,gold","gold pick/1");
 
         
         

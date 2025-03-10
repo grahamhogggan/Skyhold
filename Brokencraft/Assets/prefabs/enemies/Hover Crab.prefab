@@ -51,7 +51,7 @@ MonoBehaviour:
   renderer: {fileID: 5546449164343039274}
   DayDeath: 1
   drops:
-  - wires
+  - batttery
   - gold
   - gold
   DamageColor: {r: 1, g: 1, b: 1, a: 1}

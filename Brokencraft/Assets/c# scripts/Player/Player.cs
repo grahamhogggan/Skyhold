@@ -78,6 +78,14 @@ public class Player : MonoBehaviour
         else
         {
             this.data = new PlayerData();
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position,Vector3.up*-1,out hit))
+            {
+                Debug.Log(hit.point);
+            transform.position = hit.point+new Vector3(0,1.2f,0);
+            }
+            else Debug.Log("no spawn point found");
+
         }
     }
 }

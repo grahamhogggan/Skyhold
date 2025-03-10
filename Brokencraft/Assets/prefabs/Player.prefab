@@ -213,6 +213,7 @@ MonoBehaviour:
   - {fileID: 3189495928652548006, guid: 9fcc03ba743ffe74a82b418ae770c2aa, type: 3}
   - {fileID: 3189495928652548006, guid: 2f06041284d86564ab6fc804f484628e, type: 3}
   - {fileID: 3189495928652548006, guid: 2f3542024e24c7d4293b208dcf3a8535, type: 3}
+  - {fileID: 3189495928652548006, guid: 98253bc4ec5fb7243956ab47b27e24a5, type: 3}
   equippedObjectViewer: {fileID: 6317429509564419225}
   buildLayers:
     serializedVersion: 2
@@ -460,6 +461,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ce07a0f7ce49c464ebf2e28e7d65cd30, type: 3}
   - {fileID: 21300000, guid: dcb00d6fe8cabcb468c19703480f64e6, type: 3}
   - {fileID: 21300000, guid: b54a0550fc6f93e4da3ddc24017b760e, type: 3}
+  - {fileID: 21300000, guid: 45fa53d0759f6ae42af87eeae1df87f9, type: 3}
   offset: 0
 --- !u!114 &-1547767812270346647
 MonoBehaviour:

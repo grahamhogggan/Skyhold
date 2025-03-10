@@ -52,7 +52,7 @@ public class Spawner : MonoBehaviour
     {
         if(x+chunksX*y+chunksY*chunksX*z<world.Length&&x+chunksX*y+chunksY*chunksX*z>=0)
         {
-            Debug.Log("index value: "+(x+chunksX*y+chunksY*chunksX*z));
+            //Debug.Log("index value: "+(x+chunksX*y+chunksY*chunksX*z));
              return world[x+chunksX*y+chunksY*chunksX*z];
         }
         else return null;
@@ -64,8 +64,8 @@ public class Spawner : MonoBehaviour
     }
     public Block GetBlock(int x, int y, int z)
     {
-        Debug.Log("requested Block Y: "+y);
-        Debug.Log("Requested Chunk Y of "+(chunksY-(int)(y / 5)));
+        //Debug.Log("requested Block Y: "+y);
+        //Debug.Log("Requested Chunk Y of "+(chunksY-(int)(y / 5)));
         Chunk chunk = GetChunk((int)(x / 5), chunksY-(int)(y / 5), (int)(z / 5));
         if(chunk == null) return null;
         int rX = x % 5;
