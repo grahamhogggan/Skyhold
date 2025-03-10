@@ -453,6 +453,7 @@ MonoBehaviour:
   loader: {fileID: 922669590}
   camera: {fileID: 1691789451}
   loadingCam: {fileID: 1135802554}
+  player: {fileID: 1108717096}
 --- !u!4 &84580678
 Transform:
   m_ObjectHideFlags: 0
@@ -4571,7 +4572,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956340292}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 805.5, y: 505, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5184,6 +5185,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45a50af9425d503448c7219d7cc6ce8b, type: 3}
+--- !u!114 &1108717096 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6354409043988236362, guid: 45a50af9425d503448c7219d7cc6ce8b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1108717095}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54940888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6b386982106ece41bce55877f11dffd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1129676617
 GameObject:
   m_ObjectHideFlags: 0
@@ -11259,22 +11272,22 @@ SceneRoots:
   - {fileID: 1988486266}
   - {fileID: 1460834250}
   - {fileID: 832575519}
-  - {fileID: 84580678}
-  - {fileID: 922669594}
-  - {fileID: 642504810}
   - {fileID: 1356845551}
-  - {fileID: 1108717095}
-  - {fileID: 481109888}
   - {fileID: 2076361220}
+  - {fileID: 1727343119}
+  - {fileID: 956340294}
+  - {fileID: 84580678}
   - {fileID: 1662787910}
+  - {fileID: 331968281}
+  - {fileID: 1108717095}
   - {fileID: 392277834}
   - {fileID: 1523274737}
   - {fileID: 1219177068}
   - {fileID: 1010808314}
   - {fileID: 118090803}
-  - {fileID: 331968281}
-  - {fileID: 1727343119}
+  - {fileID: 1135802555}
+  - {fileID: 922669594}
+  - {fileID: 642504810}
   - {fileID: 1257721750}
   - {fileID: 751064404}
-  - {fileID: 1135802555}
-  - {fileID: 956340294}
+  - {fileID: 481109888}

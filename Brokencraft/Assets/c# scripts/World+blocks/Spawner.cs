@@ -32,6 +32,8 @@ public class Spawner : MonoBehaviour
     private string savePath;
     public Camera camera;
     public Camera loadingCam;
+
+    public Player player;
     // Start is called before the first frame update
     void Start()
     {
@@ -133,6 +135,7 @@ public class Spawner : MonoBehaviour
         {
             chunky.ApplyChanges();
         }
+        player.InitializePlayerPosition();
         loader.Begin();
         finishedLoading = true;
         //re-randomize randomness

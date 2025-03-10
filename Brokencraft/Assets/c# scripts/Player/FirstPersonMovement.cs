@@ -9,8 +9,10 @@ public class FirstPersonMovement : MonoBehaviour
     private CharacterController controller;
     public float Vvelocity;
     public float gravity;
+    public float fallDamageThreshold;
 
     public bool inWater = false;
+    private bool inAir= false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +30,35 @@ public class FirstPersonMovement : MonoBehaviour
         {
             Vvelocity = jumpForce;
         }
-        if(Vvelocity > gravity)
+        if(Vvelocity > -100)
         {
             Vvelocity += gravity*Time.deltaTime;
         }
         if(inWater&&Vvelocity<1)
         {
             Vvelocity += 30*Time.deltaTime ;
+        }
+
+
+        if(controller.isGrounded)
+        {
+            if(inAir == true)
+            {
+                if(Mathf.Abs(Vvelocity)>fallDamageThreshold)
+                {
+                    GetComponent<Player>().Damage((int)Mathf.Abs(Vvelocity));
+                }
+                inAir = false;
+            }
+            if(Vvelocity<-1)
+            {
+            Vvelocity = -1;
+
+            }
+        }
+        else
+        {
+            inAir = true;
         }
     }
 }

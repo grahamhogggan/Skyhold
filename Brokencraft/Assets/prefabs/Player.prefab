@@ -383,6 +383,7 @@ MonoBehaviour:
   jumpForce: 4.5
   Vvelocity: 0
   gravity: -9.8
+  fallDamageThreshold: 10
   inWater: 0
 --- !u!143 &2888175841808017611
 CharacterController:

@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private HitEffect hitEffect;
     public int saveCount{get;set;}
+    private bool newGame;
     // Start is called before the first frame update
     void Start()
     {
@@ -74,18 +75,24 @@ public class Player : MonoBehaviour
             health = data.health;
             Overlord.SetRawTime(data.time);
             this.data = data;
+            newGame = false;
         }
         else
         {
             this.data = new PlayerData();
+            newGame = true;
+
+        }
+    }
+    public void InitializePlayerPosition()
+    {
+        if (!newGame) return;
             RaycastHit hit;
             if(Physics.Raycast(transform.position,Vector3.up*-1,out hit))
             {
                 Debug.Log(hit.point);
-            transform.position = hit.point+new Vector3(0,1.2f,0);
+            transform.position = hit.point+new Vector3(0,0.45f,0);
             }
             else Debug.Log("no spawn point found");
-
-        }
     }
 }
