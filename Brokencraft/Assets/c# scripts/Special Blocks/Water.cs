@@ -96,7 +96,7 @@ public class Water : MonoBehaviour
         }
         else if (!below.gameObject.activeSelf)
         {
-            Debug.Log("dropped water to empty block");
+            //Debug.Log("dropped water to empty block");
             below.Place(block.typeName);
             block.Mine();
             return;
@@ -112,13 +112,13 @@ public class Water : MonoBehaviour
             }
             if (extra > 0)
             {
-                Debug.Log("dropped " + (amount - extra) + " water, leaving " + extra + " on top");
+                //Debug.Log("dropped " + (amount - extra) + " water, leaving " + extra + " on top");
                 block.Place("water" + extra);
                 below.Place("water4");
             }
             else
             {
-                Debug.Log("dropped " + amount + ", creating block with " + belowAmt + " water");
+                //Debug.Log("dropped " + amount + ", creating block with " + belowAmt + " water");
                 block.Mine();
                 below.Place("water" + belowAmt);
             }
@@ -126,7 +126,7 @@ public class Water : MonoBehaviour
         }
         else if(amount == 1&&(below.typeName == "dirt"||below.typeName == "grass"||below.typeName == "clay"))
         {
-            Debug.Log("created clay");
+            //Debug.Log("created clay");
             below.Place("clay");
             block.Mine();
             return;
@@ -149,7 +149,7 @@ public class Water : MonoBehaviour
                     int shift = (amount - adj) / 2;
                     if (shift > 0)
                     {
-                        Debug.Log("shifted " + shift + " water");
+                        //Debug.Log("shifted " + shift + " water");
                         block.Place("water" + (amount - shift));
                         adjacent.Place("water" + (adj + shift));
                         return;

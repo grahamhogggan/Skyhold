@@ -26,20 +26,6 @@ public class FirstPersonMovement : MonoBehaviour
         float dirZ = Input.GetAxisRaw("Vertical") * speed*Time.deltaTime;
         controller.Move(transform.TransformDirection(dirX, Vvelocity*Time.deltaTime,dirZ));
 
-        if (Input.GetKey("space")&&controller.isGrounded)
-        {
-            Vvelocity = jumpForce;
-        }
-        if(Vvelocity > -100)
-        {
-            Vvelocity += gravity*Time.deltaTime;
-        }
-        if(inWater&&Vvelocity<1)
-        {
-            Vvelocity += 30*Time.deltaTime ;
-        }
-
-
         if(controller.isGrounded)
         {
             if(inAir == true)
@@ -60,5 +46,23 @@ public class FirstPersonMovement : MonoBehaviour
         {
             inAir = true;
         }
+        if (Input.GetKey("space")&&controller.isGrounded)
+        {
+            Vvelocity = jumpForce;
+        }
+        if(Vvelocity > -100)
+        {
+            Vvelocity += gravity*Time.deltaTime;
+        }
+        if(inWater&&Vvelocity<1)
+        {
+            Vvelocity += 30*Time.deltaTime ;
+        }
+        if(inWater &&Vvelocity<-8)
+        {
+            Vvelocity = -8;
+        }
+
+
     }
 }

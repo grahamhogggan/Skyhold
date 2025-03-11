@@ -17,12 +17,12 @@ public class ScoreDisplay : MonoBehaviour
     {
         if(newLine)
         {
-        text.text ="Score: \n"+ScoreManager.GetScore();
+        text.text ="Score: \n"+ScoreManager.GetScore()+"\nActive Score: \n"+ScoreManager.GetActiveScore();
 
         }
         else
         {
-        text.text ="Score: "+ScoreManager.GetScore();
+        text.text ="Score: "+ScoreManager.GetScore()+"\nActive Score: "+ScoreManager.GetActiveScore();
 
         }
     }

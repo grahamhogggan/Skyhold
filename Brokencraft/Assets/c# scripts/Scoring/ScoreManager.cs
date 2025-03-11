@@ -6,20 +6,24 @@ using System;
 
 public class ScoreManager : MonoBehaviour
 {
-    private static  int score;
+    private static int totalScore;
+    private static int activeScore;
     private static string savePath;
     // Start is called before the first frame update
     void Start()
     {
         savePath = Overlord.saveDirectory+"/score_data";
-        if((!Overlord.OverwriteMode)&&File.Exists(savePath)&&Int32.TryParse(File.ReadAllText(savePath), out int res))
+        if((!Overlord.OverwriteMode)&&File.Exists(savePath))
         {
-        score = res;
+            ScoreSave scores = JsonUtility.FromJson<ScoreSave>(File.ReadAllText(savePath));
+        totalScore = scores.totalScore;
+        activeScore = scores.activeScore;
 
         }
         else
         {
-            score = 0;
+            totalScore = 0;
+            activeScore = 0;
         }
         SaveManager.Register(Save);
     }
@@ -31,16 +35,35 @@ public class ScoreManager : MonoBehaviour
     }
     public static void AddScore(int number)
     {
-        score+=number;
+        totalScore+=number;
+        activeScore+=number;
         
     }
     public static int GetScore()
     {
-        return score;
+        return totalScore;
+    }
+    public static int GetActiveScore()
+    {
+        return activeScore;
+    }
+    public static void SpendScore(int amount)
+    {
+        activeScore-=amount;
     }
     private static void Save()
     {
-        string save = score.ToString();
+        string save = JsonUtility.ToJson(new ScoreSave(totalScore,activeScore));
         File.WriteAllText(savePath,save);
+    }
+}
+ class ScoreSave
+{
+    public int totalScore;
+    public int activeScore;
+    public ScoreSave(int total, int active)
+    {
+        totalScore = total;
+        activeScore = active;
     }
 }

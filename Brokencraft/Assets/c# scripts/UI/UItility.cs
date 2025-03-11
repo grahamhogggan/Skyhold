@@ -8,4 +8,12 @@ public class UItility : MonoBehaviour
     {
         obj.SetActive(!obj.activeSelf);
     }
+    public void TurnOn(GameObject obj)
+    {
+        obj.SetActive(true);
+    }
+        public void TurnOFf(GameObject obj)
+    {
+        obj.SetActive(false);
+    }
 }
