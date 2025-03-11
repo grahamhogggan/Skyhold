@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     }
     public void Damage(int damage)
     {
-        health -= damage;
+        health -= (int)(damage*Mathf.Pow(0.9f,UpgradeManager.GetUpgradeAmount("defense"))+0.5f);
         hitEffect.Hit();
         
     }

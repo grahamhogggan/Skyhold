@@ -160,7 +160,7 @@ public class Miner : MonoBehaviour
             if (timeSinceLastAttack > cooldown)
             {
                 timeSinceLastAttack = 0;
-                cooldown = weaponStats.z;
+                cooldown = weaponStats.z*Mathf.Pow(0.9f,UpgradeManager.GetUpgradeAmount("mining"));
 
                 equippedObjectViewer.GetComponent<HeldObject>().Attack();
 
@@ -198,8 +198,8 @@ public class Miner : MonoBehaviour
                         Enemy hitEnemy = hit.transform.gameObject.GetComponent<Enemy>();
                         if (hitEnemy != null)
                         {
-                            Debug.Log("take that!");
-                            hitEnemy.PlayerDamage(weaponStats.x);
+                            Debug.Log("take that! ("+weaponStats.x*(UpgradeManager.GetUpgradeAmount("damage")+1)+")");
+                            hitEnemy.PlayerDamage(weaponStats.x*(UpgradeManager.GetUpgradeAmount("damage")+1));
                         }
                     }
                 }

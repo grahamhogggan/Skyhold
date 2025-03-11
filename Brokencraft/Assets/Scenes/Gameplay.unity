@@ -13620,7 +13620,6 @@ GameObject:
   - component: {fileID: 2030903828}
   - component: {fileID: 2030903827}
   - component: {fileID: 2030903826}
-  - component: {fileID: 2030903829}
   m_Layer: 5
   m_Name: upgrades
   m_TagString: Untagged
@@ -13689,18 +13688,6 @@ RectTransform:
   m_AnchoredPosition: {x: 41.1182, y: 0.000038146973}
   m_SizeDelta: {x: 1216.7798, y: 480}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2030903829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030903825}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbd5f9c27768a75419de759104ba2ae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2076361218
 GameObject:
   m_ObjectHideFlags: 0
