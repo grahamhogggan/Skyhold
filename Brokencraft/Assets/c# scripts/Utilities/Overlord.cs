@@ -29,6 +29,7 @@ public class Overlord : MonoBehaviour
 
     private bool wasNight;
     public int saveCount { get; set; }
+    public static int nightCount = 0;
 
     public enum WorldType
     {
@@ -47,6 +48,7 @@ public class Overlord : MonoBehaviour
         instance = this;
         DropSavePath = saveDirectory + "/drops.randomFileExtension";
         infoSavePath = saveDirectory + "/gameInfo.potato";
+        nightCount = 0;
         ReadDrops();
         ReadInfo();
         saveCount = 0;
@@ -167,6 +169,7 @@ public class Overlord : MonoBehaviour
             this.minSecondsPerDay = info.minSecondsPerDay;
             difficulty = info.difficulty;
             type = info.type;
+            nightCount = info.nightCount;
         }
     }
     private void OnNightStart()
@@ -177,6 +180,7 @@ public class Overlord : MonoBehaviour
             secondsPerNight += 30;
         }
         difficulty++;
+        nightCount++;
     }
 }
 
@@ -187,6 +191,7 @@ class GameInformation
     public float secondsPerNight;
     public float minSecondsPerDay;
     public int difficulty;
+    public int nightCount;
 
     public Overlord.WorldType type;
     public GameInformation(Overlord o)
@@ -196,5 +201,6 @@ class GameInformation
         this.minSecondsPerDay = o.minSecondsPerDay;
         this.difficulty = Overlord.difficulty;
         this.type = Overlord.type;
+        this.nightCount = Overlord.nightCount;
     }
 }

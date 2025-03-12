@@ -6,6 +6,7 @@ using System.IO;
 public class EnemySpawner : MonoBehaviour
 {
     public EnemySet[] sets;
+    public EnemySet bosses;
     public float spawnRate = 5f;
     private float spawnDelay = 0;
     public static int enemyNumber;
@@ -71,6 +72,13 @@ public class EnemySpawner : MonoBehaviour
     GameObject GetEnemy(string name)
     {
         foreach(GameObject enemy in sets[(int)Overlord.type].enemies)
+        {
+            if(enemy.name == name)
+            {
+                return enemy;
+            }
+        }
+        foreach(GameObject enemy in bosses.enemies)
         {
             if(enemy.name == name)
             {

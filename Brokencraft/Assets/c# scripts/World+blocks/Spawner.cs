@@ -121,7 +121,7 @@ public class Spawner : MonoBehaviour
                     }
                     if (loadingText != null)
                     {
-                        loadingText.text = "Loading . . . " + (int)(100f * (i * chunksY * chunksZ + k * chunksY + j) / (chunksX * chunksY * chunksZ)) + "%\n"+ (i * chunksY * chunksZ + k * chunksY + j)+ " chunks loaded out of 2800";
+                        loadingText.text = "Loading . . . " + (int)(100f * (i * chunksY * chunksZ + k * chunksY + j) / (chunksX * chunksY * chunksZ)) + "%\n"+ (i * chunksY * chunksZ + k * chunksY + j)+ " chunks loaded out of 1000";
                     }
                 }
                 yield return null;

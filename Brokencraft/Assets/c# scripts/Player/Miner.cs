@@ -147,98 +147,11 @@ public class Miner : MonoBehaviour
         SwitchEquippedItem();
         if (Input.GetMouseButton(0))
         {
-            Vector3 weaponStats;
-            if (equippedItem == "null")
-            {
-                weaponStats = new Vector3(1, 0, 0);
-            }
-            else
-            {
-                GameObject held = GetBlock(equippedItem);
-                weaponStats = held.GetComponent<Weapon>().GetStats();
-            }
-            if (timeSinceLastAttack > cooldown)
-            {
-                timeSinceLastAttack = 0;
-                cooldown = weaponStats.z*Mathf.Pow(0.9f,UpgradeManager.GetUpgradeAmount("mining"));
-
-                equippedObjectViewer.GetComponent<HeldObject>().Attack();
-
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.forward, out hit, 10, buildLayers, QueryTriggerInteraction.Collide))
-                {
-                    Block hitBlock = hit.transform.gameObject.GetComponentInParent<Block>();
-                    if (hitBlock != null)
-                    {
-                        Dense density = hitBlock.GetComponentInChildren<Dense>();
-                        if (density != null) cooldown *= density.multiplier;
-
-                        crosshairRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
-                        crosshairRotator.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
-                        crosshairRotator.rot = new Vector3(0, 90 / cooldown, 0);
-
-                        hitBlock.Mine();
-                        string alt = hitBlock.GetComponentInChildren<BlockDetails>().alternate;
-                        if (alt.Length > 0)
-                        {
-                            if (alt != "none")
-                            {
-                                inventory.AddItem(alt);
-                            }
-                        }
-                        else
-                        {
-                            inventory.AddItem(hitBlock.typeName);
-
-                        }
-
-                    }
-                    else
-                    {
-                        Enemy hitEnemy = hit.transform.gameObject.GetComponent<Enemy>();
-                        if (hitEnemy != null)
-                        {
-                            Debug.Log("take that! ("+weaponStats.x*(UpgradeManager.GetUpgradeAmount("damage")+1)+")");
-                            hitEnemy.PlayerDamage(weaponStats.x*(UpgradeManager.GetUpgradeAmount("damage")+1));
-                        }
-                    }
-                }
-            }
-
+            Mine();
         }
         if (Input.GetMouseButtonDown(1) && equippedItem != "null")
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 10, buildLayers, QueryTriggerInteraction.Collide))
-            {
-                Block hitBlock = hit.transform.gameObject.GetComponentInParent<Block>();
-                if (hitBlock != null)
-                {
-                    Vector3 normal = hit.normal;
-                    Block build = hitBlock.GetAdjacent(normal);
-                    /*
-                    if(build != null)
-                    {
-                        Debug.Log("successful adjacent");
-                    }
-                    else
-                    {
-                        Debug.Log("no adjacent");
-                    }
-                    */
-                    if (build != null && build.IsCellClear())
-                    {
-                        inventory.RemoveItem(equippedItem);
-                        Quaternion lookRot = Quaternion.LookRotation(transform.position - build.transform.position);
-                        double rot = lookRot.eulerAngles.y;
-                        int rotation = ((int)rot + 45) / 90;
-                        rotation *= 90;
-                        build.Place(equippedItem, rotation);
-                    }
-
-
-                }
-            }
+            Place();
         }
         if (Input.GetKeyDown("e"))
         {
@@ -253,6 +166,101 @@ public class Miner : MonoBehaviour
             }
         }
     }
+    void Place()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, 10, buildLayers, QueryTriggerInteraction.Collide))
+        {
+            Block hitBlock = hit.transform.gameObject.GetComponentInParent<Block>();
+            if (hitBlock != null)
+            {
+                Vector3 normal = hit.normal;
+                Block build = hitBlock.GetAdjacent(normal);
+                /*
+                if(build != null)
+                {
+                    Debug.Log("successful adjacent");
+                }
+                else
+                {
+                    Debug.Log("no adjacent");
+                }
+                */
+                if (build != null && build.IsCellClear())
+                {
+                    inventory.RemoveItem(equippedItem);
+                    Quaternion lookRot = Quaternion.LookRotation(transform.position - build.transform.position);
+                    double rot = lookRot.eulerAngles.y;
+                    int rotation = ((int)rot + 45) / 90;
+                    rotation *= 90;
+                    build.Place(equippedItem, rotation);
+                }
+
+
+            }
+        }
+    }
+    void Mine()
+    {
+        Vector3 weaponStats;
+        if (equippedItem == "null")
+        {
+            weaponStats = new Vector3(1, 0, 0);
+        }
+        else
+        {
+            GameObject held = GetBlock(equippedItem);
+            weaponStats = held.GetComponent<Weapon>().GetStats();
+        }
+        if (timeSinceLastAttack > cooldown)
+        {
+            timeSinceLastAttack = 0;
+            cooldown = weaponStats.z * Mathf.Pow(0.9f, UpgradeManager.GetUpgradeAmount("mining"));
+
+            equippedObjectViewer.GetComponent<HeldObject>().Attack();
+
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 10, buildLayers, QueryTriggerInteraction.Collide))
+            {
+                Block hitBlock = hit.transform.gameObject.GetComponentInParent<Block>();
+                if (hitBlock != null)
+                {
+                    Dense density = hitBlock.GetComponentInChildren<Dense>();
+                    if (density != null) cooldown *= density.multiplier;
+
+                    crosshairRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    crosshairRotator.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
+                    crosshairRotator.rot = new Vector3(0, 90 / cooldown, 0);
+
+                    hitBlock.Mine();
+                    string alt = hitBlock.GetComponentInChildren<BlockDetails>().alternate;
+                    if (alt.Length > 0)
+                    {
+                        if (alt != "none")
+                        {
+                            inventory.AddItem(alt);
+                        }
+                    }
+                    else
+                    {
+                        inventory.AddItem(hitBlock.typeName);
+
+                    }
+
+                }
+                else
+                {
+                    Enemy hitEnemy = hit.transform.gameObject.GetComponent<Enemy>();
+                    if (hitEnemy != null)
+                    {
+                        Debug.Log("take that! (" + weaponStats.x * (UpgradeManager.GetUpgradeAmount("damage") + 1) + ")");
+                        hitEnemy.PlayerDamage(weaponStats.x * (UpgradeManager.GetUpgradeAmount("damage") + 1));
+                    }
+                }
+            }
+        }
+
+    }
     void SwitchEquippedItem()
     {
         if (equippedItem == "null")
@@ -260,7 +268,7 @@ public class Miner : MonoBehaviour
             equippedObjectViewer.gameObject.SetActive(false);
             return;
         }
-        if(equippedItem==lastItemEquipped) return;
+        if (equippedItem == lastItemEquipped) return;
         lastItemEquipped = equippedItem;
         equippedObjectViewer.gameObject.SetActive(true);
 

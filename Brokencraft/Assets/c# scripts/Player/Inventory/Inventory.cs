@@ -9,7 +9,6 @@ public class Inventory
     public Inventory()
     {
         items = new List<string>();
-        items.Add("gold pick");
     }
 
 

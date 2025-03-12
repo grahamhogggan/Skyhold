@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     private string dataPath;
     public bool DayDeath = true;
     private float burnClock = 0;
+    [SerializeField] private bool allDrops = false;
     [SerializeField] private string[] drops;
 
     public int saveCount{get;set;}
@@ -82,7 +83,7 @@ public class Enemy : MonoBehaviour
         for(int y = 0; y<drops.Length;  y++)
         {
             Overlord.Drop(drops[y],transform.position+new Vector3(Random.Range(-0.1f,0.1f),y,Random.Range(-0.1f,0.1f)));
-            if(Random.Range(0.0f,1f)<0.5f)
+            if(!allDrops&&Random.Range(0.0f,1f)<0.5f)
             {
                 return;
             }

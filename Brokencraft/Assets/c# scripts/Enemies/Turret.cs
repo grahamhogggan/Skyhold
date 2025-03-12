@@ -7,10 +7,11 @@ public class Turret : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private GameObject bullet;
     [SerializeField] private float reload;
+    [SerializeField] private float offset = 0;
     private float delay = 0;
     void Start()
     {
-        
+        delay = offset;
     }
 
     // Update is called once per frame
