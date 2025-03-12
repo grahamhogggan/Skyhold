@@ -9,6 +9,11 @@ public class ChunkBlocks : MonoBehaviour
     private Chunk chunk;
     private static int ground = 20;
     private static int scale = 30;
+    private static int caveScale = 8;
+    private static int caveLevel = 8;
+    private static float caveThreshold = 3;
+    private static float caveSize = 0.15f;
+    private static float caveShift = 1;
     private static float size = 0.05f;
     public readonly static float waterLevel = 33;
     public readonly static float snowPeak = 50;
@@ -24,6 +29,7 @@ public class ChunkBlocks : MonoBehaviour
             for (int k = 0; k < Spawner.length; k++)
             {
                 float perlin = GetPerlinValue(i + chunk.GetLocation().x * 5, k + chunk.GetLocation().z * 5);
+                float cavePerlin = GetCavePerlin(i + chunk.GetLocation().x * 5, k + chunk.GetLocation().z * 5);
                 int h = (int)perlin;
                 for (int j = 0; j < Spawner.height; j++)
                 {
@@ -40,22 +46,22 @@ public class ChunkBlocks : MonoBehaviour
                     int blockY = j + (int)((Spawner.instance.chunksY - chunk.GetLocation().y) * 5);
                     if (Overlord.type == Overlord.WorldType.Countryside)
                     {
-                        CountrysideWorldGen(spawned, blockY, h, perlin);
+                        CountrysideWorldGen(spawned, blockY, h, perlin,cavePerlin);
                     }
                     else if (Overlord.type == Overlord.WorldType.Mountain)
                     {
-                        CountrysideWorldGen(spawned, blockY, h, perlin);
+                        MountainWorldGen(spawned, blockY, h, perlin,cavePerlin);
                     }
                     else if(Overlord.type == Overlord.WorldType.Desert)
                     {
-                        DesertWorldGen(spawned, blockY, h, perlin);
+                        DesertWorldGen(spawned, blockY, h, perlin,cavePerlin);
                     }
 
                 }
             }
         }
     }
-    private void CountrysideWorldGen(Block spawned, int blockY, int h, float perlin)
+    private void CountrysideWorldGen(Block spawned, int blockY, int h, float perlin, float cavePerlin)
     {
         if (blockY > h)
         {
@@ -105,9 +111,75 @@ public class ChunkBlocks : MonoBehaviour
             {
                 spawned.SetBlock("stone");
             }
+
+            if(Mathf.Abs(blockY-((perlin-ground)/caveShift)-caveLevel)<cavePerlin-caveThreshold)
+            {
+                spawned.gameObject.SetActive(false);
+            }
+
         }
     }
-    private void DesertWorldGen(Block spawned, int blockY, int h, float perlin)
+    private void MountainWorldGen(Block spawned, int blockY, int h, float perlin, float cavePerlin)
+    
+    {
+        if (blockY > h)
+        {
+            if (blockY <= waterLevel)
+            {
+                spawned.SetBlock("water4");
+            }
+            else
+            {
+                spawned.gameObject.SetActive(false);
+            }
+
+        }
+        else
+        {
+            if (h <= waterLevel + 1 && blockY > h - 2)
+            {
+                spawned.SetBlock("sand");
+            }
+            else if (blockY >= snowPeak)
+            {
+                spawned.SetBlock("snow");
+            }
+            else if (blockY == h)
+            {
+                spawned.SetBlock("grass");
+
+            }
+        }
+        if (blockY >= h)
+        {
+            chunk.Expose();
+        }
+
+
+        if (perlin - blockY > 3)
+        {
+            if (Random.Range(0, 50) == 25)
+            {
+                spawned.SetBlock("metal");
+            }
+            else if (Random.Range(0, 200) == 25)
+            {
+                spawned.SetBlock("gold");
+            }
+            else
+            {
+                spawned.SetBlock("stone");
+            }
+
+            if(Mathf.Abs(blockY-((perlin-ground)/(1.3f*caveShift))-caveLevel)<cavePerlin-caveThreshold)
+            {
+                spawned.gameObject.SetActive(false);
+            }
+
+        }
+    }
+
+    private void DesertWorldGen(Block spawned, int blockY, int h, float perlin,float cavePerlin)
     {
         if (blockY > h)
         {
@@ -138,8 +210,11 @@ public class ChunkBlocks : MonoBehaviour
                 spawned.SetBlock("stone");
             }
         }
+        if(Mathf.Abs(blockY-((perlin-ground)/caveShift)-caveLevel)<cavePerlin-caveThreshold)
+            {
+                spawned.gameObject.SetActive(false);
+            }
     }
-
 
 
 
@@ -185,5 +260,9 @@ public class ChunkBlocks : MonoBehaviour
     {
         float perlin1 = Mathf.PerlinNoise(Spawner.seed + x * size * 0.5f, Spawner.seed + y * size * 0.5f) * scale * 0.5f;
         return (perlin1) + ground;
+    }
+    public static float GetCavePerlin(float x, float y)
+    {
+        return Mathf.PerlinNoise(Spawner.seed*2+x*caveSize,Spawner.seed/2+y*caveSize)*caveScale;
     }
 }

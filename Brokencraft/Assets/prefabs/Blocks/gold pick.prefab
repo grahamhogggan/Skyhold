@@ -71,7 +71,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0.2
   knockback: 0
-  hitDelay: 0.05
+  hitDelay: 0.1
 --- !u!114 &2021955483868415550
 MonoBehaviour:
   m_ObjectHideFlags: 0
