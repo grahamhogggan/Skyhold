@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 8359401475311798562}
   - component: {fileID: 2275785568940875842}
   - component: {fileID: 3834355429049621871}
-  - component: {fileID: 370528401756977005}
+  - component: {fileID: 1076513116528082113}
   m_Layer: 0
   m_Name: Icosphere.001
   m_TagString: Untagged
@@ -691,7 +691,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &370528401756977005
+--- !u!114 &1076513116528082113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -700,12 +700,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2139663364976432382}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b7829f45828fb4089330b8eab930dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 958baf2549c2bb3438d8f55598ae0945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4148789401206613537, guid: 680dff9a3354de64ba6d895947bfe102, type: 3}
   reload: 3
   offset: 0
+  anim: {fileID: 8709340376008808922}
 --- !u!1 &2180784169114704620
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,7 +750,7 @@ GameObject:
   - component: {fileID: 4628531697332151077}
   - component: {fileID: 5607496831868418725}
   - component: {fileID: 4055619927069896625}
-  - component: {fileID: 4285589310811602073}
+  - component: {fileID: 6230757924096878657}
   m_Layer: 0
   m_Name: Icosphere.001
   m_TagString: Untagged
@@ -822,7 +823,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4285589310811602073
+--- !u!114 &6230757924096878657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -831,12 +832,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2393098672043262159}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b7829f45828fb4089330b8eab930dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 958baf2549c2bb3438d8f55598ae0945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4148789401206613537, guid: 680dff9a3354de64ba6d895947bfe102, type: 3}
   reload: 3
   offset: 2
+  anim: {fileID: 6641655163102623980}
 --- !u!1 &2464629660684156981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1406,7 +1408,7 @@ GameObject:
   - component: {fileID: 3662692529505703198}
   - component: {fileID: 7456368936102413293}
   - component: {fileID: 2853766683769597605}
-  - component: {fileID: 4984318469421364447}
+  - component: {fileID: 8188402239614074906}
   m_Layer: 0
   m_Name: Icosphere.001
   m_TagString: Untagged
@@ -1479,7 +1481,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4984318469421364447
+--- !u!114 &8188402239614074906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1488,12 +1490,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5265007141849110544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b7829f45828fb4089330b8eab930dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 958baf2549c2bb3438d8f55598ae0945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2868715814572939514, guid: e58816a5537c7f949a0dbb4f8aad0aa3, type: 3}
   reload: 5
   offset: 3.2
+  anim: {fileID: 2161963486826790520}
 --- !u!1 &5313271226300185539
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,7 +1508,7 @@ GameObject:
   - component: {fileID: 4163999541263375139}
   - component: {fileID: 6709097577065719978}
   - component: {fileID: 380965439023702799}
-  - component: {fileID: 3331753376425310248}
+  - component: {fileID: 7120346942721558170}
   m_Layer: 0
   m_Name: Boss_1
   m_TagString: Untagged
@@ -1588,7 +1591,7 @@ MonoBehaviour:
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
   floatDist: 8
   speed: 5
---- !u!114 &3331753376425310248
+--- !u!114 &7120346942721558170
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1597,7 +1600,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5313271226300185539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c704aeef303e06e4d96403340e1de9d8, type: 3}
+  m_Script: {fileID: 11500000, guid: f483ac056776d51429b7708b112a5aec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &5739188494289488908
@@ -2159,7 +2162,7 @@ GameObject:
   - component: {fileID: 6751255369754515769}
   - component: {fileID: 977686788283919659}
   - component: {fileID: 7066222378133614074}
-  - component: {fileID: 3437380499839767692}
+  - component: {fileID: 8436116942315715719}
   m_Layer: 0
   m_Name: Icosphere.001
   m_TagString: Untagged
@@ -2232,7 +2235,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3437380499839767692
+--- !u!114 &8436116942315715719
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2241,12 +2244,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7006289746692160665}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b7829f45828fb4089330b8eab930dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 958baf2549c2bb3438d8f55598ae0945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2868715814572939514, guid: e58816a5537c7f949a0dbb4f8aad0aa3, type: 3}
   reload: 5
   offset: 1.6
+  anim: {fileID: 4872392389578785640}
 --- !u!1 &7021070245681376677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,7 +2747,7 @@ GameObject:
   - component: {fileID: 5510552842375890078}
   - component: {fileID: 5779819024165725766}
   - component: {fileID: 3312418856916882668}
-  - component: {fileID: 6745025794590662819}
+  - component: {fileID: 6362927384209625579}
   m_Layer: 0
   m_Name: Icosphere.001
   m_TagString: Untagged
@@ -2816,7 +2820,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &6745025794590662819
+--- !u!114 &6362927384209625579
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2825,12 +2829,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7786405053445081369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b7829f45828fb4089330b8eab930dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 958baf2549c2bb3438d8f55598ae0945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2868715814572939514, guid: e58816a5537c7f949a0dbb4f8aad0aa3, type: 3}
   reload: 5
   offset: 0
+  anim: {fileID: 2246392677801700058}
 --- !u!1 &7813929874924191747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2842,7 +2847,7 @@ GameObject:
   - component: {fileID: 5179943647098798546}
   - component: {fileID: 1763992739708737112}
   - component: {fileID: 3268630575188165976}
-  - component: {fileID: 5851249177703461290}
+  - component: {fileID: 2663050431230702462}
   m_Layer: 0
   m_Name: Icosphere.001
   m_TagString: Untagged
@@ -2915,7 +2920,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5851249177703461290
+--- !u!114 &2663050431230702462
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2924,12 +2929,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7813929874924191747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44b7829f45828fb4089330b8eab930dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 958baf2549c2bb3438d8f55598ae0945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4148789401206613537, guid: 680dff9a3354de64ba6d895947bfe102, type: 3}
   reload: 3
   offset: 1
+  anim: {fileID: 8713597979625230447}
 --- !u!1 &8146157328172574593
 GameObject:
   m_ObjectHideFlags: 0

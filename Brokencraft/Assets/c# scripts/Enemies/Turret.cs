@@ -19,13 +19,15 @@ public class Turret : MonoBehaviour
     {
         delay+=Time.deltaTime;
     }
-    public void Shoot(Transform target)
+    public bool Shoot(Transform target)
     {   
         transform.LookAt(target);
         if(delay>reload)
         {
             Instantiate(bullet,transform.position,transform.rotation);
             delay = 0;
+            return true;
         }
+        return false;
     }
 }

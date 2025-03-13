@@ -27,7 +27,7 @@ public class BossSpawner : MonoBehaviour
             {
                 if(notSpawnedThisNight)
                 {
-                    Instantiate(bosses[(int)Overlord.type],new Vector3(25,0,25),Quaternion.identity);
+                    Instantiate(bosses[(int)Overlord.type],new Vector3(25,0,25),Quaternion.identity).name = bosses[(int)Overlord.type].name;
                     notSpawnedThisNight = false;
                 }
             }
