@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
     }
     public void Die()
     {
-        if(Overlord.IsNight())
+        if(Overlord.IsNight()||allDrops)
         {
             Dropstuff();
 
@@ -120,5 +120,9 @@ public class Enemy : MonoBehaviour
             }
         }
         return false;
+    }
+    public float getHealth()
+    {
+        return health;
     }
 }

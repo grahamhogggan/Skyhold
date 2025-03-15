@@ -205,7 +205,7 @@ public class Miner : MonoBehaviour
         Vector3 weaponStats;
         if (equippedItem == "null")
         {
-            weaponStats = new Vector3(1, 0, 0);
+            weaponStats = new Vector3(1, 0, 1);
         }
         else
         {
@@ -244,16 +244,14 @@ public class Miner : MonoBehaviour
                     else
                     {
                         inventory.AddItem(hitBlock.typeName);
-
                     }
-
                 }
                 else
                 {
                     Enemy hitEnemy = hit.transform.gameObject.GetComponent<Enemy>();
                     if (hitEnemy != null)
                     {
-                        Debug.Log("take that! (" + weaponStats.x * (UpgradeManager.GetUpgradeAmount("damage") + 1) + ")");
+                        //Debug.Log("take that! (" + weaponStats.x * (UpgradeManager.GetUpgradeAmount("damage") + 1) + ")");
                         hitEnemy.PlayerDamage(weaponStats.x * (UpgradeManager.GetUpgradeAmount("damage") + 1));
                     }
                 }

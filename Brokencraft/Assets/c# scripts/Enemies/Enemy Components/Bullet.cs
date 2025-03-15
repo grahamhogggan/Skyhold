@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private int damage = 1;
     private Rigidbody rb;
     private bool deleted = false;
     // Start is called before the first frame update
@@ -25,7 +26,7 @@ public class Bullet : MonoBehaviour
         Player p = coll.GetComponentInChildren<Player>();
         if(p !=null)
         {
-            p.Damage(1);
+            p.Damage(damage);
             Destroy(gameObject);
             deleted = true;
         }

@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4f87f3faace5c48b4f98260aa6fc6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 50
+  health: 80
   renderer: {fileID: 5546449164343039274}
   DayDeath: 1
   allDrops: 0
@@ -497,7 +497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb596d51b34023f418a61ffc64fa955d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 10
 --- !u!1 &8590614865584359352
 GameObject:
   m_ObjectHideFlags: 0
