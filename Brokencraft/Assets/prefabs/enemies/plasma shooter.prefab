@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2337218285994150604}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Eyeballs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4767316017113970298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6132106912067101596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: jetpack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 8348459218680147046}
   - component: {fileID: 2353416307940247747}
   - component: {fileID: 7885159755054138898}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5195962925184439759}
   - component: {fileID: 4050469772517671157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,6 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 4148789401206613537, guid: 680dff9a3354de64ba6d895947bfe102, type: 3}
   reload: 2
+  offset: 0
 --- !u!1 &2780277293442357327
 GameObject:
   m_ObjectHideFlags: 0
@@ -239,7 +240,7 @@ GameObject:
   - component: {fileID: 6875984154638124851}
   - component: {fileID: 8092714777513841232}
   - component: {fileID: 3651629397826960110}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +324,7 @@ GameObject:
   - component: {fileID: 7009836686306108889}
   - component: {fileID: 1235804171405898525}
   - component: {fileID: 8506035482499504385}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -417,7 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 920871765230062707}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +453,7 @@ GameObject:
   - component: {fileID: 1840707224077553303}
   - component: {fileID: 8038715347048347117}
   - component: {fileID: 2488661328617973114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,7 +541,7 @@ GameObject:
   - component: {fileID: 7636021949067382676}
   - component: {fileID: 2428494898464039251}
   - component: {fileID: 8995252489090968987}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +624,7 @@ GameObject:
   - component: {fileID: 947393843275126947}
   - component: {fileID: 2676221365552091232}
   - component: {fileID: 4143340442482333437}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +707,7 @@ GameObject:
   - component: {fileID: 7709594574321749327}
   - component: {fileID: 1321685916708791171}
   - component: {fileID: 3977786819142960085}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -787,7 +788,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3439948738794581087}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Feet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -820,7 +821,7 @@ GameObject:
   - component: {fileID: 1317476660160296545}
   - component: {fileID: 2075149705556428936}
   - component: {fileID: 5268346945333104926}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -905,7 +906,7 @@ GameObject:
   - component: {fileID: 3485523057117199992}
   - component: {fileID: 6143697504850866089}
   - component: {fileID: 4080826981137357719}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: plasma shooter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,6 +945,7 @@ MonoBehaviour:
   health: 100
   renderer: {fileID: 2488661328617973114}
   DayDeath: 1
+  allDrops: 0
   drops:
   - qubit
   - qubit
@@ -1028,7 +1030,7 @@ GameObject:
   - component: {fileID: 7444627328963937998}
   - component: {fileID: 5482500028319095140}
   - component: {fileID: 1098119206756188998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mesh (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

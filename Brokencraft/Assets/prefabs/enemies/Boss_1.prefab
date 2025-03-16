@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4791853000321002102}
   - component: {fileID: 8863996660153892372}
   - component: {fileID: 8709340376008808922}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 5075318689550315212}
   - component: {fileID: 3122823647464205501}
   - component: {fileID: 7215026288472835112}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,7 +201,7 @@ GameObject:
   - component: {fileID: 1181836008060138225}
   - component: {fileID: 4896325277628283201}
   - component: {fileID: 5207013734174852004}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: eye (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 6126357057281083737}
   - component: {fileID: 4678882138934193012}
   - component: {fileID: 438772450527032037}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 4658662003456344644}
   - component: {fileID: 3003289483764062097}
   - component: {fileID: 7106228244914432197}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 3184419396889620540}
   - component: {fileID: 9163747105302310945}
   - component: {fileID: 7619422676315182166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 2556902382062538957}
   - component: {fileID: 4929466704616652580}
   - component: {fileID: 1962329999791421241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 2275785568940875842}
   - component: {fileID: 3834355429049621871}
   - component: {fileID: 1076513116528082113}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Icosphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -716,7 +716,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 410667004940278852}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmPivot (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   - component: {fileID: 5607496831868418725}
   - component: {fileID: 4055619927069896625}
   - component: {fileID: 6230757924096878657}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Icosphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -850,7 +850,7 @@ GameObject:
   - component: {fileID: 2545377529782815307}
   - component: {fileID: 1998892367897406574}
   - component: {fileID: 2909019048854965051}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +933,7 @@ GameObject:
   - component: {fileID: 4182383769247957946}
   - component: {fileID: 3491989245640995326}
   - component: {fileID: 6769989847875461746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: eye (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1018,7 +1018,7 @@ GameObject:
   - component: {fileID: 4733250231928122208}
   - component: {fileID: 4373809767947138387}
   - component: {fileID: 4872392389578785640}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1122,7 +1122,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5088513446872621051}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1156,7 @@ GameObject:
   - component: {fileID: 3499102951597196255}
   - component: {fileID: 6864669184704114395}
   - component: {fileID: 8386411791502853759}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: eye (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1240,7 +1240,7 @@ GameObject:
   - component: {fileID: 5320029898394258121}
   - component: {fileID: 6194951550178372003}
   - component: {fileID: 4053869157627809862}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1324,7 +1324,7 @@ GameObject:
   - component: {fileID: 4356950736508651770}
   - component: {fileID: 7764262024880594872}
   - component: {fileID: 5445294199559351785}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1409,7 +1409,7 @@ GameObject:
   - component: {fileID: 7456368936102413293}
   - component: {fileID: 2853766683769597605}
   - component: {fileID: 8188402239614074906}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Icosphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1510,7 +1510,7 @@ GameObject:
   - component: {fileID: 380965439023702799}
   - component: {fileID: 7120346942721558170}
   - component: {fileID: 3996045047689308164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boss_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1629,7 +1629,7 @@ GameObject:
   - component: {fileID: 7943761161714850487}
   - component: {fileID: 3622425344515508416}
   - component: {fileID: 919026515620671986}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1712,7 +1712,7 @@ GameObject:
   - component: {fileID: 7135024190273212308}
   - component: {fileID: 9010458857723538176}
   - component: {fileID: 3726049384188583585}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1796,7 +1796,7 @@ GameObject:
   - component: {fileID: 1163931555077396550}
   - component: {fileID: 4932749191389884074}
   - component: {fileID: 2161963486826790520}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1903,7 +1903,7 @@ GameObject:
   - component: {fileID: 5561858938749602365}
   - component: {fileID: 3602667391854266758}
   - component: {fileID: 2246392677801700058}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2009,7 +2009,7 @@ GameObject:
   - component: {fileID: 3572487463726025413}
   - component: {fileID: 2870726397743098033}
   - component: {fileID: 1035027860786226731}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2093,7 +2093,7 @@ GameObject:
   - component: {fileID: 5169037388075458980}
   - component: {fileID: 7393338205450324378}
   - component: {fileID: 525651696107176546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2178,7 +2178,7 @@ GameObject:
   - component: {fileID: 977686788283919659}
   - component: {fileID: 7066222378133614074}
   - component: {fileID: 8436116942315715719}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Icosphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2276,7 +2276,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7648249736244721439}
   - component: {fileID: 2290455747188736144}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: boss_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2343,7 +2343,7 @@ GameObject:
   - component: {fileID: 6670857075461467148}
   - component: {fileID: 2954054294268523471}
   - component: {fileID: 8713597979625230447}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2449,7 +2449,7 @@ GameObject:
   - component: {fileID: 4355662741270677414}
   - component: {fileID: 6210412034807292328}
   - component: {fileID: 4955063486561513013}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2530,7 +2530,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 358871581653608984}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmPivot (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2564,7 +2564,7 @@ GameObject:
   - component: {fileID: 6797528392568302714}
   - component: {fileID: 2857812819971611364}
   - component: {fileID: 5957963745239713339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2645,7 +2645,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1754251789694590850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmPivot (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2679,7 +2679,7 @@ GameObject:
   - component: {fileID: 26335761500909540}
   - component: {fileID: 1369733955662488047}
   - component: {fileID: 7222960859954071118}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2763,7 +2763,7 @@ GameObject:
   - component: {fileID: 5779819024165725766}
   - component: {fileID: 3312418856916882668}
   - component: {fileID: 6362927384209625579}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Icosphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2863,7 +2863,7 @@ GameObject:
   - component: {fileID: 1763992739708737112}
   - component: {fileID: 3268630575188165976}
   - component: {fileID: 2663050431230702462}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Icosphere.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2963,7 +2963,7 @@ GameObject:
   - component: {fileID: 8134036475792527718}
   - component: {fileID: 2590835571178695692}
   - component: {fileID: 6641655163102623980}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3069,7 +3069,7 @@ GameObject:
   - component: {fileID: 233486395299375892}
   - component: {fileID: 1736642229179414495}
   - component: {fileID: 1836262741385066890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3151,7 +3151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1038606007208090210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmPivot (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3185,7 +3185,7 @@ GameObject:
   - component: {fileID: 3326644620515205403}
   - component: {fileID: 1646042681131681870}
   - component: {fileID: 5098503660787626162}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3268,7 +3268,7 @@ GameObject:
   - component: {fileID: 7484027460370031406}
   - component: {fileID: 2052608803283698492}
   - component: {fileID: 6130969981750643624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3351,7 +3351,7 @@ GameObject:
   - component: {fileID: 2857131602625150205}
   - component: {fileID: 6005319233804034823}
   - component: {fileID: 2202302400946144550}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3433,7 +3433,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 274489145975669668}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ArmPivot (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

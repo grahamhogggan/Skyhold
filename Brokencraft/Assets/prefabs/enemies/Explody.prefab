@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2297133154902541666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: set 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8127818079775934854}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 196831701820845110}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1312879520557699969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 8690482838987029920}
   - component: {fileID: 7282401953162404821}
   - component: {fileID: 3967634935184391055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1318234509662815454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 1832351807668196242}
   - component: {fileID: 8725087337383104469}
   - component: {fileID: 5004242502550468661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 1629676437245428638}
   - component: {fileID: 2442786381279062871}
   - component: {fileID: 1015885959942868683}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3579111904297501439}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7803116348387989981}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 345954431999552877}
   - component: {fileID: 8241894132167873639}
   - component: {fileID: 6053550394377073322}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -637,7 +637,7 @@ GameObject:
   - component: {fileID: 60896808232177944}
   - component: {fileID: 6571529949273027221}
   - component: {fileID: 2563319148556059348}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -742,7 +742,7 @@ GameObject:
   - component: {fileID: 2508680062936181527}
   - component: {fileID: 8860288111746007267}
   - component: {fileID: 2500551169203784600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -844,7 +844,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6132430352548380328}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -876,7 +876,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6786511955346832834}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: set1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,7 +914,7 @@ GameObject:
   - component: {fileID: 2270048573007112544}
   - component: {fileID: 1482298913867983771}
   - component: {fileID: 3295686980853739175}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1019,7 +1019,7 @@ GameObject:
   - component: {fileID: 1748730937870829846}
   - component: {fileID: 3279031463612803038}
   - component: {fileID: 499158150239418883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1121,7 +1121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6920988148811149887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1156,7 +1156,7 @@ GameObject:
   - component: {fileID: 683077760034538218}
   - component: {fileID: 1039319555182787301}
   - component: {fileID: 2400476536365621539}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1258,7 +1258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8294655576746247241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1293,7 +1293,7 @@ GameObject:
   - component: {fileID: 4215742667305298765}
   - component: {fileID: 2309913237872899628}
   - component: {fileID: 4994305885637830554}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1395,7 +1395,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5806374534557577086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1427,7 +1427,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7779866035394943369}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1459,7 +1459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5738512734460354528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1491,7 +1491,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2673204962633238798}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1526,7 +1526,7 @@ GameObject:
   - component: {fileID: 7395129587453040020}
   - component: {fileID: 4358274727157419149}
   - component: {fileID: 7117029551722815775}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1628,7 +1628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8775296456338429372}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1663,7 +1663,7 @@ GameObject:
   - component: {fileID: 2676112318434355793}
   - component: {fileID: 2440830159778264197}
   - component: {fileID: 1771745433070973300}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1765,7 +1765,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 941267214981548790}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1800,7 +1800,7 @@ GameObject:
   - component: {fileID: 7607776164929103828}
   - component: {fileID: 4992317198249545400}
   - component: {fileID: 6657412042256239205}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1902,7 +1902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1585526759817046020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1937,7 +1937,7 @@ GameObject:
   - component: {fileID: 4412690868116753420}
   - component: {fileID: 3190416006898893740}
   - component: {fileID: 4445750989900367022}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2042,7 +2042,7 @@ GameObject:
   - component: {fileID: 4412379029083785485}
   - component: {fileID: 422533736422521578}
   - component: {fileID: 3717267059909894572}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2147,7 +2147,7 @@ GameObject:
   - component: {fileID: 306173727566201070}
   - component: {fileID: 8138168285167315881}
   - component: {fileID: 432943233237933261}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2252,7 +2252,7 @@ GameObject:
   - component: {fileID: 1341957883681727083}
   - component: {fileID: 7152872261519595398}
   - component: {fileID: 8202137799506365876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2354,7 +2354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3940401122732284754}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2386,7 +2386,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8009452504935525900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: set1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2424,7 +2424,7 @@ GameObject:
   - component: {fileID: 7977461429629113807}
   - component: {fileID: 7930338235236024387}
   - component: {fileID: 8075004988328435616}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2529,7 +2529,7 @@ GameObject:
   - component: {fileID: 1931933076984190837}
   - component: {fileID: 4713263898589384498}
   - component: {fileID: 6803076908044473632}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2631,7 +2631,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1697538676792023086}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pulsing spike (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2663,7 +2663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2007573506729605541}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: set 2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2702,7 +2702,7 @@ GameObject:
   - component: {fileID: 4586876079976546182}
   - component: {fileID: 2325849928677426444}
   - component: {fileID: 3732090611817509705}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Explody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2784,6 +2784,7 @@ MonoBehaviour:
   health: 20
   renderer: {fileID: 0}
   DayDeath: 1
+  allDrops: 0
   drops:
   - battery
   - beam

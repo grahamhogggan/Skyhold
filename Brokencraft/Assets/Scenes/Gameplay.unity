@@ -11409,7 +11409,7 @@ MonoBehaviour:
   bosses:
     enemies:
     - {fileID: 5313271226300185539, guid: 3102aee036a98594f8e20a8c411cf6e6, type: 3}
-    - {fileID: 5313271226300185539, guid: 3102aee036a98594f8e20a8c411cf6e6, type: 3}
+    - {fileID: 6113549114222433770, guid: ae58aee8ac473ae45a8d55b5b1dae9ad, type: 3}
     - {fileID: 5313271226300185539, guid: 3102aee036a98594f8e20a8c411cf6e6, type: 3}
   spawnRate: 10
 --- !u!1 &1676099840

@@ -109,7 +109,7 @@ public class Enemy : MonoBehaviour
         if (target!=null)
         {
             RaycastHit hit;
-            if(Physics.Raycast(eyeballs.position,target.transform.position-eyeballs.position,out hit))
+            if(Physics.Raycast(eyeballs.position,target.transform.position-eyeballs.position,out hit,Mathf.Infinity,~gameObject.layer))
             {
                 
                 if(hit.transform.gameObject==target)
