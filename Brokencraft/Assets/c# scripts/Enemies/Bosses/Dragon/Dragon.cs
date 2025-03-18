@@ -4,58 +4,65 @@ using UnityEngine;
 
 public class Dragon : Enemy
 {
-// Start is called before the first frame update
+    // Start is called before the first frame update
     private Rigidbody body;
-    [SerializeField] private float floatDist;
+    [SerializeField] private float floatHeight;
+    [SerializeField] private float minDistance;
     [SerializeField] private float speed = 5;
     [SerializeField] private GameObject head;
     void Start()
     {
         base.Start();
-        body = GetComponent<Rigidbody>();   
+        body = GetComponent<Rigidbody>();
+        head.transform.localRotation = Quaternion.Euler(0, -90, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
         base.Update();
-        float targetHeight = transform.position.y - GetHeight()+floatDist;
+        float targetHeight = transform.position.y - GetHeight() + floatHeight;
         Vector3 pos = transform.position;
-        if(GetHeight()>0)
+        if (GetHeight() > 0)
         {
-            pos = transform.position+(targetHeight - transform.position.y)*transform.up*Time.deltaTime;
+            pos = transform.position + (targetHeight - transform.position.y) * transform.up * Time.deltaTime;
             body.MovePosition(pos);
         }
-        if(CanSeeTarget(transform))
+        Vector2 latOffset = new Vector2(target.transform.position.x - transform.position.x, target.transform.position.z - transform.position.z);
+        if (CanSeeTarget(transform))
         {
-                Vector3 mov = target.transform.position-transform.position;
-                mov = new Vector3(mov.x,0,mov.z);
-                if(mov.magnitude>speed)
-                {
-                    mov.Normalize();
-                    mov*=speed;
-                }
-                body.MovePosition(pos+mov*Time.deltaTime);
+            Vector3 mov = target.transform.position - transform.position;
+            mov = new Vector3(mov.x, 0, mov.z);
+            if (mov.magnitude > speed)
+            {
+                mov.Normalize();
+                mov *= speed;
+            }
 
-                Quaternion look = Quaternion.LookRotation(mov);
-                body.MoveRotation(Quaternion.Slerp(transform.rotation,look,0.1f));
+            if (latOffset.magnitude > minDistance)
+            {
+                body.MovePosition(pos + mov * Time.deltaTime);
 
-                head.transform.LookAt(target.transform.position);
+            }
+
+            LookAtPlayer(mov);
         }
-        else
+        else if (latOffset.magnitude >= minDistance)
         {
-            head.transform.localRotation = Quaternion.identity;
+            LookAtPlayer(target.transform.position - transform.position);
         }
 
+
+    }
+    void LookAtPlayer(Vector3 dir)
+    {
+        Quaternion look = Quaternion.LookRotation(dir);
+        body.MoveRotation(Quaternion.Slerp(transform.rotation, look, 0.1f));
+
+        head.transform.LookAt(target.transform.position);
     }
     float GetHeight()
     {
-        RaycastHit hit;
-        if(Physics.Raycast(transform.position,transform.up*-1,out hit,Mathf.Infinity,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Collide))
-        {
-            float h = hit.distance;
-            return h;
-        }
-        return -1;
+        return transform.position.y;
     }
 }

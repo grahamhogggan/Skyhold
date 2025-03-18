@@ -20,6 +20,6 @@ public class Boss : MonoBehaviour
     }
     void OnDestroy()
     {
-        BossHealthBar.instance.SetActive(false);
+        if(BossHealthBar.instance!=null) BossHealthBar.instance.SetActive(false);
     }
 }

@@ -101,6 +101,7 @@ Transform:
   - {fileID: 1926769335343709828}
   - {fileID: 193459013438030857}
   - {fileID: 3309637509571320353}
+  - {fileID: 7728194024497290652}
   m_Father: {fileID: 4687489064213709662}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &3132598305575552379
@@ -1170,6 +1171,7 @@ GameObject:
   - component: {fileID: 6313024273562083927}
   - component: {fileID: 3532224122195849023}
   - component: {fileID: 6207044303658242838}
+  - component: {fileID: 2771085117541675004}
   m_Layer: 8
   m_Name: Dragon
   m_TagString: Untagged
@@ -1252,7 +1254,8 @@ MonoBehaviour:
   - gold
   - gold
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
-  floatDist: 10
+  floatHeight: 11
+  minDistance: 5
   speed: 5
   head: {fileID: 1408735043797645052}
 --- !u!114 &6207044303658242838
@@ -1269,6 +1272,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 3532224122195849023}
   maxHealth: 500
+--- !u!114 &2771085117541675004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6113549114222433770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f67bfa1a3e30cfe45b248093e367f524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6476931727642786527
 GameObject:
   m_ObjectHideFlags: 0
@@ -2140,7 +2155,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 20
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6250,6 +6265,53 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.81957, y: 0.2654679, z: 0.2258805}
   m_Center: {x: -0.24823938, y: 0, z: 0.20000994}
+--- !u!1 &7603194933692361472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7728194024497290652}
+  - component: {fileID: 1390099201537554374}
+  m_Layer: 8
+  m_Name: meteor emitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7728194024497290652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7603194933692361472}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.23, z: 1.06}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1347412465099093344}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1390099201537554374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7603194933692361472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b7829f45828fb4089330b8eab930dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 2868715814572939514, guid: e58816a5537c7f949a0dbb4f8aad0aa3, type: 3}
+  reload: 5
+  offset: 0
 --- !u!1 &8376374885106772661
 GameObject:
   m_ObjectHideFlags: 0
