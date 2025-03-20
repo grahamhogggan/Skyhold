@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class NewGameManager : MonoBehaviour
 {
     public GameObject[] newGameButtons;
+    public TMP_Text[] highScoreTexts;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,7 @@ public class NewGameManager : MonoBehaviour
             {
                 newGameButtons[i].SetActive(false);
             }
+            highScoreTexts[i].text = "High Score: "+PersistentData.highScores[i];
         }
     }
 }

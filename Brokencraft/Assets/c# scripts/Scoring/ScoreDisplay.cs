@@ -10,6 +10,7 @@ public class ScoreDisplay : MonoBehaviour
     void Start()
     {
         text = GetComponent<TMP_Text>();
+        UpdateHighScores();
     }
 
     // Update is called once per frame
@@ -23,7 +24,15 @@ public class ScoreDisplay : MonoBehaviour
         else
         {
         text.text ="Score: "+ScoreManager.GetScore()+"\nActive Score: "+ScoreManager.GetActiveScore();
-
+        }
+    }
+    void UpdateHighScores()
+    {
+        int currentHighScore = PersistentData.highScores[(int)Overlord.type];
+        int latestScore = ScoreManager.GetActiveScore();
+        if(latestScore>currentHighScore)
+        {
+             PersistentData.highScores[(int)Overlord.type] = latestScore;
         }
     }
 }

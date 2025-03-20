@@ -241,6 +241,7 @@ public class Miner : MonoBehaviour
                     {
                         inventory.AddItem(hitBlock.typeName);
                     }
+                    ScoreManager.AddScore(1);
                 }
                 else
                 {
