@@ -31,6 +31,8 @@ public class Overlord : MonoBehaviour
     public int saveCount { get; set; }
     public static int nightCount = 0;
 
+
+
     public enum WorldType
     {
         Countryside = 0,
@@ -43,7 +45,6 @@ public class Overlord : MonoBehaviour
     void Awake()
     {
         difficulty = -1;
-        saveDirectory = Application.persistentDataPath; // ifmodifying this, also note GameStarter.cs has its own field fo rreasons.
         Debug.Log("initialized directory");
         instance = this;
         DropSavePath = saveDirectory + "/drops.randomFileExtension";
@@ -53,7 +54,9 @@ public class Overlord : MonoBehaviour
         ReadInfo();
         saveCount = 0;
         SaveManager.Register(Save);
+
     }
+
     public static void Pause()
     {
         Time.timeScale = 0;
@@ -182,6 +185,7 @@ public class Overlord : MonoBehaviour
         difficulty++;
         nightCount++;
     }
+
 }
 
 [System.Serializable]

@@ -838,6 +838,7 @@ GameObject:
   - component: {fileID: 274119697}
   - component: {fileID: 274119701}
   - component: {fileID: 274119702}
+  - component: {fileID: 274119703}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -955,6 +956,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 93e795d309796874ca3c6f9539cdb2f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &274119703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274119696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e68d5d7490631384384909d2e01984c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &367639211
@@ -1105,7 +1118,7 @@ GameObject:
   - component: {fileID: 433158679}
   - component: {fileID: 433158678}
   m_Layer: 5
-  m_Name: mountain (1)
+  m_Name: desert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1711,13 +1724,14 @@ GameObject:
   - component: {fileID: 720062088}
   - component: {fileID: 720062090}
   - component: {fileID: 720062089}
+  - component: {fileID: 720062091}
   m_Layer: 5
   m_Name: Are You Sure?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &720062088
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1780,6 +1794,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 720062087}
   m_CullTransparentMesh: 1
+--- !u!114 &720062091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720062087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad755bf722e77974285fb867e1d76cf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newGameButtons:
+  - {fileID: 202106173}
+  - {fileID: 1942747333}
+  - {fileID: 433158676}
 --- !u!1 &1081308452
 GameObject:
   m_ObjectHideFlags: 0

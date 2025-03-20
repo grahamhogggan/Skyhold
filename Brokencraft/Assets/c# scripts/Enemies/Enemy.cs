@@ -76,6 +76,11 @@ public class Enemy : MonoBehaviour
         }
         SaveManager.Withdraw(Save);
         Save();
+        Boss boss = GetComponent<Boss>();
+        if(boss!=null)
+        {
+            PersistentData.bossesCleared[boss.bossNumber] = true;
+        }
         Destroy(gameObject);
     }
     private void Dropstuff()

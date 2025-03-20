@@ -1618,6 +1618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 380965439023702799}
   maxHealth: 300
+  bossNumber: 1
 --- !u!1 &5739188494289488908
 GameObject:
   m_ObjectHideFlags: 0
