@@ -5,10 +5,10 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private GameObject bullet;
-    [SerializeField] private float reload;
+    [SerializeField] protected GameObject bullet;
+    [SerializeField] protected float reload;
     [SerializeField] private float offset = 0;
-    private float delay = 0;
+    protected float delay = 0;
     void Start()
     {
         delay = offset;

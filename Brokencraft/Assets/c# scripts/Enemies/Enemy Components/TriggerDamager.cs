@@ -5,6 +5,7 @@ using UnityEngine;
 public class TriggerDamager : MonoBehaviour
 {
     public int damage;
+    public bool destroyOnHit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,10 @@ public class TriggerDamager : MonoBehaviour
         if(hit!=null)
         {
             hit.Damage(damage);
+        }
+        if(destroyOnHit)
+        {
+            Destroy(gameObject);
         }
     }
 }

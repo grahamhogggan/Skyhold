@@ -228,10 +228,6 @@ public class Miner : MonoBehaviour
                     Dense density = hitBlock.GetComponentInChildren<Dense>();
                     if (density != null) cooldown *= density.multiplier;
 
-                    crosshairRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
-                    crosshairRotator.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
-                    crosshairRotator.rot = new Vector3(0, 90 / cooldown, 0);
-
                     hitBlock.Mine();
                     string alt = hitBlock.GetComponentInChildren<BlockDetails>().alternate;
                     if (alt.Length > 0)
@@ -255,6 +251,9 @@ public class Miner : MonoBehaviour
                         hitEnemy.PlayerDamage(weaponStats.x * (UpgradeManager.GetUpgradeAmount("damage") + 1));
                     }
                 }
+                crosshairRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
+                crosshairRotator.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
+                crosshairRotator.rot = new Vector3(0, 90 / cooldown, 0);
             }
         }
 
