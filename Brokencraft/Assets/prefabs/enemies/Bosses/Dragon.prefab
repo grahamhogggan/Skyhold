@@ -1272,7 +1272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 3532224122195849023}
   maxHealth: 500
-  bossNumber: 3
+  bossNumber: 2
 --- !u!114 &2771085117541675004
 MonoBehaviour:
   m_ObjectHideFlags: 0

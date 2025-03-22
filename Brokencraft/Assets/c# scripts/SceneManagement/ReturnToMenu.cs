@@ -7,6 +7,7 @@ public class ReturnToMenu : MonoBehaviour
     public static void Return()
     {
         PlayerInventory.ClearCrafting();
+        ScoreDisplay.UpdateHighScores();
         SceneManager.LoadScene(0);
     }
 }

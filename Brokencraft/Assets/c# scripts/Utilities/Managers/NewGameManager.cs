@@ -26,7 +26,7 @@ public class NewGameManager : MonoBehaviour
             {
                 newGameButtons[i].SetActive(false);
             }
-            highScoreTexts[i].text = "High Score: "+PersistentData.highScores[i];
+            highScoreTexts[i].text = "High Score:\n"+PersistentData.highScores[i];
         }
     }
 }

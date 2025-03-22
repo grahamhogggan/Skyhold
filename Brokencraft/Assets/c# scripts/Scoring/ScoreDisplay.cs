@@ -26,10 +26,10 @@ public class ScoreDisplay : MonoBehaviour
         text.text ="Score: "+ScoreManager.GetScore()+"\nActive Score: "+ScoreManager.GetActiveScore();
         }
     }
-    void UpdateHighScores()
+    public static void UpdateHighScores()
     {
         int currentHighScore = PersistentData.highScores[(int)Overlord.type];
-        int latestScore = ScoreManager.GetActiveScore();
+        int latestScore = ScoreManager.GetScore();
         if(latestScore>currentHighScore)
         {
              PersistentData.highScores[(int)Overlord.type] = latestScore;
