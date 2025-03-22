@@ -11,6 +11,7 @@ public class CraftingManager : MonoBehaviour
     [SerializeField] private TMP_Text itemsDisplayText;
     [SerializeField] private TMP_Text craftedItemText;
     private static Dictionary<string, string> craftingRecipes;
+    private static Dictionary<string,Dictionary<string,string>> recipeBooks;
     // Start is called before the first frame update
     void Start()
     {
@@ -91,9 +92,11 @@ public class CraftingManager : MonoBehaviour
         
         
     }
-    public static int RecipeCount()
+    public static int RecipeCount(string category = "all")
     {
+        if(category == "all")
         return craftingRecipes.Count;
+        return recipeBooks[category].Count;
     }
     public void RepeatCraft()
     {
@@ -146,17 +149,26 @@ public class CraftingManager : MonoBehaviour
         return null;
     }
 
-    public static string[] GetRecipe(int index)
+    public static string[] GetRecipe(int index,string category = "all")
     {
-        if(index>=craftingRecipes.Count||index<0)
+        Dictionary<string,string> book;
+        if(category == "all")
+        {
+            book = craftingRecipes;
+        }
+        else
+        {
+            book = recipeBooks[category];
+        }
+        if(index>=book.Count||index<0)
         {
             return null;
         }
         string[] results = new string[2];
-        string[] k = new string[craftingRecipes.Count];
-        string[] v = new string[craftingRecipes.Count];
-        craftingRecipes.Keys.CopyTo(k,0);
-        craftingRecipes.Values.CopyTo(v,0);
+        string[] k = new string[book.Count];
+        string[] v = new string[book.Count];
+        book.Keys.CopyTo(k,0);
+        book.Values.CopyTo(v,0);
         results[0] = k[index];
         results[1] = v[index];
         return results;
@@ -164,41 +176,46 @@ public class CraftingManager : MonoBehaviour
     private void Recipize()
     {
         craftingRecipes = new Dictionary<string, string>();
-        craftingRecipes.Add("wood", "planks/2");
-        craftingRecipes.Add("palm wood","planks/1");
-        craftingRecipes.Add("planks", "stick/3");
-        craftingRecipes.Add("pebble,pebble,pebble,pebble,pebble","stone/1");
-        craftingRecipes.Add("stone,stone", "stone slab/2");
-        craftingRecipes.Add("stone slab,stone slab","ramp/1");
-        craftingRecipes.Add("planks,planks,planks,planks","platform/16");
-        craftingRecipes.Add("planks,planks,stick,stick", "pickaxe/1");
-        craftingRecipes.Add("stick,stone,stone","mace/1");
-        craftingRecipes.Add("metal,metal,metal","beam/2");
-        craftingRecipes.Add("beam,beam,beam,beam","truss/1");
-        craftingRecipes.Add("beam,metal,stick", "sword/1");
-        craftingRecipes.Add("metal,stick,wires", "torch/2");
-        craftingRecipes.Add("gold,metal,wires,wires","processor/1");
-        craftingRecipes.Add("leaves,leaves,leaves,leaves,leaves", "dirt/1");
+        recipeBooks = new Dictionary<string, Dictionary<string, string>>();
+        AddRecipe("wood", "planks/2","basics");
+        AddRecipe("palm wood","planks/1","basics");
+        AddRecipe("planks", "stick/3","basics");
+        AddRecipe("pebble,pebble,pebble,pebble,pebble","stone/1","basics");
+        AddRecipe("stone,stone", "stone slab/2","construction");
+        AddRecipe("stone slab,stone slab","ramp/1","construction");
+        AddRecipe("planks,planks,planks,planks","platform/16","construction");
+        AddRecipe("planks,planks,planks","stairs/2","construction");
+        AddRecipe("planks,planks,stick,stick", "pickaxe/1","tools");
+        AddRecipe("stick,stick,stick,stick", "frame/1","construction");
+        AddRecipe("stick,stone,stone","mace/1","tools");
+        AddRecipe("metal,metal,metal","beam/2","basics");
+        AddRecipe("beam,beam,beam,beam","truss/1","construction");
+        AddRecipe("beam,metal,stick", "sword/1","tools");
+        AddRecipe("metal,stick,wires", "torch/2","basics");
+        AddRecipe("gold,metal,wires,wires","processor/1","machines");
+        AddRecipe("leaves,leaves,leaves,leaves,leaves", "dirt/1","other");
         
-        craftingRecipes.Add("beam,metal,processor,wires,wires", "extracter/1");
-        craftingRecipes.Add("beam,metal,processor,torch,wires","score pump/1");
-        craftingRecipes.Add("beam,fan,processor,truss,wires","turbine/1");
-        craftingRecipes.Add("beam,leaves,processor,truss,wires","biofuel plant/1");
-        craftingRecipes.Add("beam,processor,qubit,truss,wires","reactor/1");
-        craftingRecipes.Add("battery,beam,gold,metal,wires","electric sword/1");
-        craftingRecipes.Add("battery,beam,gold,gold,gold","gold pick/1");
+        AddRecipe("beam,metal,processor,wires,wires", "extracter/1","machines");
+        AddRecipe("beam,metal,processor,torch,wires","score pump/1","machines");
+        AddRecipe("beam,fan,processor,truss,wires","turbine/1","machines");
+        AddRecipe("beam,leaves,processor,truss,wires","biofuel plant/1","machines");
+        AddRecipe("beam,processor,qubit,truss,wires","reactor/1","machines");
+        AddRecipe("battery,beam,gold,metal,wires","electric sword/1","tools");
+        AddRecipe("battery,beam,gold,gold,gold","gold pick/1","tools");
+    }
+    private void AddRecipe(string costs, string results, string category = "default")
+    {
+        if(recipeBooks.ContainsKey(category))
+        {
+            recipeBooks[category].Add(costs,results);
+        }
+        else
+        {
+            recipeBooks.Add(category,new Dictionary<string,string>());
+            recipeBooks[category].Add(costs,results);
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
+        }
+        craftingRecipes.Add(costs,results);
     }
     public static int Cnt()
     {return items.Count; }

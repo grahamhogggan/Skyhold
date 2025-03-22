@@ -62,7 +62,7 @@ public class Miner : MonoBehaviour
             crosshairRotator.rot = new Vector3(0, 0, 0);
             crosshairRotator.gameObject.transform.rotation = Quaternion.identity;
         }
-        if (Overlord.paused) return;
+        if (Overlord.paused||Overlord.inInventory) return;
         if (inventory.GetItemCount() == 0)
         {
             equippedItem = "null";

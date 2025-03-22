@@ -6,6 +6,7 @@ using TMPro;
 public class RecipeDisplayManager : MonoBehaviour
 {
     public static int offset;
+    public static string category="all";
     public static bool craftableMode = true;
     public TMP_Text txt;
     // Start is called before the first frame update
@@ -52,5 +53,9 @@ public class RecipeDisplayManager : MonoBehaviour
     public void ToggleCraftableMode()
     {
         craftableMode = !craftableMode;
+    }
+    public void SetCategory(string category)
+    {
+        RecipeDisplayManager.category = category;
     }
 }

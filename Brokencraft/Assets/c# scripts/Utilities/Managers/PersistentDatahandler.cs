@@ -9,13 +9,13 @@ public class PersistentDatahandler : MonoBehaviour
     void Awake()
     {
         Overlord.saveDirectory = Application.persistentDataPath; // ifmodifying this, also note GameStarter.cs has its own field fo rreasons.
-
-    }
-    void Start()
-    {
         pDataPath = Overlord.saveDirectory + "/pData.save";
         SaveManager.Register(SavePersistentData);
         ReadPersistentData();
+    }
+    void Start()
+    {
+
 
     }
 

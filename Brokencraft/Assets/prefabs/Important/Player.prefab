@@ -215,6 +215,8 @@ MonoBehaviour:
   - {fileID: 3189495928652548006, guid: 2f3542024e24c7d4293b208dcf3a8535, type: 3}
   - {fileID: 3189495928652548006, guid: 98253bc4ec5fb7243956ab47b27e24a5, type: 3}
   - {fileID: 3189495928652548006, guid: 5a1fdb9801e3ca1459c3e65bcd496983, type: 3}
+  - {fileID: 3189495928652548006, guid: 84c0fd8ed4b7cea4982e2b9b1d4a0c16, type: 3}
+  - {fileID: 3189495928652548006, guid: 0d858737e1984e944a37961f824d5484, type: 3}
   equippedObjectViewer: {fileID: 6317429509564419225}
   buildLayers:
     serializedVersion: 2
@@ -408,7 +410,7 @@ CharacterController:
   m_Height: 1.8
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.51
+  m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -465,6 +467,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b54a0550fc6f93e4da3ddc24017b760e, type: 3}
   - {fileID: 21300000, guid: 45fa53d0759f6ae42af87eeae1df87f9, type: 3}
   - {fileID: 21300000, guid: 0cc678293bff15b4294d15de353ed9a4, type: 3}
+  - {fileID: 21300000, guid: 3e7ededd0c3eb6941b0ec7fcfa765044, type: 3}
+  - {fileID: 21300000, guid: a2186b39913ec684e8c1c7c7035e0470, type: 3}
   offset: 0
 --- !u!114 &-1547767812270346647
 MonoBehaviour:

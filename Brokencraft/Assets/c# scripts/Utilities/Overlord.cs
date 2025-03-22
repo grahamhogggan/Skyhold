@@ -8,6 +8,7 @@ public class Overlord : MonoBehaviour
 {
 
     public static bool paused = false;
+    public static bool inInventory = false;
     public static bool OverwriteMode = false;
     [Header("Day/Night Cycle")]
     public float secondsPerDay;
@@ -44,6 +45,7 @@ public class Overlord : MonoBehaviour
     public static WorldType type;
     void Awake()
     {
+        Overlord.saveDirectory = Application.persistentDataPath; // ifmodifying this, also note GameStarter.cs has its own field fo rreasons.
         difficulty = -1;
         Debug.Log("initialized directory");
         instance = this;
@@ -63,6 +65,7 @@ public class Overlord : MonoBehaviour
         MouseLook.active = false;
         FirstPersonMovement.active = false;
         paused = freeze;
+        inInventory = true;
     }
     public static void Resume()
     {
@@ -70,6 +73,7 @@ public class Overlord : MonoBehaviour
         MouseLook.active = true;
         FirstPersonMovement.active = true;
         paused = false;
+        inInventory = false;
     }
     void Update()
     {

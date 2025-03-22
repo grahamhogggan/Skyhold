@@ -35,11 +35,11 @@ public class RecipeDisplay : MonoBehaviour
         if(RecipeDisplayManager.craftableMode)
         {
             int n = GetNthCraftableRecipe(index+RecipeDisplayManager.offset+1);
-            dat = CraftingManager.GetRecipe(n);
+            dat = CraftingManager.GetRecipe(n,RecipeDisplayManager.category);
         }
         else
         {
-            dat = CraftingManager.GetRecipe(index+RecipeDisplayManager.offset);
+            dat = CraftingManager.GetRecipe(index+RecipeDisplayManager.offset,RecipeDisplayManager.category);
         }
         
         if(dat == null)
@@ -77,9 +77,9 @@ public class RecipeDisplay : MonoBehaviour
     {
         int cnt = 0;
         int i = 0;
-        while(cnt<n&&i<CraftingManager.RecipeCount())
+        while(cnt<n&&i<CraftingManager.RecipeCount(RecipeDisplayManager.category))
         {
-            items = CraftingManager.GetRecipe(i)[0].Split(",");
+            items = CraftingManager.GetRecipe(i,RecipeDisplayManager.category)[0].Split(",");
             if(PlayerCanCraft())
             {
                 cnt++;
