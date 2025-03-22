@@ -13,17 +13,19 @@ public class FirstPersonMovement : MonoBehaviour
 
     public bool inWater = false;
     private bool inAir= false;
+    public static bool active = true;
     // Start is called before the first frame update
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        active = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float dirX = Input.GetAxisRaw("Horizontal") * speed*Time.deltaTime;
-        float dirZ = Input.GetAxisRaw("Vertical") * speed*Time.deltaTime;
+        float dirX = active?Input.GetAxisRaw("Horizontal") * speed*Time.deltaTime:0;
+        float dirZ = active?Input.GetAxisRaw("Vertical") * speed*Time.deltaTime:0;
         controller.Move(transform.TransformDirection(dirX, Vvelocity*Time.deltaTime,dirZ));
 
         if(controller.isGrounded)
@@ -46,7 +48,7 @@ public class FirstPersonMovement : MonoBehaviour
         {
             inAir = true;
         }
-        if (Input.GetKey("space")&&controller.isGrounded)
+        if (Input.GetKey("space")&&controller.isGrounded&&active)
         {
             Vvelocity = jumpForce;
         }

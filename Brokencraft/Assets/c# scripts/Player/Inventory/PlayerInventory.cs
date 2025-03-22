@@ -49,7 +49,7 @@ public class PlayerInventory : MonoBehaviour
             {
                 inventoryPanel.SetActive(true);
                 RefreshInventory();
-                Overlord.Pause();
+                Overlord.Pause(false);
             }
         }
         if(Input.GetMouseButtonDown(1)&&clickedItemIndex!=-1)

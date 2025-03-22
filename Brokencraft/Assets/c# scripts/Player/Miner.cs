@@ -149,7 +149,7 @@ public class Miner : MonoBehaviour
         {
             Mine();
         }
-        if (Input.GetMouseButtonDown(1) && equippedItem != "null")
+        if (Input.GetMouseButton(1) && equippedItem != "null")
         {
             Place();
         }
@@ -169,11 +169,12 @@ public class Miner : MonoBehaviour
     void Place()
     {
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, 10, buildLayers, QueryTriggerInteraction.Collide))
+        if (timeSinceLastAttack>cooldown&&Physics.Raycast(transform.position, transform.forward, out hit, 10, buildLayers, QueryTriggerInteraction.Collide))
         {
             Block hitBlock = hit.transform.gameObject.GetComponentInParent<Block>();
             if (hitBlock != null)
             {
+                
                 Vector3 normal = hit.normal;
                 Block build = hitBlock.GetAdjacent(normal);
                 /*
@@ -194,11 +195,21 @@ public class Miner : MonoBehaviour
                     int rotation = ((int)rot + 45) / 90;
                     rotation *= 90;
                     build.Place(equippedItem, rotation);
+
+                    timeSinceLastAttack = 0;
+                    cooldown = 0.25f;
+                    UpdateCrosshair();
                 }
 
 
             }
         }
+    }
+    void UpdateCrosshair()
+    {
+        crosshairRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
+        crosshairRotator.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
+        crosshairRotator.rot = new Vector3(0, 90 / cooldown, 0);
     }
     void Mine()
     {
@@ -252,9 +263,7 @@ public class Miner : MonoBehaviour
                         hitEnemy.PlayerDamage(weaponStats.x * (UpgradeManager.GetUpgradeAmount("damage") + 1));
                     }
                 }
-                crosshairRotator.transform.rotation = Quaternion.Euler(0, 0, 0);
-                crosshairRotator.gameObject.transform.rotation = Quaternion.Euler(0, 90, 0);
-                crosshairRotator.rot = new Vector3(0, 90 / cooldown, 0);
+                UpdateCrosshair();
             }
         }
 

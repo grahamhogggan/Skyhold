@@ -57,16 +57,18 @@ public class Overlord : MonoBehaviour
 
     }
 
-    public static void Pause()
+    public static void Pause(bool freeze = true)
     {
-        Time.timeScale = 0;
+        Time.timeScale = freeze?0:1;
         MouseLook.active = false;
-        paused = true;
+        FirstPersonMovement.active = false;
+        paused = freeze;
     }
     public static void Resume()
     {
         Time.timeScale = 1;
         MouseLook.active = true;
+        FirstPersonMovement.active = true;
         paused = false;
     }
     void Update()
