@@ -197,7 +197,7 @@ public class Miner : MonoBehaviour
                     build.Place(equippedItem, rotation);
 
                     timeSinceLastAttack = 0;
-                    cooldown = 0.25f;
+                    cooldown = 0.25f* Mathf.Pow(0.95f, UpgradeManager.GetUpgradeAmount("mining"));
                     UpdateCrosshair();
                 }
 
@@ -226,7 +226,7 @@ public class Miner : MonoBehaviour
         if (timeSinceLastAttack > cooldown)
         {
             timeSinceLastAttack = 0;
-            cooldown = weaponStats.z * Mathf.Pow(0.9f, UpgradeManager.GetUpgradeAmount("mining"));
+            cooldown = weaponStats.z * Mathf.Pow(0.95f, UpgradeManager.GetUpgradeAmount("mining"));
 
             equippedObjectViewer.GetComponent<HeldObject>().Attack();
 
@@ -260,7 +260,7 @@ public class Miner : MonoBehaviour
                     if (hitEnemy != null)
                     {
                         //Debug.Log("take that! (" + weaponStats.x * (UpgradeManager.GetUpgradeAmount("damage") + 1) + ")");
-                        hitEnemy.PlayerDamage(weaponStats.x * (UpgradeManager.GetUpgradeAmount("damage") + 1));
+                        hitEnemy.PlayerDamage(weaponStats.x * (UpgradeManager.GetUpgradeAmount("damage")*0.1f + 1));
                     }
                 }
                 UpdateCrosshair();

@@ -8,6 +8,7 @@ public class UpgradeManager : MonoBehaviour
    private static List<string> UpgradesBoughtNames;
     private static List<int> UpgradesBoughtCount;
    private string savepath;
+   public static Player player;
    void Start()
    {
     savepath = Overlord.saveDirectory+"/upgrades.save";
@@ -39,11 +40,19 @@ public class UpgradeManager : MonoBehaviour
         if(UpgradesBoughtNames.IndexOf(name)!=-1)
         {
             UpgradesBoughtCount[UpgradesBoughtNames.IndexOf(name)]++;
+            if(name == "defense")
+            {
+                player.UpgradeHealth(1.2f);
+            }
         }
         else
         {
             UpgradesBoughtNames.Add(name);
             UpgradesBoughtCount.Add(1);
+            if(name == "defense")
+            {
+                player.UpgradeHealth(1.2f);
+            }
         }
     }
     public static int GetCost(string name)

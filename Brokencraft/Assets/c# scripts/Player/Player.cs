@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
         maxHealth = health;
         Load();
         SaveManager.Register(Save);
+        UpgradeManager.player = this;
     }
 
     // Update is called once per frame
@@ -39,9 +40,14 @@ public class Player : MonoBehaviour
     }
     public void Damage(int damage)
     {
-        health -= (int)(damage*Mathf.Pow(0.9f,UpgradeManager.GetUpgradeAmount("defense"))+0.5f);
+        health -= damage;
         hitEffect.Hit();
         
+    }
+    public void UpgradeHealth(float amount)
+    {
+        health = (int)(health*amount);
+        maxHealth = (int)(maxHealth*amount);
     }
     public void Heal(int amount)
     {
@@ -57,6 +63,7 @@ public class Player : MonoBehaviour
     {
         data.position = transform.position;
         data.health = health;
+        data.maxHealth = maxHealth;
         data.time = Overlord.GetRawTimeVector();
         string ToSave = JsonUtility.ToJson(data);
         File.WriteAllText(dataPath, ToSave);
@@ -73,6 +80,7 @@ public class Player : MonoBehaviour
             GetComponent<CharacterController>().enabled = true;
 
             health = data.health;
+            maxHealth = data.maxHealth;
             Overlord.SetRawTime(data.time);
             this.data = data;
             newGame = false;

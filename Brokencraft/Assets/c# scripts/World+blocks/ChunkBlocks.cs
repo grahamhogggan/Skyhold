@@ -41,7 +41,7 @@ public class ChunkBlocks : MonoBehaviour
                     Block spawned = b.GetComponent<Block>();
                     spawned.parentChunk = chunk;
                     spawned.localPos = pos - transform.position;
-                    spawned.typeName = "stone";
+                    spawned.typeName = "dirt";
                     chunk.addBlock(b.GetComponent<Block>(), i, j, k);
                     int blockY = j + (int)((Spawner.instance.chunksY - chunk.GetLocation().y) * 5);
                     if (Overlord.type == Overlord.WorldType.Countryside)
