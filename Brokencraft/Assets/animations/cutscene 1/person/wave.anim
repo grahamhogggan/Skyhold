@@ -1038,7 +1038,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 48.616665
+    m_StopTime: 49.583332
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -4244,8 +4244,15 @@ AnimationClip:
     messageOptions: 0
   - time: 39.65
     functionName: SetTarget
-    data: The results were interesting . . .                          . . . its going
-      to be dangerous down there, gook luck!
+    data: The results were interesting . . .                          . . . it's
+      going to be dangerous down there, good luck!
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 49.583332
+    functionName: LoadLoadingSceneAndReset
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
