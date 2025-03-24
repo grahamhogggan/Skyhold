@@ -149,6 +149,10 @@ public class PlayerInventory : MonoBehaviour
 
         return inventory.ItemCount();
     }
+    public static int Quantity(string item)
+    {
+        return instance.inventory.Quantity(item);
+    }
     public static void StaticRefresh()
     {
         instance.RefreshInventory();

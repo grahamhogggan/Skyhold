@@ -9,6 +9,7 @@ public class TextWriter : MonoBehaviour
     private float charTime = 0.05f;
     private float delay = 0;
     private int index = 0;
+    private float timeSinceFinished = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +27,24 @@ public class TextWriter : MonoBehaviour
                 index++;
                 delay = 0;
         }
-        Debug.Log(text);
-        Debug.Log(targetText);
+        if(IsFinishedWriting())
+        {
+            timeSinceFinished+=Time.deltaTime;
+        }
     }
     public void SetTarget(string message){
         text = "";
         targetText = message;
         index = 0;
         delay =0;
+        timeSinceFinished = 0;
+    }
+    public bool IsFinishedWriting()
+    {
+        return targetText == text;
+    }
+    public float TimeSinceFinished()
+    {
+        return timeSinceFinished;
     }
 }
