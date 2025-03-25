@@ -46,8 +46,12 @@ public class EnemySpawner : MonoBehaviour
     }
     void LoadEnemies()
     {
-        //DO this 
-        var enemyDataFiles = Directory.EnumerateFiles(Overlord.saveDirectory+"/enemies");
+        string enemyDirectory = Overlord.saveDirectory+"/enemies";
+        if(!Directory.Exists(enemyDirectory))
+        {
+            Directory.CreateDirectory(enemyDirectory);
+        }
+        var enemyDataFiles = Directory.EnumerateFiles(enemyDirectory);
         foreach(string path in enemyDataFiles)
         {
             if(Overlord.OverwriteMode)
