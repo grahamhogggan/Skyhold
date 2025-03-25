@@ -13415,6 +13415,7 @@ MonoBehaviour:
     - {fileID: 221501362939491790, guid: 9b99abfb5b078c74ebc9fcdec890b92b, type: 3}
     - {fileID: 7949785740573415645, guid: 1769502d8b3bfd64d8ef5258c1eb8d8e, type: 3}
     - {fileID: 9118556671615801782, guid: 6d40533af9603da43aa256f0dbae20b8, type: 3}
+    - {fileID: 7949785740573415645, guid: abec6f36e9e7e614798f7baa42c9a606, type: 3}
     - {fileID: 7949785740573415645, guid: 195adc891318f6f4bbd862767d75b9a8, type: 3}
   - enemies:
     - {fileID: 7949785740573415645, guid: 893acfe3065ca964ba0afc56121a5b47, type: 3}
