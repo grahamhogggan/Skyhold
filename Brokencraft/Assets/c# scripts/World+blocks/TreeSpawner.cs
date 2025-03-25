@@ -27,12 +27,13 @@ public class TreeSpawner : MonoBehaviour
                 Block originBlock = world.GetBlock(x, heightAtValue+1, y);
                 if(currentBlock == null) continue;
                 
-                if(currentBlock.typeName == "grass"&&Random.Range(0,spacing) == 1)
+                if(currentBlock.typeName == "grass"&&Random.Range(0,spacing/2) == 1)
                 {
                     if(Random.Range(0,3)!=1)
                     {
                         if(profile.bushes) SpawnBush(originBlock);
                     }
+                    else if(profile.pines) SpawnPineTree(originBlock);
                     else if(profile.trees) SpawnTree(originBlock);
                 }
                 else if((currentBlock.typeName == "sand"&&originBlock.typeName!="water4"&&Random.Range(0,spacing) == 1))
@@ -51,6 +52,15 @@ public class TreeSpawner : MonoBehaviour
         BlockChange part2 =  StructureManager.GetStructure("tree pt 2");
         c.GetNearChunk(new Vector3(0,-1,0)).ApplyAlternateChanges(part2,offset,0);
 
+    }
+    private static void SpawnPineTree(Block origin)
+    {
+        BlockChange change = StructureManager.GetStructure("pine tree");
+        Chunk c = origin.getChunk();
+        Vector3 offset = origin.GetLocalPos()+new Vector3(-2,0,-2);
+        c.ApplyAlternateChanges(change,offset,0);
+        BlockChange part2 =  StructureManager.GetStructure("pine tree 2");
+        c.GetNearChunk(new Vector3(0,-1,0)).ApplyAlternateChanges(part2,offset,0);
     }
     private static void SpawnBush(Block origin)
     {
@@ -96,5 +106,6 @@ public struct TreeProfile
     public bool trees;
     public bool bushes;
     public bool palms;
+    public bool pines;
     
 }

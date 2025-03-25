@@ -783,6 +783,8 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 8d94fc7a8a2a24340aaee6555c0f6fe5, type: 3}
   - {fileID: 4900000, guid: eee085773f512824b9d879981a99fd13, type: 3}
   - {fileID: 4900000, guid: e8a902b7274000c438e33eb90e6e7d8d, type: 3}
+  - {fileID: 4900000, guid: 89198b8a46a10164193f5afaa624cb59, type: 3}
+  - {fileID: 4900000, guid: 2b020b4004cc66245baea04a8cf07f8f, type: 3}
 --- !u!1 &95594497
 GameObject:
   m_ObjectHideFlags: 0
@@ -4736,7 +4738,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &642504807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7246,14 +7248,17 @@ MonoBehaviour:
     trees: 1
     bushes: 1
     palms: 1
+    pines: 0
   - spacing: 10
-    trees: 1
+    trees: 0
     bushes: 1
     palms: 0
+    pines: 1
   - spacing: 36
     trees: 0
     bushes: 0
     palms: 1
+    pines: 0
 --- !u!4 &956340294
 Transform:
   m_ObjectHideFlags: 0
@@ -7976,6 +7981,17 @@ PrefabInstance:
       propertyPath: buildLayers.m_Bits
       value: 311
       objectReference: {fileID: 0}
+    - target: {fileID: 1401238848640861479, guid: 45a50af9425d503448c7219d7cc6ce8b,
+        type: 3}
+      propertyPath: instanceBlocks.Array.size
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1401238848640861479, guid: 45a50af9425d503448c7219d7cc6ce8b,
+        type: 3}
+      propertyPath: instanceBlocks.Array.data[44]
+      value: 
+      objectReference: {fileID: 3189495928652548006, guid: 37982f60ffa166345bce346bcc94068d,
+        type: 3}
     - target: {fileID: 3292108504279784823, guid: 45a50af9425d503448c7219d7cc6ce8b,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -10477,7 +10493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 117, y: 44}
+  m_AnchoredPosition: {x: 452, y: 93}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1300588734
@@ -10771,10 +10787,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
