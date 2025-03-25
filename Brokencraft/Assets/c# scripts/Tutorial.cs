@@ -5,15 +5,12 @@ using TMPro;
 
 public class Tutorial : MonoBehaviour
 {
-    TextWriter writer;
+    [SerializeField] private TextWriter writer;
     [SerializeField] private float waitToHideTime;
     [SerializeField] private TMP_Text nextGoalText;
     [SerializeField] private GameObject nextGoalPanel;
     [SerializeField] private GameObject hide;
-    void Start()
-    {
-        writer = GetComponent<TextWriter>();
-    }
+    
     void Update()
     {
         if(Overlord.paused) return;
@@ -40,7 +37,7 @@ public class Tutorial : MonoBehaviour
         }
         else if(PersistentData.tutorialStep == 2)
         {
-            if(writer.TimeSinceFinished()>=15)
+            if(writer.TimeSinceFinished()>=7)
             {
                 PersistentData.tutorialStep = 3;
             }
@@ -98,7 +95,7 @@ public class Tutorial : MonoBehaviour
         }
         else if(PersistentData.tutorialStep == 10)
         {
-            if(writer.TimeSinceFinished()>=15)
+            if(writer.TimeSinceFinished()>=7)
             {
                 PersistentData.tutorialStep = 11;
             }

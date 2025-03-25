@@ -10,6 +10,12 @@ public class CutsceneLoader : MonoBehaviour
             PersistentData.SceneToPlay =0;
             SceneManager.LoadScene(4);
         }
+        else if(PersistentData.SceneToPlay!=0)
+        {
+            int p = PersistentData.SceneToPlay;
+            PersistentData.SceneToPlay =0;
+            SceneManager.LoadScene(p);
+        }
         else
         {
             SceneManager.LoadScene(3);

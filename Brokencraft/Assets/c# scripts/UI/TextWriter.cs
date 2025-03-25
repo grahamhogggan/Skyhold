@@ -15,6 +15,7 @@ public class TextWriter : MonoBehaviour
     {
         text = "";
         targetText = "";
+        timeSinceFinished = Mathf.Infinity;
     }
 
     // Update is called once per frame
