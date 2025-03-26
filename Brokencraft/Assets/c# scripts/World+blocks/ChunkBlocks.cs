@@ -56,6 +56,10 @@ public class ChunkBlocks : MonoBehaviour
                     {
                         DesertWorldGen(spawned, blockY, h, perlin,cavePerlin);
                     }
+                    else if(Overlord.type == Overlord.WorldType.Snow)
+                    {  
+                        SnowWorldGen(spawned, blockY, h, perlin,cavePerlin);
+                    }
 
                 }
             }
@@ -117,6 +121,73 @@ public class ChunkBlocks : MonoBehaviour
                 spawned.gameObject.SetActive(false);
             }
 
+        }
+    }
+     private void SnowWorldGen(Block spawned, int blockY, int h, float perlin, float cavePerlin)
+    {
+        float modifiedWaterLevel = waterLevel-8;
+        if (blockY > h)
+        {
+            if (blockY < modifiedWaterLevel)
+            {
+                spawned.SetBlock("water4");
+            }
+            else if(blockY==modifiedWaterLevel)
+            {
+                spawned.SetBlock("ice");
+            }
+            else
+            {
+                spawned.gameObject.SetActive(false);
+            }
+
+        }
+        else
+        {
+            if (h <= modifiedWaterLevel + 1 && blockY > h - 2)
+            {
+                spawned.SetBlock("ice");
+            }
+            else if (blockY >= snowPeak)
+            {
+                spawned.SetBlock("snow");
+            }
+            else if (blockY == h)
+            {
+                spawned.SetBlock("snow");
+
+            }
+        }
+        if (blockY >= h)
+        {
+            chunk.Expose();
+        }
+
+
+        if (perlin - blockY > 3)
+        {
+            if (Random.Range(0, 50) == 25)
+            {
+                spawned.SetBlock("metal");
+            }
+            else if (Random.Range(0, 200) == 25)
+            {
+                spawned.SetBlock("gold");
+            }
+            else
+            {
+                spawned.SetBlock("stone");
+            }
+
+            if(Mathf.Abs(blockY-((perlin-ground)/caveShift)-caveLevel)<cavePerlin-caveThreshold)
+            {
+                spawned.gameObject.SetActive(false);
+            }
+
+        }
+        else if(perlin-blockY>0)
+        {
+            spawned.SetBlock("snow");
         }
     }
     private void MountainWorldGen(Block spawned, int blockY, int h, float perlin, float cavePerlin)
@@ -236,6 +307,10 @@ public class ChunkBlocks : MonoBehaviour
         else if (Overlord.type == Overlord.WorldType.Desert)
         {
             return DesertGen(x, y);
+        }
+        else if(Overlord.type == Overlord.WorldType.Snow)
+        {
+            return DesertGen(x,y);
         }
 
 

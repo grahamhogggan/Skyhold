@@ -7259,6 +7259,11 @@ MonoBehaviour:
     bushes: 0
     palms: 1
     pines: 0
+  - spacing: 36
+    trees: 0
+    bushes: 0
+    palms: 0
+    pines: 1
 --- !u!4 &956340294
 Transform:
   m_ObjectHideFlags: 0
@@ -7981,17 +7986,6 @@ PrefabInstance:
       propertyPath: buildLayers.m_Bits
       value: 311
       objectReference: {fileID: 0}
-    - target: {fileID: 1401238848640861479, guid: 45a50af9425d503448c7219d7cc6ce8b,
-        type: 3}
-      propertyPath: instanceBlocks.Array.size
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 1401238848640861479, guid: 45a50af9425d503448c7219d7cc6ce8b,
-        type: 3}
-      propertyPath: instanceBlocks.Array.data[44]
-      value: 
-      objectReference: {fileID: 3189495928652548006, guid: 37982f60ffa166345bce346bcc94068d,
-        type: 3}
     - target: {fileID: 3292108504279784823, guid: 45a50af9425d503448c7219d7cc6ce8b,
         type: 3}
       propertyPath: m_CullingMask.m_Bits
@@ -13441,11 +13435,19 @@ MonoBehaviour:
     - {fileID: 221501362939491790, guid: 9b99abfb5b078c74ebc9fcdec890b92b, type: 3}
     - {fileID: 7949785740573415645, guid: 1769502d8b3bfd64d8ef5258c1eb8d8e, type: 3}
     - {fileID: 932832980839047979, guid: 9dee80d327d03374fa1da44eb14bb80e, type: 3}
+  - enemies:
+    - {fileID: 7949785740573415645, guid: 893acfe3065ca964ba0afc56121a5b47, type: 3}
+    - {fileID: 9118556671615801782, guid: 6d40533af9603da43aa256f0dbae20b8, type: 3}
+    - {fileID: 7949785740573415645, guid: 195adc891318f6f4bbd862767d75b9a8, type: 3}
+    - {fileID: 221501362939491790, guid: 9b99abfb5b078c74ebc9fcdec890b92b, type: 3}
+    - {fileID: 7949785740573415645, guid: 1769502d8b3bfd64d8ef5258c1eb8d8e, type: 3}
+    - {fileID: 7949785740573415645, guid: abec6f36e9e7e614798f7baa42c9a606, type: 3}
   bosses:
     enemies:
     - {fileID: 5313271226300185539, guid: 3102aee036a98594f8e20a8c411cf6e6, type: 3}
     - {fileID: 6113549114222433770, guid: ae58aee8ac473ae45a8d55b5b1dae9ad, type: 3}
     - {fileID: 416341988663598152, guid: 230f83817034c354a8028780d3f906c5, type: 3}
+    - {fileID: 5313271226300185539, guid: 3102aee036a98594f8e20a8c411cf6e6, type: 3}
   spawnRate: 10
 --- !u!1 &1676099840
 GameObject:

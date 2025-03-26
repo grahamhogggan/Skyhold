@@ -28,13 +28,21 @@ public class GameStarter : MonoBehaviour
     }
     void Start()
     {
-        if(continueButton!=null)
+        if (continueButton != null)
         {
-        PlayerData player = JsonUtility.FromJson<PlayerData>(File.ReadAllText(Application.persistentDataPath + "/PlayerData.savedata"));
-        if(player.health<=0)
-        {
-            continueButton.SetActive(false);
-        }
+            if (!File.Exists(Application.persistentDataPath + "/PlayerData.savedata"))
+            {
+                continueButton.SetActive(false);
+            }
+            else
+            {
+                PlayerData player = JsonUtility.FromJson<PlayerData>(File.ReadAllText(Application.persistentDataPath + "/PlayerData.savedata"));
+                if (player.health <= 0)
+                {
+                    continueButton.SetActive(false);
+                }
+            }
+
         }
 
     }

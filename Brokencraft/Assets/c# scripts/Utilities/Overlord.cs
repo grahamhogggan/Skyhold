@@ -40,6 +40,7 @@ public class Overlord : MonoBehaviour
         Mountain = 1,
         Desert = 2,
 
+        Snow = 3,
 
     }
     public static WorldType type;
