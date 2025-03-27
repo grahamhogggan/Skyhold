@@ -40,7 +40,7 @@ public class TreeSpawner : MonoBehaviour
                 {
                     if (profile.palms) SpawnPalmTree(originBlock);
                 }
-                else if (currentBlock.typeName == "snow" && Random.Range(0, spacing) == 1)
+                else if (currentBlock.typeName == "snow"  && (originBlock.typeName != "water4" && originBlock.typeName != "ice")&& Random.Range(0, spacing) == 1)
                 {
                     if (profile.pines) SpawnPineTree(originBlock);
                 }

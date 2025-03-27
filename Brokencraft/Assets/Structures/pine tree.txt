@@ -1,4 +1,4 @@
 {"changeCodes":["2/0/2/place: wood/90","2/1/2/place: wood/90","2/2/2/place: wood/270","2/3/2/place: wood/270","2/4/2/place: wood/270",
 "3/2/2/place: pine leaves/0","1/2/2/place: pine leaves/0","2/2/3/place: pine leaves/0","2/2/1/place: pine leaves/0","3/2/3/place: pine leaves/0","1/2/3/place: pine leaves/0","3/2/1/place: pine leaves/0","1/2/1/place: pine leaves/0","2/2/4/place: pine leaves/0","4/2/2/place: pine leaves/0","2/2/0/place: pine leaves/0","0/2/2/place: pine leaves/0",
 
-"3/3/2/place: pine leaves/0","1/3/2/place: pine leaves/0","2/3/3/place: pine leaves/0","2/3/1/place: pine leaves/0","3/3/3/place: pine leaves/0","1/3/3/place: pine leaves/0","3/3/1/place: pine leaves/0","1/3/1/place: pine leaves/0","3/4/2/place: pine leaves/0","1/4/2/place: pine leaves/0","2/4/3/place: pine leaves/0","2/4/1/place: pine leaves/0"],"exposed": true}
+"3/4/2/place: pine leaves/0","1/4/2/place: pine leaves/0","2/4/3/place: pine leaves/0","2/4/1/place: pine leaves/0"],"exposed": true}

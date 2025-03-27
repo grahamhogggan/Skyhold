@@ -80,6 +80,7 @@ public class ChasingEnemy : Enemy
             jumping = true;
             Yvelocity = 5;
             jetPackFlames.SetActive(true);
+            
         }
         else
         {
@@ -108,10 +109,11 @@ public class ChasingEnemy : Enemy
     private bool ShouldJump(Vector3 dir)
     {
         RaycastHit hit;
-        if(Physics.Raycast(feet.transform.position,new Vector3(dir.x,0,dir.z),out hit,1)&&!Physics.Raycast(transform.position, transform.up, 2)&&body.isGrounded)
+        if(Physics.Raycast(feet.transform.position,new Vector3(dir.x,0,dir.z),out hit,1)&&!Physics.Raycast(transform.position, transform.up, 2,~(1 << gameObject.layer))&&body.isGrounded)
         {
             if(hit.transform.gameObject.GetComponent<Player>())
             {
+ 
                 return false;
             }
             else

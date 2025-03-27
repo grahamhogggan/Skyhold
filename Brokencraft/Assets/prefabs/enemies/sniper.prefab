@@ -205,7 +205,10 @@ MonoBehaviour:
   renderer: {fileID: 4802909273974620172}
   DayDeath: 1
   allDrops: 0
-  drops: []
+  drops:
+  - processor
+  - wires
+  - beam
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &9054239787764848323
 PrefabInstance:
