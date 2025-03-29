@@ -15,6 +15,7 @@ public class FirstPersonMovement : MonoBehaviour
     private bool inAir= false;
     public static bool active = true;
     public AudioSource footsteps;
+    public AudioSource jump;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +26,17 @@ public class FirstPersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dirX = active?Input.GetAxisRaw("Horizontal") * speed*Time.deltaTime:0;
-        float dirZ = active?Input.GetAxisRaw("Vertical") * speed*Time.deltaTime:0;
-        controller.Move(transform.TransformDirection(dirX, Vvelocity*Time.deltaTime,dirZ));
+        float dirX = active?Input.GetAxisRaw("Horizontal") * speed:0;
+        float dirZ = active?Input.GetAxisRaw("Vertical") * speed:0;
+        if(Vector3.Magnitude(new Vector3(dirX,0,dirZ))>0.1f&&controller.isGrounded)
+        {
+            footsteps.enabled = true;
+        }
+        else
+        {
+            footsteps.enabled = false;
+        }
+        controller.Move(transform.TransformDirection(dirX, Vvelocity,dirZ)*Time.deltaTime);
 
         if(controller.isGrounded)
         {
@@ -52,6 +61,7 @@ public class FirstPersonMovement : MonoBehaviour
         if (Input.GetKey("space")&&controller.isGrounded&&active)
         {
             Vvelocity = jumpForce;
+            jump.Play();
         }
         if(Vvelocity > -100)
         {

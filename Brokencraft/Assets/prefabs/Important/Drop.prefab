@@ -122,6 +122,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: extracter
   ID: 0
+  collectSound: {fileID: 65829266077972783, guid: 93ed3f294855141448e0f7ce6c886a69,
+    type: 3}
 --- !u!54 &5052465354037305085
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ public class DroppedItem : MonoBehaviour
 {
     public string item;
     public int ID;
+    public GameObject collectSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class DroppedItem : MonoBehaviour
         {
             PlayerInventory.StaticAddItem(item);
             Overlord.DeleteDrop(ID);
+            Instantiate(collectSound);
             Destroy(gameObject);
         }
     }
