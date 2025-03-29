@@ -14,13 +14,14 @@ public class RecipeDisplay : MonoBehaviour
     [SerializeField] private Image img;
 
     [SerializeField]private GameObject toggle;
-
+    [SerializeField] private AudioSource sfx;
     private string[] items;
 
     public void Craft()
     {
         if(PlayerCanCraft())
         {
+            sfx.Play();
             PlayerInventory.ClearCrafting();
             foreach(string items in items)
             {

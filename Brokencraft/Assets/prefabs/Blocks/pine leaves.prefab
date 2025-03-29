@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7361268965717732493}
   - component: {fileID: 6556809951526705595}
   - component: {fileID: -8776630359139950076}
+  - component: {fileID: 5883127381705642874}
   m_Layer: 0
   m_Name: pine leaves
   m_TagString: Untagged
@@ -99,6 +100,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   alternate: leaves
+--- !u!114 &5883127381705642874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189495928652548006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721f8559bb8e4d147a767de319a5f130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 65829266077972783, guid: 720e135292d3f824b93bb1139930e06d, type: 3}
 --- !u!1 &4869665992440399100
 GameObject:
   m_ObjectHideFlags: 0

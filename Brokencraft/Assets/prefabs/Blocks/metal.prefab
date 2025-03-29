@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: 3713191609114991956}
   - component: {fileID: 2479197127988799828}
   - component: {fileID: 4187308133085709096}
+  - component: {fileID: 4341029962466347186}
   m_Layer: 0
   m_Name: metal
   m_TagString: Untagged
@@ -428,6 +429,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   multiplier: 5
+--- !u!114 &4341029962466347186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189495928652548006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721f8559bb8e4d147a767de319a5f130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 65829266077972783, guid: afc7b05ef5bb34a45af2bef3d967d034, type: 3}
 --- !u!1 &3423444072251081418
 GameObject:
   m_ObjectHideFlags: 0

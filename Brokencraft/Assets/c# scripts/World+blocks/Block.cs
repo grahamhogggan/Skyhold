@@ -21,7 +21,6 @@ public class Block : MonoBehaviour
 
     public void Mine()
     {
-        
         gameObject.SetActive(false);
         parentChunk.RecordChange("mined/0", this);
         

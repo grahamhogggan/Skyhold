@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: -4670160577987269172}
   - component: {fileID: 17425508783560942}
   - component: {fileID: -3618307994059063173}
+  - component: {fileID: 1019635735573438683}
   m_Layer: 0
   m_Name: sand
   m_TagString: Untagged
@@ -182,3 +183,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   alternate: 
+--- !u!114 &1019635735573438683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189495928652548006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721f8559bb8e4d147a767de319a5f130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 65829266077972783, guid: e9fe6dfea20faf6449724442036fd6c7, type: 3}

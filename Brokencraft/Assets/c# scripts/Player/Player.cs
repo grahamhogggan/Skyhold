@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] private HitEffect hitEffect;
     public int saveCount{get;set;}
     private bool newGame;
+    public AudioSource damagedSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,7 @@ public class Player : MonoBehaviour
     {
         health -= damage;
         hitEffect.Hit();
+        damagedSound.Play();
         
     }
     public void UpgradeHealth(float amount)

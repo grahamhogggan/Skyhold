@@ -18,6 +18,8 @@ public class Clicker : MonoBehaviour
                 if(objectHit.GetComponent<Clickable>())
                 {
                     objectHit.GetComponent<Clickable>().OnClick.Invoke();
+                    AudioSource sound = objectHit.GetComponent<Clickable>().interactSound;
+                    if(sound!=null) sound.Play();
                 }
             }
         }

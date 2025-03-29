@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6696804811599890616}
   - component: {fileID: 1016200302800811840}
   - component: {fileID: -5822146506430779188}
+  - component: {fileID: -6766581803644412996}
   m_Layer: 0
   m_Name: snow
   m_TagString: Untagged
@@ -99,6 +100,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   alternate: 
+--- !u!114 &-6766581803644412996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189495928652548006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721f8559bb8e4d147a767de319a5f130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 65829266077972783, guid: 720e135292d3f824b93bb1139930e06d, type: 3}
 --- !u!1 &4852978522819901032
 GameObject:
   m_ObjectHideFlags: 0

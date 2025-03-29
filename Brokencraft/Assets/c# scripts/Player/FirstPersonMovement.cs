@@ -14,6 +14,7 @@ public class FirstPersonMovement : MonoBehaviour
     public bool inWater = false;
     private bool inAir= false;
     public static bool active = true;
+    public AudioSource footsteps;
     // Start is called before the first frame update
     void Start()
     {

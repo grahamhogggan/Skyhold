@@ -10,6 +10,7 @@ public class Upgrade : MonoBehaviour
    private int cost;
    public string name;
    public int initialCost;
+   public AudioSource soundEffect;
 void Start()
 {
      cost = UpgradeManager.GetCost(name)*initialCost;
@@ -20,6 +21,7 @@ void Start()
     {
         ScoreManager.SpendScore(cost);
         UpgradeManager.Purchase(name);
+        soundEffect.Play();
     }
    }
 public void Update()

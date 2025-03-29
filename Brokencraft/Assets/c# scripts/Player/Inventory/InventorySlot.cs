@@ -12,6 +12,7 @@ public class InventorySlot : MonoBehaviour
     public Sprite sprite;
     public string item;
     public int quantity;    
+    public AudioSource clickSound;
     public void Refresh()
     {
         if(quantity == 0)
@@ -42,7 +43,7 @@ public class InventorySlot : MonoBehaviour
     }
     public void OnClick()
     {
-        Debug.Log("clicked on item "+PlayerInventory.indexOf(item));
+        clickSound.Play();
         if(PlayerInventory.clickedItemIndex == -1)
         {
             PlayerInventory.clickedItemIndex = PlayerInventory.indexOf(item);

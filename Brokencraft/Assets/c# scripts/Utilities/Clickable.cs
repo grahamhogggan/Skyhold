@@ -6,5 +6,6 @@ using UnityEngine.Events;
 public class Clickable : MonoBehaviour
 {
     public UnityEvent OnClick;
+    public AudioSource interactSound;
     
 }

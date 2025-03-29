@@ -27,6 +27,9 @@ public class Miner : MonoBehaviour
     public Rotator crosshairRotator;
     public TMP_Text interactableText;
     private string lastItemEquipped;
+    public GameObject defaultMineSound;
+    public GameObject defaultPlaceSound;
+    public AudioSource attackSound;
 
     // Start is called before the first frame update
     public void Start()
@@ -189,6 +192,7 @@ public class Miner : MonoBehaviour
                 */
                 if (build != null && build.IsCellClear())
                 {
+                    Instantiate(defaultPlaceSound);
                     inventory.RemoveItem(equippedItem);
                     Quaternion lookRot = Quaternion.LookRotation(transform.position - build.transform.position);
                     double rot = lookRot.eulerAngles.y;
@@ -236,6 +240,14 @@ public class Miner : MonoBehaviour
                 Block hitBlock = hit.transform.gameObject.GetComponentInParent<Block>();
                 if (hitBlock != null)
                 {
+                    if(hitBlock.GetComponentInChildren<AlternativeMineSound>())
+                    {
+                        Instantiate(hitBlock.GetComponentInChildren<AlternativeMineSound>().sound);
+                    }
+                    else
+                    {
+                    Instantiate(defaultMineSound);
+                    }
                     Dense density = hitBlock.GetComponentInChildren<Dense>();
                     if (density != null) cooldown *= density.multiplier;
 
@@ -260,6 +272,7 @@ public class Miner : MonoBehaviour
                     if (hitEnemy != null)
                     {
                         //Debug.Log("take that! (" + weaponStats.x * (UpgradeManager.GetUpgradeAmount("damage") + 1) + ")");
+                        attackSound.Play();
                         hitEnemy.PlayerDamage(weaponStats.x * (UpgradeManager.GetUpgradeAmount("damage")*0.1f + 1));
                     }
                 }
