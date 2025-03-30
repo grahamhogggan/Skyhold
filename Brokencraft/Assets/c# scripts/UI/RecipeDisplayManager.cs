@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Text;
 
 public class RecipeDisplayManager : MonoBehaviour
 {
@@ -29,11 +30,11 @@ public class RecipeDisplayManager : MonoBehaviour
 
         if(craftableMode)
         {
-            txt.text = "Craftable only";
+            txt.text = "\u2713";
         }
         else
         {
-            txt.text = "All Recipes";
+            txt.text = "\u2717";
         }
     }
     public void Up()

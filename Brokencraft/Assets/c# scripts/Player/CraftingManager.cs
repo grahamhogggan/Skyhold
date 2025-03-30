@@ -32,18 +32,6 @@ public class CraftingManager : MonoBehaviour
         if(hypotheticalResult!=null)
         {
             craftedItemText.text = hypotheticalResult[0] + " x" + hypotheticalResult[1];
-            if(Input.GetKeyDown("e"))
-            {
-                if(Input.GetKey("left shift"))
-                {
-                RepeatCraft();
-
-                }
-                else
-                {
-                    Craft();
-                }
-            }
 
         }
         else

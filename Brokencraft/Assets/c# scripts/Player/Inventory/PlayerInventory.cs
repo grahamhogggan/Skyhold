@@ -52,10 +52,6 @@ public class PlayerInventory : MonoBehaviour
                 Overlord.Pause(false);
             }
         }
-        if(Input.GetMouseButtonDown(1)&&clickedItemIndex!=-1)
-        {
-            ToCrafting();
-        }
 
         if(Input.GetKeyDown("a")&&inventoryPanel.activeSelf)
         {
