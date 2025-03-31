@@ -60,6 +60,10 @@ public class ChunkBlocks : MonoBehaviour
                     {  
                         SnowWorldGen(spawned, blockY, h, perlin,cavePerlin);
                     }
+                    else if(Overlord.type == Overlord.WorldType.Jungle)
+                    {
+                        MountainWorldGen(spawned, blockY, h, perlin,cavePerlin);
+                    }
 
                 }
             }
@@ -312,6 +316,10 @@ public class ChunkBlocks : MonoBehaviour
         {
             return DesertGen(x,y);
         }
+        else if(Overlord.type == Overlord.WorldType.Jungle)
+        {
+            return JungleGen(x,y);
+        }
 
 
         //for building structures
@@ -327,6 +335,13 @@ public class ChunkBlocks : MonoBehaviour
     public static float MountainGen(float x, float y)
     {
         float perlin1 = Mathf.PerlinNoise(Spawner.seed + x * size * 2, Spawner.seed + y * size * 2) * scale * 1.3f;
+        //float perlin15 = Mathf.PerlinNoise(Mathf.Pow(Spawner.seed,0.7f) + x * size, Mathf.Pow(Spawner.seed,0.7f) + y * size) * scale;
+        //float perlin2 = Mathf.PerlinNoise(Mathf.Pow(Spawner.seed,0.5f) + x * size*2,Mathf.Pow(Spawner.seed,0.5f) + y * size*2) * scale*0.5f;
+        return (perlin1) + ground;
+    }
+    public static float JungleGen(float x, float y)
+    {
+        float perlin1 = Mathf.PerlinNoise(Spawner.seed + x * size * 1.5f, Spawner.seed + y * size * 1.5f) * scale * 1.2f;
         //float perlin15 = Mathf.PerlinNoise(Mathf.Pow(Spawner.seed,0.7f) + x * size, Mathf.Pow(Spawner.seed,0.7f) + y * size) * scale;
         //float perlin2 = Mathf.PerlinNoise(Mathf.Pow(Spawner.seed,0.5f) + x * size*2,Mathf.Pow(Spawner.seed,0.5f) + y * size*2) * scale*0.5f;
         return (perlin1) + ground;

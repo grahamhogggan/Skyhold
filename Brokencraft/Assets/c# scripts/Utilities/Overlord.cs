@@ -39,9 +39,12 @@ public class Overlord : MonoBehaviour
         Countryside = 0,
         Mountain = 1,
         Desert = 2,
-
         Snow = 3,
-
+        Jungle = 4,
+        Titan = 5,
+        Mixed = 6, 
+        Space = 7,
+        Finale = 8
     }
     public static WorldType type;
     void Awake()

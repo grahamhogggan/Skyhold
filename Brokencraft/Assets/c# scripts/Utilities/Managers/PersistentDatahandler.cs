@@ -32,7 +32,7 @@ public class PersistentDatahandler : MonoBehaviour
         }
         else
         {
-            PersistentData.Init(4);
+            PersistentData.Init(9);
         }
     }
     void SavePersistentData()

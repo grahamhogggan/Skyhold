@@ -190,6 +190,15 @@ public class CraftingManager : MonoBehaviour
         AddRecipe("beam,processor,qubit,truss,wires","reactor/1","machines");
         AddRecipe("battery,beam,gold,metal,wires","electric sword/1","tools");
         AddRecipe("battery,beam,gold,gold,gold","gold pick/1","tools");
+        AddLevelSpecificRecipes();
+    }
+    private void AddLevelSpecificRecipes()
+    {
+        if(Overlord.type == Overlord.WorldType.Jungle)
+        {
+        AddRecipe("shroom stalk,shroom stalk,shroom stalk","stick/1","basics");
+        AddRecipe("blue shroom,metal,shroom","wires/1","basics");
+        }
     }
     private void AddRecipe(string costs, string results, string category = "default")
     {
