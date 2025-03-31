@@ -15,6 +15,7 @@ public class Meteor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (speed == 0) return;
         GetComponent<Rigidbody>().velocity = transform.forward*speed;
     }
     void OnCollisionEnter(Collision coll)
