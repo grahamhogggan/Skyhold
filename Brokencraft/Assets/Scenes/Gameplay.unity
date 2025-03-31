@@ -246,7 +246,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bb31a9ba2638646b39b309b14b4887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  freq: 10
+  freq: 5
   spawner: {fileID: 1662787911}
 --- !u!4 &57528098
 Transform:
@@ -14599,7 +14599,7 @@ MonoBehaviour:
     - {fileID: 6113549114222433770, guid: ae58aee8ac473ae45a8d55b5b1dae9ad, type: 3}
     - {fileID: 416341988663598152, guid: 230f83817034c354a8028780d3f906c5, type: 3}
     - {fileID: 416341988663598152, guid: eb6b96d5bc438cc47b72abc5f356ef7f, type: 3}
-    - {fileID: 5313271226300185539, guid: 3102aee036a98594f8e20a8c411cf6e6, type: 3}
+    - {fileID: 416341988663598152, guid: 9ee20201c79bc8042ab51818f6db41ef, type: 3}
   spawnRate: 10
 --- !u!1 &1676099840
 GameObject:

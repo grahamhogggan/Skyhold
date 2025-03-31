@@ -381,7 +381,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 20.8
+    m_StopTime: 20.75
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -1588,27 +1588,28 @@ AnimationClip:
     messageOptions: 0
   - time: 5.8
     functionName: SetTarget
-    data: If you were hoping for a new area to explore, you'll be disappointed
+    data: These signals led me to a new area to investigate, there you'll find a
+      frigid snow field
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 12.3
     functionName: SetTarget
-    data: Did you really think there would be this much content in a demo?
+    data: You're welcome to explore this new area, or continue exploring the previous
+      one
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 17.216667
     functionName: SetTarget
-    data: At this point, you'll likely quit playing. leaving me here,         . .
-      . alone . . .
+    data: 'Just keep in mind you can''t be in two places at once. '
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 20.8
+  - time: 20.75
     functionName: LoadRegularScene
     data: 
     objectReferenceParameter: {fileID: 0}

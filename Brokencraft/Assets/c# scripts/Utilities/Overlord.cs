@@ -60,6 +60,7 @@ public class Overlord : MonoBehaviour
         ReadInfo();
         saveCount = 0;
         SaveManager.Register(Save);
+        wasNight = true;
 
     }
 
@@ -102,14 +103,14 @@ public class Overlord : MonoBehaviour
                 }
             }
 
-
-        }
-
         if (isNight && !wasNight)
         {
             OnNightStart();
         }
         wasNight = isNight;
+
+        }
+
     }
     public static bool IsNight() { return instance.isNight; }
     public static float GetRawTime()
@@ -187,6 +188,7 @@ public class Overlord : MonoBehaviour
     }
     private void OnNightStart()
     {
+        Debug.Log("night started");
         if (secondsPerDay > minSecondsPerDay)
         {
             secondsPerDay -= 30;
