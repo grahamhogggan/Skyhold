@@ -8,6 +8,8 @@ public class HoveringEnemy : Enemy
     private CharacterController body;
     [SerializeField] private float floatDist;
     [SerializeField] private float speed = 5;
+    public bool RotateToFacePlayer = false;
+    public GameObject mesh;
     
     void Start()
     {
@@ -32,13 +34,17 @@ public class HoveringEnemy : Enemy
                     mov.Normalize();
                 }
                 body.Move(mov*Time.deltaTime);
+                if(RotateToFacePlayer)
+                {
+                    mesh.transform.LookAt(target.transform.position);
+                }
         }
 
     }
     float GetHeight()
     {
         RaycastHit hit;
-        if(Physics.Raycast(transform.position,transform.up*-1,out hit,Mathf.Infinity,Physics.DefaultRaycastLayers,QueryTriggerInteraction.Collide))
+        if(Physics.Raycast(transform.position,transform.up*-1,out hit,Mathf.Infinity,~(1 << gameObject.layer),QueryTriggerInteraction.Collide))
         {
             float h = hit.distance;
             return h;
