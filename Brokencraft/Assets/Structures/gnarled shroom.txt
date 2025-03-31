@@ -1,0 +1,6 @@
+{"changeCodes":["2/0/2/place: shroom stalk/90","2/1/2/place: shroom stalk/90","3/1/2/place: shroom stalk/270","3/2/2/place: shroom stalk/270","4/3/2/place: shroom stalk/270","5/4/2/place: shroom stalk/270","4/2/2/place: shroom stalk/270",
+
+"5/2/2/place: leaves/90","6/2/2/place: leaves/90","5/2/1/place: leaves/90","5/2/3/place: leaves/90",
+"6/3/2/place: leaves/90","4/3/3/place: leaves/90","5/3/3/place: leaves/90","6/3/3/place: leaves/90","4/3/1/place: leaves/90","5/3/1/place: leaves/90","6/3/1/place: leaves/90",
+"5/4/2/place: leaves/90","6/4/2/place: leaves/90","5/4/1/place: leaves/90","5/4/3/place: leaves/90","4/4/2/place: leaves/90"
+],"exposed":true}

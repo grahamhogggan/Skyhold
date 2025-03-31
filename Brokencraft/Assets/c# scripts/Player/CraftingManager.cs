@@ -167,19 +167,22 @@ public class CraftingManager : MonoBehaviour
         recipeBooks = new Dictionary<string, Dictionary<string, string>>();
         AddRecipe("wood", "planks/2","basics");
         AddRecipe("palm wood","planks/1","basics");
-        AddRecipe("planks", "stick/3","basics");
+        AddRecipe("shroom stalk,shroom stalk","planks/1","basics",4);
+        AddRecipe("shroom stalk,shroom stalk","planks/1","basics",5);
+        AddRecipe("planks", "stick/3","basics,construction");
         AddRecipe("pebble,pebble,pebble,pebble,pebble","stone/1","basics");
         AddRecipe("stone,stone", "stone slab/2","construction");
         AddRecipe("stone slab,stone slab","ramp/1","construction");
         AddRecipe("planks,planks,planks,planks","platform/16","construction");
         AddRecipe("planks,planks,planks","stairs/2","construction");
-        AddRecipe("planks,planks,stick,stick", "pickaxe/1","tools");
+        AddRecipe("planks,planks,stick,stick", "pickaxe/1","tools,basics");
         AddRecipe("stick,stick,stick,stick", "frame/1","construction");
         AddRecipe("stick,stone,stone","mace/1","tools");
-        AddRecipe("metal,metal,metal","beam/2","basics");
+        AddRecipe("metal,metal,metal","beam/2","basics,tools,machines");
         AddRecipe("beam,beam,beam,beam","truss/1","construction");
-        AddRecipe("beam,metal,stick", "sword/1","tools");
-        AddRecipe("metal,stick,wires", "torch/2","basics");
+        AddRecipe("beam,metal,stick", "sword/1","tools,basics");
+        AddRecipe("metal,stick,wires", "torch/2","basics,tools");
+        AddRecipe("blue shroom,metal,shroom","wires/1","basics,machines",4);
         AddRecipe("gold,metal,wires,wires","processor/1","machines");
         AddRecipe("leaves,leaves,leaves,leaves,leaves", "dirt/1","other");
         
@@ -190,18 +193,13 @@ public class CraftingManager : MonoBehaviour
         AddRecipe("beam,processor,qubit,truss,wires","reactor/1","machines");
         AddRecipe("battery,beam,gold,metal,wires","electric sword/1","tools");
         AddRecipe("battery,beam,gold,gold,gold","gold pick/1","tools");
-        AddLevelSpecificRecipes();
     }
-    private void AddLevelSpecificRecipes()
+    private void AddRecipe(string costs, string results, string categories = "default",int levelType = -1)
     {
-        if(Overlord.type == Overlord.WorldType.Jungle)
+        if(levelType !=-1&&(int)Overlord.type != levelType) return;
+        string[] categoryArr = categories.Split(",");
+        foreach(string category in categoryArr)
         {
-        AddRecipe("shroom stalk,shroom stalk,shroom stalk","stick/1","basics");
-        AddRecipe("blue shroom,metal,shroom","wires/1","basics");
-        }
-    }
-    private void AddRecipe(string costs, string results, string category = "default")
-    {
         if(recipeBooks.ContainsKey(category))
         {
             recipeBooks[category].Add(costs,results);
@@ -212,6 +210,8 @@ public class CraftingManager : MonoBehaviour
             recipeBooks[category].Add(costs,results);
 
         }
+        }
+
         craftingRecipes.Add(costs,results);
     }
     public static int Cnt()

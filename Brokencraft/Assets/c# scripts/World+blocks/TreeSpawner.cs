@@ -56,6 +56,10 @@ public class TreeSpawner : MonoBehaviour
                 {
                     if (profile.pines) SpawnPineTree(originBlock);
                 }
+                else if (currentBlock.typeName == "stone"  && (originBlock.typeName != "water4")&& Random.Range(0, spacing) == 1)
+                {
+                    if (profile.gnarleds) SpawnGnarledShroom(originBlock);
+                }
             }
         }
     }
@@ -75,6 +79,17 @@ public class TreeSpawner : MonoBehaviour
         Chunk c = origin.getChunk();
         Vector3 offset = origin.GetLocalPos() + new Vector3(-2, 0, -2);
         c.ApplyAlternateChanges(change, offset, 0);
+        //BlockChange part2 = StructureManager.GetStructure("tree pt 2");
+        //c.GetNearChunk(new Vector3(0, -1, 0)).ApplyAlternateChanges(part2, offset, 0);
+
+    }
+            private static void SpawnGnarledShroom(Block origin)
+    {
+        int rot = Random.Range(0, 4);
+        BlockChange change = StructureManager.GetStructure("gnarled shroom");
+        Chunk c = origin.getChunk();
+        Vector3 offset = origin.GetLocalPos() + new Vector3(-2, 0, -2);
+        c.ApplyAlternateChanges(change, offset, rot);
         //BlockChange part2 = StructureManager.GetStructure("tree pt 2");
         //c.GetNearChunk(new Vector3(0, -1, 0)).ApplyAlternateChanges(part2, offset, 0);
 
@@ -144,5 +159,6 @@ public struct TreeProfile
     public bool palms;
     public bool pines;
     public bool shrooms;
+    public bool gnarleds;
 
 }

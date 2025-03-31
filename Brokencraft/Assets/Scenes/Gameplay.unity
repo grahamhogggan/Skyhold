@@ -884,6 +884,7 @@ MonoBehaviour:
   - {fileID: 4900000, guid: 2b020b4004cc66245baea04a8cf07f8f, type: 3}
   - {fileID: 4900000, guid: f4922901a15316248b62531be0d0d789, type: 3}
   - {fileID: 4900000, guid: 47d43f985fd18a843bc9282178aa7000, type: 3}
+  - {fileID: 4900000, guid: 0b79dc420dff1a14ab923bc0253c23b9, type: 3}
 --- !u!1 &95594497
 GameObject:
   m_ObjectHideFlags: 0
@@ -4291,11 +4292,6 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 154167113bf2a9f4696d8431a8bcd850, type: 3}
     - {fileID: 8300000, guid: 3e58bf99d20b9cc4492b1870c7186188, type: 3}
     - {fileID: 8300000, guid: 57dc72509317b7a47a281cbfc2921e78, type: 3}
-  - tracks:
-    - {fileID: 8300000, guid: 57dc72509317b7a47a281cbfc2921e78, type: 3}
-    - {fileID: 8300000, guid: 154167113bf2a9f4696d8431a8bcd850, type: 3}
-    - {fileID: 8300000, guid: 3e58bf99d20b9cc4492b1870c7186188, type: 3}
-    - {fileID: 8300000, guid: f953db1a8fe995845923c04f519af144, type: 3}
   - tracks:
     - {fileID: 8300000, guid: 57dc72509317b7a47a281cbfc2921e78, type: 3}
     - {fileID: 8300000, guid: 154167113bf2a9f4696d8431a8bcd850, type: 3}
@@ -8274,30 +8270,42 @@ MonoBehaviour:
     palms: 1
     pines: 0
     shrooms: 0
+    gnarleds: 0
   - spacing: 10
     trees: 0
     bushes: 1
     palms: 0
     pines: 1
     shrooms: 0
+    gnarleds: 0
   - spacing: 36
     trees: 0
     bushes: 0
     palms: 1
     pines: 0
     shrooms: 0
+    gnarleds: 0
   - spacing: 36
     trees: 0
     bushes: 0
     palms: 0
     pines: 1
     shrooms: 0
+    gnarleds: 0
   - spacing: 4
     trees: 1
     bushes: 1
     palms: 1
     pines: 0
     shrooms: 1
+    gnarleds: 0
+  - spacing: 20
+    trees: 1
+    bushes: 0
+    palms: 0
+    pines: 0
+    shrooms: 0
+    gnarleds: 1
 --- !u!4 &956340294
 Transform:
   m_ObjectHideFlags: 0
@@ -14604,6 +14612,15 @@ MonoBehaviour:
     - {fileID: 221501362939491790, guid: 9b99abfb5b078c74ebc9fcdec890b92b, type: 3}
     - {fileID: 7949785740573415645, guid: 1769502d8b3bfd64d8ef5258c1eb8d8e, type: 3}
     - {fileID: 7949785740573415645, guid: abec6f36e9e7e614798f7baa42c9a606, type: 3}
+  - enemies:
+    - {fileID: 7949785740573415645, guid: 893acfe3065ca964ba0afc56121a5b47, type: 3}
+    - {fileID: 9118556671615801782, guid: 6d40533af9603da43aa256f0dbae20b8, type: 3}
+    - {fileID: 7949785740573415645, guid: 195adc891318f6f4bbd862767d75b9a8, type: 3}
+    - {fileID: 221501362939491790, guid: 983832f2932f0b643906d778dc6c27e7, type: 3}
+    - {fileID: 221501362939491790, guid: 46e1d566446477b458f7d01653d16a0f, type: 3}
+    - {fileID: 221501362939491790, guid: 9b99abfb5b078c74ebc9fcdec890b92b, type: 3}
+    - {fileID: 7949785740573415645, guid: 1769502d8b3bfd64d8ef5258c1eb8d8e, type: 3}
+    - {fileID: 7949785740573415645, guid: abec6f36e9e7e614798f7baa42c9a606, type: 3}
   bosses:
     enemies:
     - {fileID: 5313271226300185539, guid: 3102aee036a98594f8e20a8c411cf6e6, type: 3}
@@ -14611,6 +14628,7 @@ MonoBehaviour:
     - {fileID: 416341988663598152, guid: 230f83817034c354a8028780d3f906c5, type: 3}
     - {fileID: 416341988663598152, guid: eb6b96d5bc438cc47b72abc5f356ef7f, type: 3}
     - {fileID: 416341988663598152, guid: 9ee20201c79bc8042ab51818f6db41ef, type: 3}
+    - {fileID: 5313271226300185539, guid: 3102aee036a98594f8e20a8c411cf6e6, type: 3}
   spawnRate: 10
 --- !u!1 &1676099840
 GameObject:

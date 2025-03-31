@@ -64,6 +64,10 @@ public class ChunkBlocks : MonoBehaviour
                     {
                         MountainWorldGen(spawned, blockY, h, perlin,cavePerlin);
                     }
+                    else if(Overlord.type == Overlord.WorldType.Titan)
+                    {
+                        TitanGen(spawned, blockY, h, perlin,cavePerlin);
+                    }
 
                 }
             }
@@ -253,6 +257,54 @@ public class ChunkBlocks : MonoBehaviour
 
         }
     }
+    private void TitanGen(Block spawned, int blockY, int h, float perlin, float cavePerlin)
+    
+    {
+        if (blockY > h)
+        {
+            if (blockY <= waterLevel)
+            {
+                spawned.SetBlock("water4");
+            }
+            else
+            {
+                spawned.gameObject.SetActive(false);
+            }
+
+        }
+
+        if (blockY >= h)
+        {
+            chunk.Expose();
+        }
+
+
+        if (perlin - blockY > 3)
+        {
+            if (Random.Range(0, 50) == 25)
+            {
+                spawned.SetBlock("metal");
+            }
+            else if (Random.Range(0, 200) == 25)
+            {
+                spawned.SetBlock("gold");
+            }
+            else
+            {
+                spawned.SetBlock("stone");
+            }
+
+            if(Mathf.Abs(blockY-((perlin-ground)/(1.3f*caveShift))-caveLevel)<cavePerlin-caveThreshold)
+            {
+                spawned.gameObject.SetActive(false);
+            }
+
+        }
+        else if(perlin-blockY>=0)
+        {
+            spawned.SetBlock("stone");
+        }
+    }
 
     private void DesertWorldGen(Block spawned, int blockY, int h, float perlin,float cavePerlin)
     {
@@ -320,6 +372,10 @@ public class ChunkBlocks : MonoBehaviour
         {
             return JungleGen(x,y);
         }
+        else if(Overlord.type == Overlord.WorldType.Titan)
+        {
+            return TitanGen(x,y);
+        }
 
 
         //for building structures
@@ -350,6 +406,11 @@ public class ChunkBlocks : MonoBehaviour
     {
         float perlin1 = Mathf.PerlinNoise(Spawner.seed + x * size * 0.5f, Spawner.seed + y * size * 0.5f) * scale * 0.5f;
         return (perlin1) + ground;
+    }
+    public static float TitanGen(float x, float y)
+    {
+        float regularVal = JungleGen(x,y);
+        return 5*(int)(regularVal/5);
     }
     public static float GetCavePerlin(float x, float y)
     {
