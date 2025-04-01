@@ -17,6 +17,8 @@ public class Enemy : MonoBehaviour
 
     public int saveCount{get;set;}
     public Color DamageColor = Color.red;
+
+    public static float minY = -60;
     // Start is called before the first frame update
     protected void Start()
     {
@@ -33,7 +35,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     protected void Update()
     {
-        if (health <= 0)
+        if (health <= 0||transform.position.y<minY)
         {
             Die();
         }

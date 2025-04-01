@@ -7,6 +7,7 @@ public class Cactaboss : MonoBehaviour
     // Start is called before the first frame update
 
     private SpineLauncher[] turrets;
+    public bool alwaysShoot = false;
     
     void Start()
     {
@@ -16,7 +17,7 @@ public class Cactaboss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GetComponent<Enemy>().CanSeeTarget(transform))
+        if(GetComponent<Enemy>().CanSeeTarget(transform)||alwaysShoot)
         {
             foreach(SpineLauncher turret in turrets)
             {

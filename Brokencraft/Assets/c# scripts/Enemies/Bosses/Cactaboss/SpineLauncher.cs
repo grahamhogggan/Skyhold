@@ -20,7 +20,6 @@ public class SpineLauncher:MonoBehaviour
     }
     public bool Shoot(Transform target)
     {
-        Debug.Log("subclass method called");
         if(delay>reload)
         {
             Instantiate(bullet,transform.position,Quaternion.Euler(Vector3.up)).GetComponent<Spine>().target = target;

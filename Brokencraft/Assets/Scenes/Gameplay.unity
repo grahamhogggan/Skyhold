@@ -14629,7 +14629,7 @@ MonoBehaviour:
     - {fileID: 416341988663598152, guid: 230f83817034c354a8028780d3f906c5, type: 3}
     - {fileID: 416341988663598152, guid: eb6b96d5bc438cc47b72abc5f356ef7f, type: 3}
     - {fileID: 416341988663598152, guid: 9ee20201c79bc8042ab51818f6db41ef, type: 3}
-    - {fileID: 5313271226300185539, guid: 3102aee036a98594f8e20a8c411cf6e6, type: 3}
+    - {fileID: 7949785740573415645, guid: 5670eca04a6fdaa4f9f91f837b0d6814, type: 3}
   spawnRate: 10
 --- !u!1 &1676099840
 GameObject:
