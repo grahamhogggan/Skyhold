@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int minY;
 
     [SerializeField] private HitEffect hitEffect;
-    public int saveCount{get;set;}
+    public int saveCount { get; set; }
     private bool newGame;
     public AudioSource damagedSound;
     // Start is called before the first frame update
@@ -28,13 +28,13 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if(health <=0)
+
+        if (health <= 0)
         {
             SaveManager.SaveAll(true);
             SceneManager.LoadScene(1);
         }
-        if(transform.position.y<minY)
+        if (transform.position.y < minY)
         {
             health = -1;
         }
@@ -44,23 +44,23 @@ public class Player : MonoBehaviour
         health -= damage;
         hitEffect.Hit();
         damagedSound.Play();
-        
+
     }
     public void UpgradeHealth(float amount)
     {
-        health = (int)(health*amount);
-        maxHealth = (int)(maxHealth*amount);
+        health = (int)(health * amount);
+        maxHealth = (int)(maxHealth * amount);
     }
     public void Heal(int amount)
     {
-        health+=amount;
-        if(health>maxHealth)
+        health += amount;
+        if (health > maxHealth)
         {
             health = maxHealth;
         }
     }
     public int GetHealth()
-    {return health; }
+    { return health; }
     public void Save()
     {
         data.position = transform.position;
@@ -97,12 +97,34 @@ public class Player : MonoBehaviour
     public void InitializePlayerPosition()
     {
         if (!newGame) return;
-            RaycastHit hit;
-            if(Physics.Raycast(transform.position,Vector3.up*-1,out hit))
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.up * -1, out hit))
+        {
+            Debug.Log(hit.point);
+            transform.position = hit.point + new Vector3(0, 0.45f, 0);
+        }
+        else
+        {
+            Vector3[] alternateAttemptOffsets =
             {
-                Debug.Log(hit.point);
-            transform.position = hit.point+new Vector3(0,0.45f,0);
+                new Vector3(-20,0,0),
+                new Vector3(20,0,0),
+                new Vector3(-20,0,-20),
+                new Vector3(-20,0,20),
+                new Vector3(20,0,-20),
+                new Vector3(20,0,20),
+                new Vector3(0,0,20),
+                new Vector3(0,0,-20),
+            };
+            foreach (Vector3 pos in alternateAttemptOffsets)
+            {
+                if (Physics.Raycast(transform.position+pos, Vector3.up * -1, out hit))
+                {
+                    Debug.Log(hit.point);
+                    transform.position = hit.point + new Vector3(0, 0.45f, 0);
+                    return;
+                }
             }
-            else Debug.Log("no spawn point found");
+        }
     }
 }

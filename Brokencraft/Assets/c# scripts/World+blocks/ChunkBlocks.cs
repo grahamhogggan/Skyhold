@@ -96,7 +96,11 @@ public class ChunkBlocks : MonoBehaviour
                             }
                         }
                     }
+                    else if (Overlord.type == Overlord.WorldType.Space)
+                    {
+                        SpaceWorldGen(spawned, blockY, h, perlin, cavePerlin);
 
+                    }
                 }
             }
         }
@@ -159,6 +163,58 @@ public class ChunkBlocks : MonoBehaviour
 
         }
     }
+    private void SpaceWorldGen(Block spawned, int blockY, int h, float perlin, float cavePerlin)
+    {
+        float waterLevel = ChunkBlocks.waterLevel+1;
+        if (blockY > h||blockY-waterLevel<waterLevel-perlin)
+        {
+                spawned.gameObject.SetActive(false);
+        }
+        else
+        {
+            if (h <= waterLevel + 1 && blockY > h - 1)
+            {
+                spawned.SetBlock("sand");
+            }
+            else if (blockY >= snowPeak)
+            {
+                spawned.SetBlock("snow");
+            }
+            else if (blockY == h)
+            {
+                spawned.SetBlock("grass");
+
+            }
+        }
+        if (blockY >= h)
+        {
+            chunk.Expose();
+        }
+
+
+        if (perlin - blockY > 3)
+        {
+            if (Random.Range(0, 50) == 25)
+            {
+                spawned.SetBlock("metal");
+            }
+            else if (Random.Range(0, 200) == 25)
+            {
+                spawned.SetBlock("gold");
+            }
+            else
+            {
+                spawned.SetBlock("stone");
+            }
+
+            if (Mathf.Abs(blockY - ((perlin - ground) / caveShift) - caveLevel) < cavePerlin - caveThreshold)
+            {
+                spawned.gameObject.SetActive(false);
+            }
+
+        }
+    }
+
     private void SnowWorldGen(Block spawned, int blockY, int h, float perlin, float cavePerlin)
     {
         float modifiedWaterLevel = waterLevel - 8;
@@ -414,15 +470,18 @@ public class ChunkBlocks : MonoBehaviour
                 }
                 else
                 {
-                    return MountainGen(x, y)-5;
+                    return MountainGen(x, y) - 5;
                 }
             }
             else
             {
-                return DesertGen(x, y)+10;
+                return DesertGen(x, y) + 10;
             }
         }
-
+        else if (Overlord.type == Overlord.WorldType.Space)
+        {
+            return SpaceGen(x, y);
+        }
 
         //for building structures
         return ground + 20;
@@ -457,6 +516,15 @@ public class ChunkBlocks : MonoBehaviour
     {
         float regularVal = JungleGen(x, y);
         return 5 * (int)(regularVal / 5);
+    }
+    public static float SpaceGen(float x, float y)
+    {
+        float regularVal = RegularGen(x, y);
+        if (regularVal <= waterLevel)
+        {
+            return 0;
+        }
+        else return regularVal;
     }
     public static float GetCavePerlin(float x, float y)
     {

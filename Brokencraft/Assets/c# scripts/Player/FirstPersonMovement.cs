@@ -12,7 +12,7 @@ public class FirstPersonMovement : MonoBehaviour
     public float fallDamageThreshold;
 
     public bool inWater = false;
-    private bool inAir= false;
+    private bool inAir = false;
     public static bool active = true;
     public AudioSource footsteps;
     public AudioSource jump;
@@ -26,9 +26,10 @@ public class FirstPersonMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float dirX = active?Input.GetAxisRaw("Horizontal") * speed:0;
-        float dirZ = active?Input.GetAxisRaw("Vertical") * speed:0;
-        if(Vector3.Magnitude(new Vector3(dirX,0,dirZ))>0.1f&&controller.isGrounded)
+        float dirX = active ? Input.GetAxisRaw("Horizontal") * speed : 0;
+        float dirZ = active ? Input.GetAxisRaw("Vertical") * speed : 0;
+        Vector3 movement = transform.TransformDirection(dirX, Vvelocity, dirZ);
+        if (Vector3.Magnitude(new Vector3(dirX, 0, dirZ)) > 0.1f && controller.isGrounded)
         {
             footsteps.enabled = true;
         }
@@ -36,21 +37,21 @@ public class FirstPersonMovement : MonoBehaviour
         {
             footsteps.enabled = false;
         }
-        controller.Move(transform.TransformDirection(dirX, Vvelocity,dirZ)*Time.deltaTime);
+        controller.Move(movement*Time.deltaTime);
 
-        if(controller.isGrounded)
+        if (controller.isGrounded)
         {
-            if(inAir == true)
+            if (inAir == true)
             {
-                if(Mathf.Abs(Vvelocity)>fallDamageThreshold)
+                if (Mathf.Abs(Vvelocity) > fallDamageThreshold)
                 {
                     GetComponent<Player>().Damage((int)Mathf.Abs(Vvelocity));
                 }
                 inAir = false;
             }
-            if(Vvelocity<-1)
+            if (Vvelocity < -1)
             {
-            Vvelocity = -1;
+                Vvelocity = -1;
 
             }
         }
@@ -58,20 +59,20 @@ public class FirstPersonMovement : MonoBehaviour
         {
             inAir = true;
         }
-        if (Input.GetKey("space")&&controller.isGrounded&&active)
+        if (Input.GetKey("space") && controller.isGrounded && active)
         {
             Vvelocity = jumpForce;
             jump.Play();
         }
-        if(Vvelocity > -100)
+        if (Vvelocity > -100)
         {
-            Vvelocity += gravity*Time.deltaTime;
+            Vvelocity += gravity * Time.deltaTime;
         }
-        if(inWater&&Vvelocity<1)
+        if (inWater && Vvelocity < 1)
         {
-            Vvelocity += 30*Time.deltaTime ;
+            Vvelocity += 30 * Time.deltaTime;
         }
-        if(inWater &&Vvelocity<-8)
+        if (inWater && Vvelocity < -8)
         {
             Vvelocity = -8;
         }
