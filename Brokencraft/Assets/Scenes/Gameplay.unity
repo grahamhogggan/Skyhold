@@ -4282,11 +4282,13 @@ MonoBehaviour:
     - {fileID: 8300000, guid: ff6c6aeb0af742f4192cbbb6b319b6fe, type: 3}
     - {fileID: 8300000, guid: f953db1a8fe995845923c04f519af144, type: 3}
     - {fileID: 8300000, guid: 57dc72509317b7a47a281cbfc2921e78, type: 3}
+    - {fileID: 8300000, guid: 5d0ff7c9d5d261f49ad8b4b0a896903f, type: 3}
   - tracks:
     - {fileID: 8300000, guid: f953db1a8fe995845923c04f519af144, type: 3}
     - {fileID: 8300000, guid: ff6c6aeb0af742f4192cbbb6b319b6fe, type: 3}
     - {fileID: 8300000, guid: 3e58bf99d20b9cc4492b1870c7186188, type: 3}
     - {fileID: 8300000, guid: 57dc72509317b7a47a281cbfc2921e78, type: 3}
+    - {fileID: 8300000, guid: 5d0ff7c9d5d261f49ad8b4b0a896903f, type: 3}
   - tracks:
     - {fileID: 8300000, guid: ff6c6aeb0af742f4192cbbb6b319b6fe, type: 3}
     - {fileID: 8300000, guid: 154167113bf2a9f4696d8431a8bcd850, type: 3}
@@ -4297,11 +4299,20 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 154167113bf2a9f4696d8431a8bcd850, type: 3}
     - {fileID: 8300000, guid: 3e58bf99d20b9cc4492b1870c7186188, type: 3}
     - {fileID: 8300000, guid: f953db1a8fe995845923c04f519af144, type: 3}
+    - {fileID: 8300000, guid: 5d0ff7c9d5d261f49ad8b4b0a896903f, type: 3}
   - tracks:
+    - {fileID: 8300000, guid: 5d0ff7c9d5d261f49ad8b4b0a896903f, type: 3}
     - {fileID: 8300000, guid: 3e58bf99d20b9cc4492b1870c7186188, type: 3}
     - {fileID: 8300000, guid: ff6c6aeb0af742f4192cbbb6b319b6fe, type: 3}
     - {fileID: 8300000, guid: 57dc72509317b7a47a281cbfc2921e78, type: 3}
     - {fileID: 8300000, guid: f953db1a8fe995845923c04f519af144, type: 3}
+  - tracks:
+    - {fileID: 8300000, guid: 3e58bf99d20b9cc4492b1870c7186188, type: 3}
+    - {fileID: 8300000, guid: 5d0ff7c9d5d261f49ad8b4b0a896903f, type: 3}
+    - {fileID: 8300000, guid: ff6c6aeb0af742f4192cbbb6b319b6fe, type: 3}
+    - {fileID: 8300000, guid: 57dc72509317b7a47a281cbfc2921e78, type: 3}
+    - {fileID: 8300000, guid: f953db1a8fe995845923c04f519af144, type: 3}
+    - {fileID: 8300000, guid: 154167113bf2a9f4696d8431a8bcd850, type: 3}
 --- !u!1 &482879871
 GameObject:
   m_ObjectHideFlags: 0
@@ -8306,6 +8317,13 @@ MonoBehaviour:
     pines: 0
     shrooms: 0
     gnarleds: 1
+  - spacing: 14
+    trees: 1
+    bushes: 1
+    palms: 1
+    pines: 1
+    shrooms: 0
+    gnarleds: 0
 --- !u!4 &956340294
 Transform:
   m_ObjectHideFlags: 0
@@ -14622,6 +14640,18 @@ MonoBehaviour:
     - {fileID: 7949785740573415645, guid: 1769502d8b3bfd64d8ef5258c1eb8d8e, type: 3}
     - {fileID: 7949785740573415645, guid: abec6f36e9e7e614798f7baa42c9a606, type: 3}
     - {fileID: 7949785740573415645, guid: 4e9fdc3271c2c9043ab92f36bbbd2c9d, type: 3}
+  - enemies:
+    - {fileID: 7949785740573415645, guid: 893acfe3065ca964ba0afc56121a5b47, type: 3}
+    - {fileID: 9118556671615801782, guid: 6d40533af9603da43aa256f0dbae20b8, type: 3}
+    - {fileID: 7949785740573415645, guid: 195adc891318f6f4bbd862767d75b9a8, type: 3}
+    - {fileID: 4314025354163833877, guid: e2bddd4176d709f41b1d91fde47d5b07, type: 3}
+    - {fileID: 221501362939491790, guid: 983832f2932f0b643906d778dc6c27e7, type: 3}
+    - {fileID: 221501362939491790, guid: 9b99abfb5b078c74ebc9fcdec890b92b, type: 3}
+    - {fileID: 221501362939491790, guid: 46e1d566446477b458f7d01653d16a0f, type: 3}
+    - {fileID: 932832980839047979, guid: 9dee80d327d03374fa1da44eb14bb80e, type: 3}
+    - {fileID: 7949785740573415645, guid: 1769502d8b3bfd64d8ef5258c1eb8d8e, type: 3}
+    - {fileID: 7949785740573415645, guid: abec6f36e9e7e614798f7baa42c9a606, type: 3}
+    - {fileID: 7949785740573415645, guid: 4e9fdc3271c2c9043ab92f36bbbd2c9d, type: 3}
   bosses:
     enemies:
     - {fileID: 5313271226300185539, guid: 3102aee036a98594f8e20a8c411cf6e6, type: 3}
@@ -14630,6 +14660,7 @@ MonoBehaviour:
     - {fileID: 416341988663598152, guid: eb6b96d5bc438cc47b72abc5f356ef7f, type: 3}
     - {fileID: 416341988663598152, guid: 9ee20201c79bc8042ab51818f6db41ef, type: 3}
     - {fileID: 7949785740573415645, guid: 5670eca04a6fdaa4f9f91f837b0d6814, type: 3}
+    - {fileID: 5313271226300185539, guid: fca0014236f8f8d4489f598f8f31e242, type: 3}
   spawnRate: 10
 --- !u!1 &1676099840
 GameObject:
