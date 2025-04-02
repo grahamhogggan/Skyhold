@@ -49,6 +49,6 @@ public class HoveringEnemy : Enemy
             float h = hit.distance;
             return h;
         }
-        return -1;
+        return floatDist;
     }
 }

@@ -37,6 +37,7 @@ public class FirstPersonMovement : MonoBehaviour
         {
             footsteps.enabled = false;
         }
+       
         controller.Move(movement*Time.deltaTime);
 
         if (controller.isGrounded)

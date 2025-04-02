@@ -112,7 +112,10 @@ public class Overlord : MonoBehaviour
         }
 
     }
-    public static bool IsNight() { return instance.isNight; }
+    public static bool IsNight() {
+        if(type == WorldType.Space) return true;
+         return instance.isNight; 
+         }
     public static float GetRawTime()
     {
 

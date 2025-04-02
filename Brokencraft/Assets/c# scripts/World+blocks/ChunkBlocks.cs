@@ -174,7 +174,7 @@ public class ChunkBlocks : MonoBehaviour
         {
             if (h <= waterLevel + 1 && blockY > h - 1)
             {
-                spawned.SetBlock("sand");
+                spawned.SetBlock("stone");
             }
             else if (blockY >= snowPeak)
             {

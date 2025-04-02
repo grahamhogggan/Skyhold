@@ -82,6 +82,12 @@ public class ChasingEnemy : Enemy
             jetPackFlames.SetActive(true);
             
         }
+        else if(!Physics.Raycast(transform.position, transform.up*-1))
+        {
+            jumping = true;
+            Yvelocity = 1;
+            jetPackFlames.SetActive(true);
+        }
         else
         {
             jetPackFlames.SetActive(false);
@@ -121,6 +127,7 @@ public class ChasingEnemy : Enemy
                 return true;
             }
         }
+        
         return false;
     }
 }
