@@ -5,6 +5,7 @@ using UnityEngine;
 public class Clicker : MonoBehaviour
 {
     public LayerMask hitlayers;
+    public int maxDistance = 1000;
 
     // Update is called once per frame
     void Update()
@@ -15,7 +16,7 @@ public class Clicker : MonoBehaviour
             if(Physics.Raycast(transform.position,transform.forward,out hit,Mathf.Infinity,hitlayers))
             {
                 GameObject objectHit = hit.transform.gameObject;
-                if(objectHit.GetComponent<Clickable>())
+                if(objectHit.GetComponent<Clickable>()&&hit.distance<maxDistance)
                 {
                     objectHit.GetComponent<Clickable>().OnClick.Invoke();
                     AudioSource sound = objectHit.GetComponent<Clickable>().interactSound;

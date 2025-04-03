@@ -16,39 +16,50 @@ public class BossBeater : MonoBehaviour
     }
     public static void BeatBoss(int num)
     {
-        w.SetTarget("I'm receiving some new data, come back to the ship quickly");
-        switch(num)
+        if (num == 8)
+        {
+            w.SetTarget("I've found something! Im sending you in to the source of the signal now!             ");
+        }
+        else
+        {
+            w.SetTarget("I'm receiving some new data, come back to the ship quickly");
+
+        }
+        switch (num)
         {
             case 1:
-            PersistentData.SceneToPlay = 5;
-            break;
+                PersistentData.SceneToPlay = 5;
+                break;
             case 2:
-            PersistentData.SceneToPlay = 6;
-            break;
+                PersistentData.SceneToPlay = 6;
+                break;
             case 3:
-            PersistentData.SceneToPlay = 7;
-            break;
+                PersistentData.SceneToPlay = 7;
+                break;
             case 4:
-            PersistentData.SceneToPlay = 8;
-            break;
+                PersistentData.SceneToPlay = 8;
+                break;
             case 5:
-            PersistentData.SceneToPlay = 9;
-            break;
-             case 6:
-            PersistentData.SceneToPlay = 10;
-            break;
-             case 7:
-            PersistentData.SceneToPlay = 11;
-            break;
+                PersistentData.SceneToPlay = 9;
+                break;
+            case 6:
+                PersistentData.SceneToPlay = 10;
+                break;
+            case 7:
+                PersistentData.SceneToPlay = 11;
+                break;
+            case 8:
+                PersistentData.SceneToPlay = 12;
+                break;
 
         }
         waiting = true;
     }
     void Update()
     {
-        if(waiting)
+        if (waiting)
         {
-            if(w.TimeSinceFinished()>3)
+            if (w.TimeSinceFinished() > 3)
             {
                 quit.Invoke();
             }
