@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class VoiceManager : MonoBehaviour
 {
-   public void Speak()
+   void Update()
    {
-    foreach(Voice voice in GetComponentsInChildren<Voice>())
+    TextWriter writer = GetComponent<TextWriter>();
+    if(writer.IsFinishedWriting())
     {
-        voice.Reset();
+        foreach(Voice voice in GetComponentsInChildren<Voice>())
+        {
+            voice.speaking = false;
+        }
+    }
+    else
+    {
+        foreach(Voice voice in GetComponentsInChildren<Voice>())
+        {
+            voice.speaking = true;
+        }
     }
    }
 }
