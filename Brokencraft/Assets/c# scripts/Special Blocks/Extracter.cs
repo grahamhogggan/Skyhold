@@ -21,6 +21,8 @@ public class Extracter : MonoBehaviour
     private GameObject dispMesh;
 
     private bool savedAlready = false;
+
+    public float speedMult = 1;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +44,7 @@ public class Extracter : MonoBehaviour
     {
         if(itemGenerating!="empty")
         {
-            delay += Time.deltaTime;
+            delay += Time.deltaTime*speedMult;
             if (delay > spawnTime)
             {
                 delay = 0;

@@ -60,6 +60,16 @@ public class ResourceUser : MonoBehaviour
             Refresh();
         }
     }
+    public bool AddManually(string item)
+    {
+        if(accepted.Contains(item)&&stored.Count<maxItems)
+        {
+            stored.Add(item);
+            Refresh();
+            return true;
+        }
+        return false;
+    }
     private void Refresh()
     {
         for(int i = 0; i<indicators.Length; i++)

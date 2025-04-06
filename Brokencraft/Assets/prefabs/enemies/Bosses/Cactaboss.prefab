@@ -180,6 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2326ccd09082ae348bede371b98c1303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alwaysShoot: 0
 --- !u!114 &763975746004335931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,7 +198,7 @@ MonoBehaviour:
   DayDeath: 0
   allDrops: 1
   drops:
-  - battey
+  - battery
   - beam
   - beam
   - beam

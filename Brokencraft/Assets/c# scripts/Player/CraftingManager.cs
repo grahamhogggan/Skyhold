@@ -193,6 +193,8 @@ public class CraftingManager : MonoBehaviour
         AddRecipe("beam,processor,qubit,truss,wires","reactor/1","machines");
         AddRecipe("battery,beam,gold,metal,wires","electric sword/1","tools");
         AddRecipe("battery,beam,gold,gold,gold","gold pick/1","tools");
+        AddRecipe("extracter,gold,torch,truss,wires","extractor v2/1","machines");
+        AddRecipe("extracter,qubit,qubit,truss,wires","quantum extractor/1","machines");
     }
     private void AddRecipe(string costs, string results, string categories = "default",int levelType = -1)
     {

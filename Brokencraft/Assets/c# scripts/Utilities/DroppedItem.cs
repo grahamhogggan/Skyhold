@@ -27,6 +27,15 @@ public class DroppedItem : MonoBehaviour
             Instantiate(collectSound);
             Destroy(gameObject);
         }
+        ResourceUser user = c.gameObject.GetComponent<ResourceUser>();
+        if(user!=null)
+        {
+            if(user.AddManually(item))
+            {
+                Overlord.DeleteDrop(ID);
+                Destroy(gameObject);
+            }
+        }
     }
     void SetViewer()
     {
