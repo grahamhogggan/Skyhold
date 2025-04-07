@@ -12,6 +12,31 @@ public class CraftingManager : MonoBehaviour
     [SerializeField] private TMP_Text craftedItemText;
     private static Dictionary<string, string> craftingRecipes;
     private static Dictionary<string,Dictionary<string,string>> recipeBooks;
+    public static Dictionary<string,string> blockDescriptions = new Dictionary<string, string>()
+    {
+        {"name","Description"},
+        {"wood","A useful material found in trees for constructing a variety of tools and structures"},
+        {"dirt","Fairly useless substance found all over the place"},
+        {"sand","Fairly useless stuff found in beaces and deserts"},
+        {"pebble","Pebbles can be collected by mining stone. Combine many of them to make a stone block"},
+        {"planks","Planks are a very useful material for crafting anything needing wood"},
+        {"stick","Sticks can be used to craft many tools, as well as serving as a decent weapon in a pinch"},
+        {"stone","Stone is crafted from pebbles, and can be used to craft heavy duty devices like a mace"},
+        {"torch","Torches light up their surroundings and can also heal you when you are near them"},
+        {"stone slab","Stone slabs are one-half the size of a regular block, which may come in handy for building"},
+        {"ramp","Ramps can be used for slopes or to redirect extracted materials"},
+        {"platform","Platforms come in large quantities an can be used to build large flat areas or bridges"},
+        {"stairs","Great for mineshafts or quick ascent"},
+        {"frame","Wooden structure that can absorb meteor impacts, protecting valuable parts of your base"},
+        {"beam","Metal beams are vital for constructing toolas and machines"},
+        {"processor","Processors allow you to create all kinds of useful machines"},
+        {"extracter","Extracters can extract materials out of thin air. just press E wil a material in hand to tell it what to extract. Yes, I know I spelled extracter wrong but I hardcoded it into too many places to change"},
+        {"score pump","Gains score for you automatically"},
+        {"truss","Expensive but sturdy structure that can absorb meteor impacts. Important for constructing more complex machinery"},
+        {"pickaxe","Very quick at mining things, but a weak weapon"},
+        {"sword","Highly effective weapon for battling enemies"},
+        {"mace","Deals huge damage, but is painfully slow to wield"},
+    };
     // Start is called before the first frame update
     void Start()
     {

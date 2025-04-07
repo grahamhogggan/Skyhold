@@ -15,6 +15,11 @@ public class RecipeDisplay : MonoBehaviour
 
     [SerializeField]private GameObject toggle;
     [SerializeField] private AudioSource sfx;
+
+    [SerializeField] private GameObject recipeDisplayPanel;
+    [SerializeField] private TMP_Text RecipeNameText;
+    [SerializeField] private TMP_Text RecipeDescriptionText;
+    [SerializeField] private TMP_Text CraftText;
     private string[] items;
 
     public void Craft()
@@ -28,10 +33,21 @@ public class RecipeDisplay : MonoBehaviour
                 PlayerInventory.AddItemToCrafting(items);
             }
             CraftingManager.Craft();
+            if(!PlayerCanCraft())
+            {
+                recipeDisplayPanel.SetActive(false);
+            }
         }
     }
     void Update()
     {
+         if(Input.GetMouseButtonDown(0))
+        {
+            if(!RectTransformUtility.RectangleContainsScreenPoint(recipeDisplayPanel.GetComponent<RectTransform>(), Input.mousePosition))
+            {
+                recipeDisplayPanel.SetActive(false);
+            }
+        }
         string[] dat = null;
         if(RecipeDisplayManager.craftableMode)
         {
@@ -66,12 +82,25 @@ public class RecipeDisplay : MonoBehaviour
         if(PlayerCanCraft())
         {
             buttonText.color = Color.white;
+            CraftText.color = Color.white;
         }
         else
         {
             buttonText.color = Color.red;
+            CraftText.color = Color.red;
+        }
+        string itemCrafting = dat[1].Split("/")[0];
+        RecipeNameText.text = itemCrafting;
+        if(CraftingManager.blockDescriptions.ContainsKey(itemCrafting))
+        {
+            RecipeDescriptionText.text = CraftingManager.blockDescriptions[itemCrafting];
+        }
+        else
+        {
+            RecipeDescriptionText.text = "";
         }
         img.sprite = PlayerInventory.instance.GetBlockPreview(dat[1].Split("/")[0]);
+
     }
 
     private int GetNthCraftableRecipe(int n)
