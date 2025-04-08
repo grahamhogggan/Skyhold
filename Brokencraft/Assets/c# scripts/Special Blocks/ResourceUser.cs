@@ -8,6 +8,7 @@ public class ResourceUser : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private List<string> accepted;
     [SerializeField] private MonoBehaviour[] toDo;
+    [SerializeField] private AudioSource[] toPlay;
     [SerializeField] private GameObject[] indicators;
     [SerializeField] private GameObject[] show;
     private int maxItems;
@@ -90,6 +91,17 @@ public class ResourceUser : MonoBehaviour
         foreach(MonoBehaviour behaviour in toDo)
         {
             behaviour.enabled = stored.Count>0;
+        }
+        foreach(AudioSource src in toPlay)
+        {
+            if(stored.Count>0)
+            {
+                src.Stop();
+            }
+            else
+            {
+                src.Play();
+            }
         }
     }
     void Save()

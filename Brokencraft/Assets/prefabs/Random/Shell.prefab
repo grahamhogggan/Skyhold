@@ -112,6 +112,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  soundEffectOnImpact: {fileID: 65829266077972783, guid: df7af3c67fab7df49818b1f561c9d6ea,
+    type: 3}
 --- !u!1 &7943379085498632133
 GameObject:
   m_ObjectHideFlags: 0

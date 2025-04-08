@@ -5,6 +5,7 @@ using UnityEngine;
 public class Meteor : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private GameObject soundEffectOnImpact;
     private bool deleted = false;
     // Start is called before the first frame update
     void Start()
@@ -39,7 +40,7 @@ public class Meteor : MonoBehaviour
         if(hitBlock!=null)
         {
             TerroristManager.Bomb(hitBlock,Mathf.Min(3+(int)Overlord.difficulty/3,6));
-
+            Instantiate(soundEffectOnImpact,transform.position,Quaternion.identity);
 
         }
         ScoreManager.AddScore(5);
