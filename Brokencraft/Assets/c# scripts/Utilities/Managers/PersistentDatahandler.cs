@@ -37,6 +37,11 @@ public class PersistentDatahandler : MonoBehaviour
     }
     void SavePersistentData()
     {
+        if(PersistentData.highScores.Length<0)
+        {
+            Debug.Log("Save File compromised");
+            return;
+        }
         string dataSav = JsonUtility.ToJson(PersistentData.getSaveData());
         File.WriteAllText(pDataPath, dataSav);
     }
