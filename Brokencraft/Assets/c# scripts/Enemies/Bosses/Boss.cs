@@ -22,7 +22,7 @@ public class Boss : MonoBehaviour
     void OnDestroy()
     {
         if(BossHealthBar.instance!=null) BossHealthBar.instance.SetActive(false);
-        BossBeater.BeatBoss(bossNumber);
+        if(enemy.getHealth()<=0) BossBeater.BeatBoss(bossNumber);
         
     }
 }

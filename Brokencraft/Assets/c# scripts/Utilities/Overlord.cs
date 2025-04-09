@@ -31,6 +31,7 @@ public class Overlord : MonoBehaviour
     private bool wasNight;
     public int saveCount { get; set; }
     public static int nightCount = 0;
+    [SerializeField] private FadingPanel nightCountText;
 
 
 
@@ -199,6 +200,7 @@ public class Overlord : MonoBehaviour
         }
         difficulty++;
         nightCount++;
+        nightCountText.Show("Night: "+nightCount);
     }
 
 }
