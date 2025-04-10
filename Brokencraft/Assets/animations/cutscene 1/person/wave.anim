@@ -4199,16 +4199,9 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0
-    functionName: SetTarget
-    data: We're on a mission to investigate some strange signals detected here.
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
   - time: 2.3833334
     functionName: SetTarget
-    data: So, we've arrived, 4 million light years away from earth
+    data: So, you're finally awake. Welcome, new recruit.
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -4230,22 +4223,23 @@ AnimationClip:
     messageOptions: 0
   - time: 23.333334
     functionName: SetTarget
-    data: We're on a mission to investigate some strange signals detected here.
+    data: Your mission is to help defend the galaxy from the many alien forces that
+      will attack
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 33.05
     functionName: SetTarget
-    data: While you've been waking up, I've done some preliminary investigations
+    data: You'll be stationed to defend a small patch of land as long as possible.
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 39.65
     functionName: SetTarget
-    data: The results were interesting . . .                          . . . it's
-      going to be dangerous down there, good luck!
+    data: Your first mission will be an easy one, with many resources for you to
+      use. good luck!
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

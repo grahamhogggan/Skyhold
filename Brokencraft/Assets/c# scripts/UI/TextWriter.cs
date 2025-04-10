@@ -24,9 +24,20 @@ public class TextWriter : MonoBehaviour
         delay+=Time.deltaTime;
         if(delay>charTime&&index<targetText.Length)
         {
+            if(targetText[index]==',')
+            {
+                delay=-1*charTime;
+            }
+            else if(targetText[index]=='.')
+            {
+                delay=-5*charTime;
+            }
+            else
+            {
+                delay = 0;
+            }
                 text+=targetText[index];
                 index++;
-                delay = 0;
         }
         if(IsFinishedWriting())
         {

@@ -18,11 +18,11 @@ public class BossBeater : MonoBehaviour
     {
         if (num == 8)
         {
-            w.SetTarget("I've found something! Im sending you in to the source of the signal now!             ");
+            w.SetTarget("Incredible job down there, there's something you need to see, now");
         }
         else
         {
-            w.SetTarget("I'm receiving some new data, come back to the ship quickly");
+            w.SetTarget("Great job. Come back to the ship, I want to tell you something");
 
         }
         switch (num)

@@ -1573,8 +1573,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: SetTarget
-    data: Nice job beating that snowman, when it was killed, I picked up on some
-      new signals
+    data: Nice job beating that snowman. I think you're ready for something harder
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -1588,8 +1587,8 @@ AnimationClip:
     messageOptions: 0
   - time: 5.8
     functionName: SetTarget
-    data: These signals led me to a new area to investigate, there you'll find a
-      jungle infested with mushrooms
+    data: There's a new area for you to defend. here you'll find a jungle infested
+      with mushrooms
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

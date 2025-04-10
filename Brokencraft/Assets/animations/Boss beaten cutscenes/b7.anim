@@ -1573,8 +1573,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: SetTarget
-    data: Nice job beating that machine again, when it was destroyed, I picked up
-      on some new signals
+    data: Nice job beating that robot again. I think you're ready for something harder
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -1588,15 +1587,14 @@ AnimationClip:
     messageOptions: 0
   - time: 5.8
     functionName: SetTarget
-    data: These signals have led me to what I think is the source of the signal.
-      It looks to be a tough challenge.
+    data: There's a new area for you to defend. This one's a little deeper into space.
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 12.3
     functionName: SetTarget
-    data: You're welcome to explore this new area, or continue exploring the previous
+    data: You're welcome to go to this new area, or continue defending the previous
       one
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
