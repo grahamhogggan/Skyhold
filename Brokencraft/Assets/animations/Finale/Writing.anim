@@ -140,7 +140,7 @@ AnimationClip:
   m_Events:
   - time: 7.983333
     functionName: SetTarget
-    data: I believe the signals have been originating from somewhere in this structure
+    data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
