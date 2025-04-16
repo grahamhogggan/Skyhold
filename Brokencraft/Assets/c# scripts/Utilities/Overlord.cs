@@ -50,7 +50,7 @@ public class Overlord : MonoBehaviour
     public static WorldType type;
     void Awake()
     {
-        Overlord.saveDirectory = Application.persistentDataPath; // ifmodifying this, also note GameStarter.cs has its own field fo rreasons.
+        Overlord.saveDirectory = Application.persistentDataPath; // if modifying this, also note GameStarter.cs has its own field for reasons.
         difficulty = -1;
         Debug.Log("initialized directory");
         instance = this;

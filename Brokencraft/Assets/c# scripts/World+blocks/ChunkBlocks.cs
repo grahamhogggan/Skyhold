@@ -101,8 +101,23 @@ public class ChunkBlocks : MonoBehaviour
                         SpaceWorldGen(spawned, blockY, h, perlin, cavePerlin);
 
                     }
+                    else if(Overlord.type == Overlord.WorldType.Finale)
+                    {
+                        FinalWorldGen(spawned,blockY,h,perlin,cavePerlin);
+                    }
                 }
             }
+        }
+    }
+    private void FinalWorldGen(Block spawned, int blockY, int h, float perlin, float cavePerlin)
+    {
+        if(blockY>h)
+        {
+            spawned.gameObject.SetActive(false);
+        }
+        else
+        {
+            spawned.SetBlock("sand");
         }
     }
     private void CountrysideWorldGen(Block spawned, int blockY, int h, float perlin, float cavePerlin)
@@ -482,7 +497,10 @@ public class ChunkBlocks : MonoBehaviour
         {
             return SpaceGen(x, y);
         }
-
+        else
+        {
+            return ground+20;
+        }
         //for building structures
         return ground + 20;
     }
