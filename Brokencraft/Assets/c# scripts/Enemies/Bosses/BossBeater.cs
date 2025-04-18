@@ -20,6 +20,10 @@ public class BossBeater : MonoBehaviour
         {
             w.SetTarget("Incredible job down there, there's something you need to see, now");
         }
+        else if(num == 9)
+        {
+            w.SetTarget("!!! Attention all spectators, we have had an emergency, please exit the stadium as efficiently as possible !!!");
+        }
         else
         {
             w.SetTarget("Great job. Come back to the ship, I want to tell you something");

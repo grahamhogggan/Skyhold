@@ -15,13 +15,17 @@ public class BossSpawner : MonoBehaviour
     {
         notSpawnedThisNight = false;
         bosses = spawner.bosses.enemies;
-        
+        if(Overlord.type == Overlord.WorldType.Finale&&Overlord.OverwriteMode)
+        {
+            GameObject boss = Instantiate(bosses[(int)Overlord.type],new Vector3(25,0,25),Quaternion.identity);
+            boss.name = bosses[(int)Overlord.type].name;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Overlord.IsNight())
+        if(Overlord.IsNight()&&Overlord.type != Overlord.WorldType.Finale)
         {
             if(Overlord.nightCount%freq == 0)
             {

@@ -22,7 +22,7 @@ public class Turret : MonoBehaviour
     public bool Shoot(Transform target)
     {   
         transform.LookAt(target);
-        if(delay>reload)
+        if(delay>reload&&bullet!=null)
         {
             Instantiate(bullet,transform.position,transform.rotation);
             delay = 0;

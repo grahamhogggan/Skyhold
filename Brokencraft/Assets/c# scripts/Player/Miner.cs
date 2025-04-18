@@ -126,7 +126,7 @@ public class Miner : MonoBehaviour
 
         //check interactions
         RaycastHit interactionHit;
-        if (Physics.Raycast(transform.position, transform.forward, out interactionHit, 10, buildLayers, QueryTriggerInteraction.Collide))
+        if (Physics.Raycast(transform.position, transform.forward, out interactionHit, 5, buildLayers, QueryTriggerInteraction.Collide))
         {
             Block hit = interactionHit.transform.gameObject.GetComponentInParent<Block>();
             if (hit != null)
@@ -172,7 +172,7 @@ public class Miner : MonoBehaviour
     void Place()
     {
         RaycastHit hit;
-        if (timeSinceLastAttack>cooldown&&Physics.Raycast(transform.position, transform.forward, out hit, 10, buildLayers, QueryTriggerInteraction.Collide))
+        if (timeSinceLastAttack>cooldown&&Physics.Raycast(transform.position, transform.forward, out hit, 5, buildLayers, QueryTriggerInteraction.Collide))
         {
             Block hitBlock = hit.transform.gameObject.GetComponentInParent<Block>();
             if (hitBlock != null)
@@ -235,7 +235,7 @@ public class Miner : MonoBehaviour
             equippedObjectViewer.GetComponent<HeldObject>().Attack();
 
             RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.forward, out hit, 10, buildLayers, QueryTriggerInteraction.Collide))
+            if (Physics.Raycast(transform.position, transform.forward, out hit, 3, buildLayers, QueryTriggerInteraction.Collide))
             {
                 Block hitBlock = hit.transform.gameObject.GetComponentInParent<Block>();
                 if (hitBlock != null)

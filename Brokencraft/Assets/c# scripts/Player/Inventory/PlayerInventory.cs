@@ -25,6 +25,10 @@ public class PlayerInventory : MonoBehaviour
         if (!File.Exists(inventorySavePath)||Overlord.OverwriteMode)
         {
             inventory = new Inventory();
+            if(Overlord.type == Overlord.WorldType.Finale)
+            {
+                AddItem("electric sword");
+            }
         }
         else
         {
