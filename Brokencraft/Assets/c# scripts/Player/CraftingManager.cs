@@ -42,8 +42,9 @@ public class CraftingManager : MonoBehaviour
         {"reactor","Reactors require qubits to be input in order to run, but they generate score at an extremely high rate"},
         {"electric sword","A very powerful weapon, more powerful than a standard sword"},
         {"gold pick","A pickaxe with extremely fast mining capabilities"},
-        {"extractor v2","An extractor that significantly imporves extraction rates"},
+        {"extractor v2","An extractor that significantly improves extraction rates"},
         {"quantum extractor","This extractor is super fast, but requires a steady stream of qubits output from another exractor to run properly"},
+        {"grenade","Grenades explode immediately upon placement, shooting shrapnel that can deal damage to enemies nearby"},
     };
     // Start is called before the first frame update
     void Start()
@@ -228,6 +229,7 @@ public class CraftingManager : MonoBehaviour
         AddRecipe("battery,beam,gold,gold,gold","gold pick/1","tools");
         AddRecipe("extracter,gold,torch,truss,wires","extractor v2/1","machines");
         AddRecipe("extracter,qubit,qubit,truss,wires","quantum extractor/1","machines");
+        AddRecipe("metal,torch,wires","grenade/5","tools,machines");
     }
     private void AddRecipe(string costs, string results, string categories = "default",int levelType = -1)
     {
