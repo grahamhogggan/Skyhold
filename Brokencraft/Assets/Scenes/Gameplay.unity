@@ -69113,7 +69113,7 @@ MonoBehaviour:
     - {fileID: 5313271226300185539, guid: fca0014236f8f8d4489f598f8f31e242, type: 3}
     - {fileID: 6113549114222433770, guid: 558da873323ec454eb6cf042a81fc92b, type: 3}
     - {fileID: 416341988663598152, guid: 7dfb79e903d86bb40a99c659aeefefcb, type: 3}
-  spawnRate: 10
+  spawnRate: 5
 --- !u!1 &1676099840
 GameObject:
   m_ObjectHideFlags: 0

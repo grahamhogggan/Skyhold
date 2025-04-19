@@ -10,7 +10,6 @@ public class Enemy : MonoBehaviour
     [SerializeField]private Renderer renderer;
     private Color initColor;
     private string dataPath;
-    public bool DayDeath = true;
     private float burnClock = 0;
     [SerializeField] private bool allDrops = false;
     [SerializeField] private string[] drops;
@@ -48,15 +47,6 @@ public class Enemy : MonoBehaviour
             renderer.material.color += (Color)((Vector4)(initColor - renderer.material.color)).normalized * 3 * Time.deltaTime;
 
         }
-        if(!Overlord.IsNight())
-        {
-            burnClock += Time.deltaTime;
-            if (DayDeath && burnClock > 2f)
-            {
-                Damage(1);
-                burnClock = 0;
-            }
-        }
     }
     public void Damage(float damage)
     {
@@ -71,11 +61,7 @@ public class Enemy : MonoBehaviour
     }
     public void Die()
     {
-        if(Overlord.IsNight()||allDrops)
-        {
-            Dropstuff();
-
-        }
+        Dropstuff();
         SaveManager.Withdraw(Save);
         Save();
         Boss boss = GetComponent<Boss>();
