@@ -158,70 +158,63 @@ AnimationClip:
   m_Events:
   - time: 4.1666665
     functionName: Say
-    data: bla
+    data: You there!
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 8.116667
     functionName: Say
-    data: bla bla
+    data: 'You really shouldn''t be there '
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 12.233334
     functionName: Say
-    data: bla bla bla
+    data: 'but since you''re here, '
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 16.183332
+  - time: 15.45
     functionName: Say
-    data: bla bla bla
+    data: I suppose you should know the real reason you've been fighting these battles
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 20.25
     functionName: Say
-    data: bla bla bla
+    data: Brutality makes for such good entertainment
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 24.183332
+  - time: 24.6
     functionName: Say
-    data: bla bla bla
+    data: In fact, I think you're just in time to start in our holiday special
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 28.133333
+  - time: 29.666666
     functionName: Say
-    data: bla bla bla
+    data: Unfortunately that involves dying
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 31.166666
+  - time: 34.4
     functionName: Say
-    data: bla bla bla
+    data: You've really made us quite rich with your talent
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 40.5
     functionName: Say
-    data: bla bla bla
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 45.083332
-    functionName: Say
-    data: bla bla bla
+    data: Farewell . . .
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
