@@ -145,9 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4f87f3faace5c48b4f98260aa6fc6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
+  health: 25
   renderer: {fileID: 0}
-  DayDeath: 1
   allDrops: 0
   drops:
   - wires
@@ -156,6 +155,8 @@ MonoBehaviour:
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
   floatDist: 5
   speed: 5
+  RotateToFacePlayer: 0
+  mesh: {fileID: 0}
 --- !u!143 &8829495890887818557
 CharacterController:
   m_ObjectHideFlags: 0

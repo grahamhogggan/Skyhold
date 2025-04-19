@@ -90,8 +90,8 @@ Transform:
   m_GameObject: {fileID: 4314025354163833877}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.0000000081659, y: 0.13531, z: 0}
+  m_LocalScale: {x: 0.726, y: 0.726, z: 0.726}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2965834802689600057}
@@ -114,7 +114,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   renderer: {fileID: 8283236205605278880}
-  DayDeath: 1
   allDrops: 0
   drops:
   - metal
@@ -126,7 +125,7 @@ MonoBehaviour:
   - snow
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
   body: {fileID: 0}
-  speed: 2
+  speed: 1.8
   inWater: 0
   feet: {fileID: 3677594191927380577}
   strength: 5

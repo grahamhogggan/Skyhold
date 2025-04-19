@@ -47,9 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea4f87f3faace5c48b4f98260aa6fc6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 80
+  health: 140
   renderer: {fileID: 5546449164343039274}
-  DayDeath: 1
   allDrops: 0
   drops:
   - battery
@@ -58,6 +57,8 @@ MonoBehaviour:
   DamageColor: {r: 1, g: 1, b: 1, a: 1}
   floatDist: 1
   speed: 3
+  RotateToFacePlayer: 0
+  mesh: {fileID: 0}
 --- !u!143 &8829495890887818557
 CharacterController:
   m_ObjectHideFlags: 0
@@ -498,6 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  destroyOnHit: 0
 --- !u!1 &8590614865584359352
 GameObject:
   m_ObjectHideFlags: 0

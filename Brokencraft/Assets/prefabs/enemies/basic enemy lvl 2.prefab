@@ -847,9 +847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7963369af9f40d04b9aefa5a5e456356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
+  health: 60
   renderer: {fileID: 0}
-  DayDeath: 1
   allDrops: 0
   drops:
   - metal
