@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1114834574296385554}
   - component: {fileID: 8147376445857371887}
   - component: {fileID: 157426342673882062}
+  - component: {fileID: 4267627353761261694}
   m_Layer: 0
   m_Name: Spine
   m_TagString: Untagged
@@ -111,8 +112,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb596d51b34023f418a61ffc64fa955d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
+  damage: 15
   destroyOnHit: 1
+--- !u!114 &4267627353761261694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3264690489079309436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98ed8f6124721e64fbf83f4bf24a2af1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  soundEffectOnImpact: {fileID: 65829266077972783, guid: df7af3c67fab7df49818b1f561c9d6ea,
+    type: 3}
 --- !u!1 &7943379085498632133
 GameObject:
   m_ObjectHideFlags: 0
