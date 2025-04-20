@@ -1236,7 +1236,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 500
   renderer: {fileID: 8757166594112664186}
-  DayDeath: 0
   allDrops: 1
   drops:
   - processor
@@ -2156,7 +2155,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2

@@ -1573,7 +1573,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 300
   renderer: {fileID: 5957963745239713339}
-  DayDeath: 0
   allDrops: 1
   drops:
   - metal
@@ -1590,8 +1589,10 @@ MonoBehaviour:
   - extracter
   - extracter
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
-  floatDist: 8
-  speed: 5
+  floatDist: 3
+  speed: 1
+  RotateToFacePlayer: 0
+  mesh: {fileID: 0}
 --- !u!114 &7120346942721558170
 MonoBehaviour:
   m_ObjectHideFlags: 0
