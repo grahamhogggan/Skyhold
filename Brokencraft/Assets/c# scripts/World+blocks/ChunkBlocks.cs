@@ -209,11 +209,11 @@ public class ChunkBlocks : MonoBehaviour
 
         if (perlin - blockY > 3)
         {
-            if (Random.Range(0, 50) == 25)
+            if (Random.Range(0, 10) == 5)
             {
                 spawned.SetBlock("metal");
             }
-            else if (Random.Range(0, 200) == 25)
+            else if (Random.Range(0, 50) == 25)
             {
                 spawned.SetBlock("gold");
             }
