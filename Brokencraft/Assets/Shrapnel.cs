@@ -22,7 +22,7 @@ public class Shrapnel : MonoBehaviour
     }
     void OnTriggerEnter(Collider coll)
     {
-        Enemy en = coll.gameObject.GetComponentInChildren<Enemy>();
+        Enemy en = coll.transform.root.gameObject.GetComponentInChildren<Enemy>();
         if(en!=null)
         {   
             en.Damage(damage);

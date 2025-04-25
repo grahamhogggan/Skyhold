@@ -560,11 +560,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 800
   renderer: {fileID: 8001651567422154889}
-  DayDeath: 0
   allDrops: 1
   drops: []
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
-  floatHeight: -8
+  floatHeight: -12
   minDistance: 5
   speed: 5
   head: {fileID: 1719711417166308916}
