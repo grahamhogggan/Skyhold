@@ -22,7 +22,7 @@ public class ChunkBlocks : MonoBehaviour
     // Start is called before the first frame update
     public void SpawnChunk(int seed)
     {
-
+        Random.InitState(seed);
         chunk = transform.root.gameObject.GetComponent<Chunk>();
         for (int i = 0; i < Spawner.width; i++)
         {
