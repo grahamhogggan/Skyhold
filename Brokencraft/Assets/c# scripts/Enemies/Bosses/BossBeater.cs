@@ -55,6 +55,9 @@ public class BossBeater : MonoBehaviour
             case 8:
                 PersistentData.SceneToPlay = 12;
                 break;
+            case 9:
+                PersistentData.SceneToPlay = 14;
+                break;
 
         }
         waiting = true;
