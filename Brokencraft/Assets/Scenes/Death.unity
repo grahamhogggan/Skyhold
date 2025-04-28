@@ -183,8 +183,9 @@ MonoBehaviour:
 
     Died :('
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 005af2bb65da87f43ab4f7d90ba9d1d4, type: 2}
+  m_sharedMaterial: {fileID: -4834419604699007803, guid: 005af2bb65da87f43ab4f7d90ba9d1d4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1064,8 +1065,9 @@ MonoBehaviour:
 
     XXXXXX'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 005af2bb65da87f43ab4f7d90ba9d1d4, type: 2}
+  m_sharedMaterial: {fileID: -4834419604699007803, guid: 005af2bb65da87f43ab4f7d90ba9d1d4,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
