@@ -85,8 +85,15 @@ public class Spawner : MonoBehaviour
         loadingCam.enabled = true;
         if(Overlord.OverwriteMode)
         {
+            if(SeedInputBox.seedChosen == 0)
+            {
             Random.InitState((int)(Time.deltaTime*Time.time*Random.Range(0,10000)));
             seed = Random.Range(100,100000);
+            }
+            else
+            {
+                seed = SeedInputBox.seedChosen;
+            }
             File.WriteAllText(savePath,seed.ToString());
         }
         else

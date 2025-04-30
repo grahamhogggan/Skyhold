@@ -46,7 +46,7 @@ public class FirstPersonMovement : MonoBehaviour
             {
                 if (Mathf.Abs(Vvelocity) > fallDamageThreshold)
                 {
-                    GetComponent<Player>().Damage((int)Mathf.Abs(Vvelocity));
+                    GetComponent<Player>().Damage((int)Mathf.Abs(Vvelocity)-(int)fallDamageThreshold);
                 }
                 inAir = false;
             }
