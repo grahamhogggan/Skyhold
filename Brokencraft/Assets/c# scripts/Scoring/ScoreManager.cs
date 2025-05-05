@@ -15,7 +15,7 @@ public class ScoreManager : MonoBehaviour
         savePath = Overlord.saveDirectory+"/score_data";
         if((!Overlord.OverwriteMode)&&File.Exists(savePath))
         {
-            ScoreSave scores = JsonUtility.FromJson<ScoreSave>(File.ReadAllText(savePath));
+            ScoreSave scores = JsonUtility.FromJson<ScoreSave>(Encryption.Decrypt(File.ReadAllText(savePath)));
         totalScore = scores.totalScore;
         activeScore = scores.activeScore;
 
@@ -54,6 +54,7 @@ public class ScoreManager : MonoBehaviour
     private static void Save()
     {
         string save = JsonUtility.ToJson(new ScoreSave(totalScore,activeScore));
+        save = Encryption.Encrypt(save);
         File.WriteAllText(savePath,save);
     }
 }

@@ -149,8 +149,10 @@ public class Overlord : MonoBehaviour
     public void Save()
     {
         string data = JsonUtility.ToJson(dropData);
+        data = Encryption.Encrypt(data);
         File.WriteAllText(DropSavePath, data);
         string thisData = JsonUtility.ToJson(new GameInformation(this));
+        thisData = Encryption.Encrypt(thisData);
         File.WriteAllText(infoSavePath, thisData);
     }
     private void ReadDrops()
@@ -158,6 +160,7 @@ public class Overlord : MonoBehaviour
         if (File.Exists(DropSavePath) && !OverwriteMode)
         {
             string data = File.ReadAllText(DropSavePath);
+            data = Encryption.Decrypt(data);
             dropData = JsonUtility.FromJson<DropData>(data);
             for (int i = 0; i < dropData.items.Count; i++)
             {
@@ -181,6 +184,7 @@ public class Overlord : MonoBehaviour
         if (File.Exists(infoSavePath) && !OverwriteMode)
         {
             string data = File.ReadAllText(infoSavePath);
+            data  = Encryption.Decrypt(data);
             GameInformation info = JsonUtility.FromJson<GameInformation>(data);
             this.secondsPerDay = info.secondsPerDay;
             this.secondsPerNight = info.secondsPerNight;

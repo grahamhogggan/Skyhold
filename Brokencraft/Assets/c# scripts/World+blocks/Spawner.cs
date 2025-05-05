@@ -94,11 +94,12 @@ public class Spawner : MonoBehaviour
             {
                 seed = SeedInputBox.seedChosen;
             }
-            File.WriteAllText(savePath,seed.ToString());
+            string sav = seed.ToString();
+            File.WriteAllText(savePath,sav);
         }
         else
         {
-            seed = int.Parse(File.ReadAllText(savePath));
+            seed = int.Parse((File.ReadAllText(savePath)));
         }
         //Debug.Log("Generating . . .");
         Random.InitState(seed);

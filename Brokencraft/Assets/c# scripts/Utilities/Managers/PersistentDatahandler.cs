@@ -27,7 +27,7 @@ public class PersistentDatahandler : MonoBehaviour
     {
         if (File.Exists(pDataPath))
         {
-            persistentDataStruct pData = JsonUtility.FromJson<persistentDataStruct>(File.ReadAllText(pDataPath));
+            persistentDataStruct pData = JsonUtility.FromJson<persistentDataStruct>(Encryption.Decrypt(File.ReadAllText(pDataPath)));
             PersistentData.Init(pData);
         }
         else
@@ -43,6 +43,7 @@ public class PersistentDatahandler : MonoBehaviour
             return;
         }
         string dataSav = JsonUtility.ToJson(PersistentData.getSaveData());
+        dataSav = Encryption.Encrypt(dataSav);
         File.WriteAllText(pDataPath, dataSav);
     }
     public void OnDestroy()

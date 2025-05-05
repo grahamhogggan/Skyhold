@@ -19,7 +19,7 @@ public class UpgradeManager : MonoBehaviour
     }
     else
     {
-        UpgradeSave save =JsonUtility.FromJson<UpgradeSave>(File.ReadAllText(savepath));
+        UpgradeSave save =JsonUtility.FromJson<UpgradeSave>(Encryption.Decrypt(File.ReadAllText(savepath)));
         UpgradesBoughtCount =save.countSaveData;
         UpgradesBoughtNames = save.nameSaveData;
     }
@@ -28,6 +28,7 @@ public class UpgradeManager : MonoBehaviour
    public void Save()
    {
     string data = JsonUtility.ToJson(new UpgradeSave(UpgradesBoughtNames,UpgradesBoughtCount));
+    data = Encryption.Encrypt(data);
     File.WriteAllText(savepath,data);
    }
     // Update is called once per frame

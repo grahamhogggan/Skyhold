@@ -70,6 +70,7 @@ public class Extracter : MonoBehaviour
         if(File.Exists(dataPath)&&!Overlord.OverwriteMode)
         {
             string read = File.ReadAllText(dataPath);
+            read = Encryption.Decrypt(read);
             data = JsonUtility.FromJson<ExtracterData>(read);
             itemGenerating = data.itemGenerating;
             delay = data.delay;
@@ -82,6 +83,7 @@ public class Extracter : MonoBehaviour
         data.delay = delay;
         data.spawnTime = spawnTime;
         string saveData = JsonUtility.ToJson(data);
+        saveData = Encryption.Encrypt(saveData);
         File.WriteAllText(dataPath, saveData);
         savedAlready = true;
     }

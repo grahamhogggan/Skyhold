@@ -61,6 +61,7 @@ public class EnemySpawner : MonoBehaviour
             else
             {
                 string readData = File.ReadAllText(path);
+                readData = Encryption.Decrypt(readData);
                 EnemyData enemy = JsonUtility.FromJson<EnemyData>(readData);
                 if (enemy.health > 0)
                 {

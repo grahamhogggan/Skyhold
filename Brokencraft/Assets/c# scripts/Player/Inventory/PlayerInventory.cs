@@ -69,12 +69,13 @@ public class PlayerInventory : MonoBehaviour
     void SaveInventory()
     {
         string inventoryData = JsonUtility.ToJson(inventory);
+        inventoryData = Encryption.Encrypt(inventoryData);
         File.WriteAllText(inventorySavePath, inventoryData);
 
     }
     void LoadInventory()
     {
-        inventory = JsonUtility.FromJson<Inventory>(File.ReadAllText(inventorySavePath));
+        inventory = JsonUtility.FromJson<Inventory>(Encryption.Decrypt(File.ReadAllText(inventorySavePath)));
     }
     public void RefreshInventory()
     {

@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
         Load();
         SaveManager.Register(Save);
         UpgradeManager.player = this;
+
     }
 
     // Update is called once per frame
@@ -68,14 +69,15 @@ public class Player : MonoBehaviour
         data.maxHealth = maxHealth;
         data.time = Overlord.GetRawTimeVector();
         string ToSave = JsonUtility.ToJson(data);
+        ToSave = Encryption.Encrypt(ToSave);
         File.WriteAllText(dataPath, ToSave);
-        Debug.Log("save time");
     }
     void Load()
     {
         if (File.Exists(dataPath) && !Overlord.OverwriteMode)
         {
             string loaded = File.ReadAllText(dataPath);
+            loaded = Encryption.Decrypt(loaded);
             PlayerData data = JsonUtility.FromJson<PlayerData>(loaded);
             GetComponent<CharacterController>().enabled = false;
             transform.position = data.position;

@@ -36,7 +36,7 @@ public class GameStarter : MonoBehaviour
             }
             else
             {
-                PlayerData player = JsonUtility.FromJson<PlayerData>(File.ReadAllText(Application.persistentDataPath + "/PlayerData.savedata"));
+                PlayerData player = JsonUtility.FromJson<PlayerData>(Encryption.Decrypt(File.ReadAllText(Application.persistentDataPath + "/PlayerData.savedata")));
                 if (player.health <= 0)
                 {
                     continueButton.SetActive(false);

@@ -77,16 +77,18 @@ public class Chunk : MonoBehaviour
     void SaveDataToFile(string filePath,BlockChange change)
     {
         string jsonData = JsonUtility.ToJson(change);
+        jsonData = Encryption.Encrypt(jsonData);
         File.WriteAllText(filePath, jsonData);
     }
     void SaveDataToFile()
     {
         string jsonData = JsonUtility.ToJson(changeLog);
+        jsonData = Encryption.Encrypt(jsonData);
         File.WriteAllText(savepath, jsonData);
     }
     void ReadData(string path)
     {
-        changeLog = JsonUtility.FromJson<BlockChange>(File.ReadAllText(path));
+        changeLog = JsonUtility.FromJson<BlockChange>(Encryption.Decrypt(File.ReadAllText(path)));
     }
     public void ApplyChanges()
     {

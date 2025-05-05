@@ -110,6 +110,7 @@ public class ResourceUser : MonoBehaviour
         data.stored = this.stored;
         data.delay = this.delay;
         string jsonData = JsonUtility.ToJson(data);
+        jsonData = Encryption.Encrypt(jsonData);
         File.WriteAllText(savePath,jsonData);
                 savedAlready = true;
 
@@ -118,7 +119,7 @@ public class ResourceUser : MonoBehaviour
     {
         if(File.Exists(savePath))
         {
-            ResourceUserData data = JsonUtility.FromJson<ResourceUserData>(File.ReadAllText(savePath));
+            ResourceUserData data = JsonUtility.FromJson<ResourceUserData>(Encryption.Decrypt(File.ReadAllText(savePath)));
             delay = data.delay;
             stored = data.stored;
 
