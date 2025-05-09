@@ -90,6 +90,7 @@ public class Enemy : MonoBehaviour
         data.position = transform.position;
         data.type = gameObject.name;
         string save = JsonUtility.ToJson(data);
+        save = Encryption.Encrypt(save);
         File.WriteAllText(dataPath, save);
 
     }

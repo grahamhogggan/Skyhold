@@ -28,6 +28,10 @@ public class PlayerInventory : MonoBehaviour
             if(Overlord.type == Overlord.WorldType.Finale)
             {
                 AddItem("electric sword");
+                for(int i = 0; i<50; i++)
+                {
+                    AddItem("grenade");
+                }
             }
         }
         else
