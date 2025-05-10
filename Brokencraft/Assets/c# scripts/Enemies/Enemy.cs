@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     public Color DamageColor = Color.red;
 
     public static float minY = -60;
+    public bool boss = false;
     // Start is called before the first frame update
     protected void Start()
     {

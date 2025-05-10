@@ -24,8 +24,10 @@ public class Shrapnel : MonoBehaviour
     {
         Enemy en = coll.transform.root.gameObject.GetComponentInChildren<Enemy>();
         if(en!=null)
-        {   
-            en.Damage(damage);
+        {   if(en.boss)
+                en.Damage(damage/3);
+            else
+                en.Damage(damage);
         }
     }
 }
