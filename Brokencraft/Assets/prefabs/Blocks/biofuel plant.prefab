@@ -477,6 +477,7 @@ GameObject:
   - component: {fileID: 4523095771978318884}
   - component: {fileID: 4458207401517856048}
   - component: {fileID: -3809366476367735032}
+  - component: {fileID: 3417460277884353197}
   m_Layer: 0
   m_Name: biofuel plant
   m_TagString: Untagged
@@ -741,6 +742,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3417460277884353197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3189495928652548006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 721f8559bb8e4d147a767de319a5f130, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 65829266077972783, guid: a8e0245cb43c8604d86214627735e056, type: 3}
 --- !u!1 &4757423424136599430
 GameObject:
   m_ObjectHideFlags: 0

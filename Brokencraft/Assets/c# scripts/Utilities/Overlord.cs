@@ -62,7 +62,11 @@ public class Overlord : MonoBehaviour
         saveCount = 0;
         SaveManager.Register(Save);
         wasNight = true;
-
+        
+        if(type==WorldType.Jungle)
+        {
+            RenderSettings.fogDensity*=2;
+        }
     }
 
     public static void Pause(bool freeze = true)

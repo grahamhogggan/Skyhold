@@ -62,7 +62,7 @@ public class ChunkBlocks : MonoBehaviour
                     }
                     else if (Overlord.type == Overlord.WorldType.Jungle)
                     {
-                        MountainWorldGen(spawned, blockY, h, perlin, cavePerlin);
+                        JungleWorldGen(spawned, blockY, h, perlin, cavePerlin);
                     }
                     else if (Overlord.type == Overlord.WorldType.Titan)
                     {
@@ -325,6 +325,65 @@ public class ChunkBlocks : MonoBehaviour
             else if (blockY == h)
             {
                 spawned.SetBlock("grass");
+
+            }
+        }
+        if (blockY >= h)
+        {
+            chunk.Expose();
+        }
+
+
+        if (perlin - blockY > 3)
+        {
+            if (Random.Range(0, 50) == 25)
+            {
+                spawned.SetBlock("metal");
+            }
+            else if (Random.Range(0, 200) == 25)
+            {
+                spawned.SetBlock("gold");
+            }
+            else
+            {
+                spawned.SetBlock("stone");
+            }
+
+            if (Mathf.Abs(blockY - ((perlin - ground) / (1.3f * caveShift)) - caveLevel) < cavePerlin - caveThreshold)
+            {
+                spawned.gameObject.SetActive(false);
+            }
+
+        }
+    }
+    private void JungleWorldGen(Block spawned, int blockY, int h, float perlin, float cavePerlin)
+
+    {
+        if (blockY > h)
+        {
+            if (blockY <= waterLevel)
+            {
+                spawned.SetBlock("water4");
+            }
+            else
+            {
+                spawned.gameObject.SetActive(false);
+            }
+
+        }
+        else
+        {
+            if (h <= waterLevel + 1 && blockY > h - 2)
+            {
+                spawned.SetBlock("sand");
+            }
+            else if (blockY >= snowPeak)
+            {
+                spawned.SetBlock("snow");
+            }
+            else if (blockY == h)
+            {
+                spawned.SetBlock("mushroom grass");
 
             }
         }

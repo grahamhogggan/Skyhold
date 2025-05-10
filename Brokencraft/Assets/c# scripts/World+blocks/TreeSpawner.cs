@@ -33,18 +33,6 @@ public class TreeSpawner : MonoBehaviour
                     {
                         if (profile.bushes) SpawnBush(originBlock);
                     }
-                    else if(Random.Range(0,5)!=1&&profile.shrooms)
-                    {
-                        if(Random.Range(0,2)==0)
-                        {
-                        SpawnShroom(originBlock);
-
-                        }
-                        else
-                        {
-                            SpawnBlueShroom(originBlock);
-                        }
-                    }
                     else if (profile.pines&&(!profile.trees||Random.Range(0,2)==1)) SpawnPineTree(originBlock);
                     else if (profile.trees) SpawnTree(originBlock);
                 }
@@ -59,6 +47,21 @@ public class TreeSpawner : MonoBehaviour
                 else if (currentBlock.typeName == "stone"  && (originBlock.typeName != "water4")&& Random.Range(0, spacing) == 1)
                 {
                     if (profile.gnarleds) SpawnGnarledShroom(originBlock);
+                }
+                else if(currentBlock.typeName=="mushroom grass"&& Random.Range(0, spacing / 2) == 0)
+                {
+                    if(Random.Range(0,5)!=1&&profile.shrooms)
+                    {
+                        if(Random.Range(0,2)==0)
+                        {
+                        SpawnShroom(originBlock);
+
+                        }
+                        else
+                        {
+                            SpawnBlueShroom(originBlock);
+                        }
+                    }
                 }
             }
         }
