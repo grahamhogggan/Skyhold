@@ -500,7 +500,7 @@ RectTransform:
   m_GameObject: {fileID: 662841732}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.4848, y: 2.4848, z: 2.4848}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2041547180}
@@ -530,9 +530,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'UNTITLED
-
-'
+  m_text: SKYHOLD
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 005af2bb65da87f43ab4f7d90ba9d1d4, type: 2}
   m_sharedMaterial: {fileID: -4834419604699007803, guid: 005af2bb65da87f43ab4f7d90ba9d1d4,
@@ -542,8 +540,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294901698
+  m_fontColor: {r: 0.759434, g: 1, b: 0.9956045, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1178,7 +1176,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4, y: -202}
+  m_AnchoredPosition: {x: -4, y: -166}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1947629659
@@ -1201,7 +1199,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Designed by Graham Hoggan
+  m_text: 'Designed by Graham Hoggan
+
+    Programmed by Graham Hoggan
+
+    Original
+    Score by Graham Hoggan'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 005af2bb65da87f43ab4f7d90ba9d1d4, type: 2}
   m_sharedMaterial: {fileID: -4834419604699007803, guid: 005af2bb65da87f43ab4f7d90ba9d1d4,
@@ -1265,7 +1268,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -119.48607, y: 0, z: -138.68799, w: 0}
+  m_margin: {x: -207.40565, y: 0, z: -237.75243, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1313,7 +1316,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4, y: -701}
+  m_AnchoredPosition: {x: -4, y: -938}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1983152846

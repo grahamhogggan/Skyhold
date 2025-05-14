@@ -4231,7 +4231,7 @@ AnimationClip:
     messageOptions: 0
   - time: 33.05
     functionName: SetTarget
-    data: You'll be stationed to defend a small patch of land as long as possible.
+    data: You'll be stationed to defend a small skyhold as long as possible.
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: a08a23fc0a3deed49a11d9d53b1b0519
+  - enabled: 1
+    path: Assets/Scenes/Splash Screen.unity
+    guid: c60cd13362437b345bc211439bfc8d3b
   m_configObjects: {}

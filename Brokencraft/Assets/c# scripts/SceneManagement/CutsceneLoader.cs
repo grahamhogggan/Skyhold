@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class CutsceneLoader : MonoBehaviour
-{    void Start()
+{ 
+    static bool playSplashes = true;
+       void Start()
     {
-        if(PersistentData.SceneToPlay ==1 )
+        if(playSplashes)
+        {
+            SceneManager.LoadScene(15);
+            playSplashes = false;
+        }
+        else if(PersistentData.SceneToPlay ==1 )
         {
             PersistentData.SceneToPlay =0;
             SceneManager.LoadScene(4);
