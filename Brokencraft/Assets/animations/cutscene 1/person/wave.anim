@@ -4201,7 +4201,7 @@ AnimationClip:
   m_Events:
   - time: 2.3833334
     functionName: SetTarget
-    data: So, you're finally awake. Welcome, new recruit.
+    data: So, you've arrived. Welcome, new recruit.
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
@@ -4215,15 +4215,14 @@ AnimationClip:
     messageOptions: 0
   - time: 9.866667
     functionName: SetTarget
-    data: How's your memory faring after the long haul? . . .                                                  
-      . . . Not well, I suppose. That's hypersleep for you.
+    data: Welcome to the Skyhold defense headquaters
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 23.333334
     functionName: SetTarget
-    data: Your mission is to help defend the galaxy from the many alien forces that
+    data: Your mission is to help defend the planet from the many alien forces that
       will attack
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
