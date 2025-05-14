@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 4325016748828847842}
   - component: {fileID: 8667911514380556161}
   m_Layer: 0
-  m_Name: score pump
+  m_Name: energy pump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

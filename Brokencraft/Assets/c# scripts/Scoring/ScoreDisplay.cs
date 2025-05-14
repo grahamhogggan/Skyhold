@@ -18,12 +18,12 @@ public class ScoreDisplay : MonoBehaviour
     {
         if(newLine)
         {
-        text.text ="Score: "+ScoreManager.GetScore()+"\nActive Score: "+ScoreManager.GetActiveScore();
+        text.text ="Score: "+ScoreManager.GetScore()+"\nEnergy: "+ScoreManager.GetActiveScore();
 
         }
         else
         {
-         text.text ="Score: "+ScoreManager.GetScore()+"   Active Score: "+ScoreManager.GetActiveScore();
+         text.text ="Score: "+ScoreManager.GetScore()+"   Energy: "+ScoreManager.GetActiveScore();
         }
     }
     public static void UpdateHighScores()

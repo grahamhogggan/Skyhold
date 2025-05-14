@@ -31,15 +31,15 @@ public class CraftingManager : MonoBehaviour
         {"beam","Metal beams are vital for constructing tools and machines"},
         {"processor","Processors allow you to create all kinds of useful machines"},
         {"extracter","Extracters can extract materials out of thin air. just press E with a material in hand to tell it what to extract. Yes, I know I spelled extracter wrong but I hardcoded it into too many places to change"},
-        {"score pump","Gains score for you automatically"},
+        {"energy pump","Gains energy for you automatically"},
         {"truss","Expensive but sturdy structure that can absorb meteor impacts. Important for constructing more complex machinery"},
         {"pickaxe","Very quick at mining things, but a weak weapon"},
         {"sword","Highly effective weapon for battling enemies"},
         {"mace","Deals huge damage, but is painfully slow to wield"},
         {"wires","Wires are usually dropped by hostile enemies, but can also be crafted with mushrooms"},
-        {"turbine","Turbines passively generate score at a higher rate than score pumps"},
-        {"biofuel plant","Biofuel plants require an organic material such as leaves to be input, but they generate score at a high rate"},
-        {"reactor","Reactors require qubits to be input in order to run, but they generate score at an extremely high rate"},
+        {"turbine","Turbines passively generate energy at a higher rate than standard pumps"},
+        {"biofuel plant","Biofuel plants require an organic material such as leaves to be input, but they generate energy at a high rate"},
+        {"reactor","Reactors require qubits to be input in order to run, but they generate energy at an extremely high rate"},
         {"electric sword","A very powerful weapon, more powerful than a standard sword"},
         {"gold pick","A pickaxe with extremely fast mining capabilities"},
         {"extractor v2","An extractor that significantly improves extraction rates"},
@@ -221,7 +221,7 @@ public class CraftingManager : MonoBehaviour
         AddRecipe("leaves,leaves,leaves,leaves,leaves", "dirt/1","other");
         
         AddRecipe("beam,metal,processor,wires,wires", "extracter/1","machines");
-        AddRecipe("beam,metal,processor,torch,wires","score pump/1","machines");
+        AddRecipe("beam,metal,processor,torch,wires","energy pump/1","machines");
         AddRecipe("beam,fan,processor,truss,wires","turbine/1","machines");
         AddRecipe("beam,leaves,processor,truss,wires","biofuel plant/1","machines");
         AddRecipe("beam,processor,qubit,truss,wires","reactor/1","machines");
