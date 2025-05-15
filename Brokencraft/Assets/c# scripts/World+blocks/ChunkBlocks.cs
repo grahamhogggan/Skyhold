@@ -158,11 +158,12 @@ public class ChunkBlocks : MonoBehaviour
 
         if (perlin - blockY > 3)
         {
-            if (Random.Range(0, 50) == 25)
+            int oreType = Random.Range(0, 1000);
+            if (oreType<20)
             {
                 spawned.SetBlock("metal");
             }
-            else if (Random.Range(0, 200) == 25)
+            else if (oreType<25)
             {
                 spawned.SetBlock("gold");
             }
@@ -209,11 +210,12 @@ public class ChunkBlocks : MonoBehaviour
 
         if (perlin - blockY > 3)
         {
-            if (Random.Range(0, 10) == 5)
+            int oreType = Random.Range(0, 1000);
+            if (oreType<100)
             {
                 spawned.SetBlock("metal");
             }
-            else if (Random.Range(0, 50) == 25)
+            else if (oreType<110)
             {
                 spawned.SetBlock("gold");
             }
@@ -273,11 +275,12 @@ public class ChunkBlocks : MonoBehaviour
 
         if (perlin - blockY > 3)
         {
-            if (Random.Range(0, 50) == 25)
+            int oreType = Random.Range(0, 1000);
+            if (oreType<20)
             {
                 spawned.SetBlock("metal");
             }
-            else if (Random.Range(0, 200) == 25)
+            else if (oreType<25)
             {
                 spawned.SetBlock("gold");
             }
@@ -336,11 +339,13 @@ public class ChunkBlocks : MonoBehaviour
 
         if (perlin - blockY > 3)
         {
-            if (Random.Range(0, 50) == 25)
+            int oreType = Random.Range(0, 1000);
+            Debug.Log(oreType);
+            if (oreType < 20)
             {
                 spawned.SetBlock("metal");
             }
-            else if (Random.Range(0, 200) == 25)
+            else if (oreType < 25)
             {
                 spawned.SetBlock("gold");
             }
@@ -395,11 +400,12 @@ public class ChunkBlocks : MonoBehaviour
 
         if (perlin - blockY > 3)
         {
-            if (Random.Range(0, 50) == 25)
+            int oreType = Random.Range(0, 1000);
+            if (oreType<20)
             {
                 spawned.SetBlock("metal");
             }
-            else if (Random.Range(0, 200) == 25)
+            else if (oreType<25)
             {
                 spawned.SetBlock("gold");
             }
@@ -439,11 +445,12 @@ public class ChunkBlocks : MonoBehaviour
 
         if (perlin - blockY > 3)
         {
-            if (Random.Range(0, 50) == 25)
+            int oreType = Random.Range(0, 1000);
+            if (oreType<20)
             {
                 spawned.SetBlock("metal");
             }
-            else if (Random.Range(0, 200) == 25)
+            else if (oreType<25)
             {
                 spawned.SetBlock("gold");
             }
@@ -482,11 +489,12 @@ public class ChunkBlocks : MonoBehaviour
 
         if (perlin - blockY > 5)
         {
-            if (Random.Range(0, 50) == 25)
+            int oreType = Random.Range(0, 1000);
+            if (oreType<20)
             {
                 spawned.SetBlock("metal");
             }
-            else if (Random.Range(0, 200) == 25)
+            else if (oreType<25)
             {
                 spawned.SetBlock("gold");
             }
