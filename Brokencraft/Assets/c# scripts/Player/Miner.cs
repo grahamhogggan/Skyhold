@@ -201,7 +201,15 @@ public class Miner : MonoBehaviour
                     build.Place(equippedItem, rotation);
 
                     timeSinceLastAttack = 0;
-                    cooldown = 0.25f* Mathf.Pow(0.95f, UpgradeManager.GetUpgradeAmount("mining"));
+                    float cooldownBase = 0.25f;
+
+                    Heavy weight = build.GetComponentInChildren<Heavy>();
+                    if (weight != null)
+                    {
+                        cooldownBase = weight.placementDelay;
+                    }
+
+                    cooldown = cooldownBase* Mathf.Pow(0.95f, UpgradeManager.GetUpgradeAmount("mining"));
                     UpdateCrosshair();
                 }
 
