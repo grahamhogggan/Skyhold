@@ -22,8 +22,8 @@ public class ChunkBlocks : MonoBehaviour
     // Start is called before the first frame update
     public void SpawnChunk(int seed)
     {
-        Random.InitState(seed);
         chunk = transform.root.gameObject.GetComponent<Chunk>();
+        Random.InitState(seed+(int)(chunk.GetLocation().x+chunk.GetLocation().y*10+chunk.GetLocation().z*100));
         for (int i = 0; i < Spawner.width; i++)
         {
             for (int k = 0; k < Spawner.length; k++)
@@ -101,9 +101,9 @@ public class ChunkBlocks : MonoBehaviour
                         SpaceWorldGen(spawned, blockY, h, perlin, cavePerlin);
 
                     }
-                    else if(Overlord.type == Overlord.WorldType.Finale)
+                    else if (Overlord.type == Overlord.WorldType.Finale)
                     {
-                        FinalWorldGen(spawned,blockY,h,perlin,cavePerlin);
+                        FinalWorldGen(spawned, blockY, h, perlin, cavePerlin);
                     }
                 }
             }
