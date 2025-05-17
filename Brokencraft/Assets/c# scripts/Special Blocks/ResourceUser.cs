@@ -96,11 +96,11 @@ public class ResourceUser : MonoBehaviour
         {
             if(stored.Count>0)
             {
-                src.Stop();
+                src.Play();
             }
             else
             {
-                src.Play();
+                src.Stop();
             }
         }
     }

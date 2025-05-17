@@ -45,6 +45,7 @@ public class CraftingManager : MonoBehaviour
         {"extractor v2","An extractor that significantly improves extraction rates"},
         {"quantum extractor","This extractor is super fast, but requires a steady stream of qubits output from another exractor to run properly"},
         {"grenade","Grenades explode immediately upon placement, shooting shrapnel that can deal damage to enemies nearby"},
+        {"campfire","Campfires provide excellent light and healing, provided they receive a steady supply of wood"},
     };
     // Start is called before the first frame update
     void Start()
@@ -199,37 +200,38 @@ public class CraftingManager : MonoBehaviour
     {
         craftingRecipes = new Dictionary<string, string>();
         recipeBooks = new Dictionary<string, Dictionary<string, string>>();
-        AddRecipe("wood", "planks/2","basics");
-        AddRecipe("palm wood","planks/1","basics");
-        AddRecipe("shroom stalk,shroom stalk","planks/1","basics",4);
-        AddRecipe("shroom stalk,shroom stalk","planks/1","basics",5);
-        AddRecipe("planks", "stick/3","basics,construction");
-        AddRecipe("pebble,pebble,pebble,pebble,pebble","stone/1","basics");
-        AddRecipe("stone,stone", "stone slab/2","construction");
-        AddRecipe("stone slab,stone slab","ramp/1","construction");
-        AddRecipe("planks,planks,planks,planks","platform/16","construction");
-        AddRecipe("planks,planks,planks","stairs/2","construction");
-        AddRecipe("planks,planks,stick,stick", "pickaxe/1","tools,basics");
-        AddRecipe("stick,stick,stick,stick", "frame/1","construction");
-        AddRecipe("stick,stone,stone","mace/1","tools");
-        AddRecipe("metal,metal,metal","beam/2","basics,tools,machines");
-        AddRecipe("beam,beam,beam,beam","truss/1","construction");
-        AddRecipe("beam,metal,stick", "sword/1","tools,basics");
-        AddRecipe("metal,stick,wires", "torch/2","basics,tools");
-        AddRecipe("blue shroom,metal,shroom","wires/1","basics,machines",4);
-        AddRecipe("gold,metal,wires,wires","processor/1","machines");
-        AddRecipe("leaves,leaves,leaves,leaves,leaves", "dirt/1","other");
-        
-        AddRecipe("beam,metal,processor,wires,wires", "extracter/1","machines");
-        AddRecipe("beam,metal,processor,torch,wires","energy pump/1","machines");
-        AddRecipe("beam,fan,processor,truss,wires","turbine/1","machines");
-        AddRecipe("beam,leaves,processor,truss,wires","biofuel plant/1","machines");
-        AddRecipe("beam,processor,qubit,truss,wires","reactor/1","machines");
-        AddRecipe("battery,beam,gold,metal,wires","electric sword/1","tools");
-        AddRecipe("battery,beam,gold,gold,gold","gold pick/1","tools");
-        AddRecipe("extracter,gold,torch,truss,wires","extractor v2/1","machines");
-        AddRecipe("extracter,qubit,qubit,truss,wires","quantum extractor/1","machines");
-        AddRecipe("metal,torch,wires","grenade/5","tools,machines");
+        AddRecipe("wood", "planks/2", "basics");
+        AddRecipe("palm wood", "planks/1", "basics");
+        AddRecipe("shroom stalk,shroom stalk", "planks/1", "basics", 4);
+        AddRecipe("shroom stalk,shroom stalk", "planks/1", "basics", 5);
+        AddRecipe("planks", "stick/3", "basics,construction");
+        AddRecipe("pebble,pebble,pebble,pebble,pebble", "stone/1", "basics");
+        AddRecipe("stone,stone", "stone slab/2", "construction");
+        AddRecipe("stone slab,stone slab", "ramp/1", "construction");
+        AddRecipe("planks,planks,planks,planks", "platform/16", "construction");
+        AddRecipe("planks,planks,planks", "stairs/2", "construction");
+        AddRecipe("planks,planks,stick,stick", "pickaxe/1", "tools,basics");
+        AddRecipe("stick,stick,stick,stick", "frame/1", "construction");
+        AddRecipe("stick,stone,stone", "mace/1", "tools");
+        AddRecipe("metal,metal,metal", "beam/2", "basics,tools,machines");
+        AddRecipe("beam,beam,beam,beam", "truss/1", "construction");
+        AddRecipe("beam,metal,stick", "sword/1", "tools,basics");
+        AddRecipe("metal,stick,wires", "torch/2", "basics,tools");
+        AddRecipe("blue shroom,metal,shroom", "wires/1", "basics,machines", 4);
+        AddRecipe("gold,metal,wires,wires", "processor/1", "machines");
+        AddRecipe("leaves,leaves,leaves,leaves,leaves", "dirt/1", "other");
+
+        AddRecipe("beam,metal,processor,wires,wires", "extracter/1", "machines");
+        AddRecipe("beam,metal,processor,torch,wires", "energy pump/1", "machines");
+        AddRecipe("beam,fan,processor,truss,wires", "turbine/1", "machines");
+        AddRecipe("beam,leaves,processor,truss,wires", "biofuel plant/1", "machines");
+        AddRecipe("beam,processor,qubit,truss,wires", "reactor/1", "machines");
+        AddRecipe("battery,beam,gold,metal,wires", "electric sword/1", "tools");
+        AddRecipe("battery,beam,gold,gold,gold", "gold pick/1", "tools");
+        AddRecipe("extracter,gold,torch,truss,wires", "extractor v2/1", "machines");
+        AddRecipe("extracter,qubit,qubit,truss,wires", "quantum extractor/1", "machines");
+        AddRecipe("metal,torch,wires", "grenade/5", "tools,machines");
+        AddRecipe("torch,torch,torch,torch", "campfire/1","machines,tools");
     }
     private void AddRecipe(string costs, string results, string categories = "default",int levelType = -1)
     {
