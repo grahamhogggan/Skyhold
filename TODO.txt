@@ -2,3 +2,5 @@
 3. Take screenshots/videos of gameplay
 
 5. Increase tutorial length
+
+6. Fix ascending enemies
