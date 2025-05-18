@@ -1,6 +1,4 @@
 
 3. Take screenshots/videos of gameplay
 
-4. Increase basic enemy & lvl 2 enemy strength
-
 5. Increase tutorial length

@@ -770,11 +770,12 @@ MonoBehaviour:
   - wires
   - wires
   DamageColor: {r: 1, g: 0, b: 0, a: 1}
+  boss: 0
   body: {fileID: 0}
   speed: 0.5
   inWater: 0
   feet: {fileID: 3439948738794581087}
-  strength: 1
+  strength: 3
   attackSpeed: 1
   jetPackFlames: {fileID: 517739919332954172}
   eyeballs: {fileID: 2337218285994150604}
