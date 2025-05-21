@@ -13,6 +13,7 @@ public class Tutorial : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(PersistentData.tutorialStep);
         if (Overlord.paused) return;
         if (writer.TimeSinceFinished() > waitToHideTime)
         {
@@ -60,11 +61,11 @@ public class Tutorial : MonoBehaviour
         else if (PersistentData.tutorialStep == 5)
         {
             writer.SetTarget("Press TAB to enter your inventory. Click the '+' next to the planks recipe to craft wood planks");
-            nextGoalText.text = "Craft 5 planks";
             PersistentData.tutorialStep = 6;
         }
         else if (PersistentData.tutorialStep == 6)
         {
+            nextGoalText.text = "Craft 5 planks";
             int numCrafted = PlayerInventory.Quantity("planks");
             if (numCrafted >= 5)
             {
@@ -75,11 +76,11 @@ public class Tutorial : MonoBehaviour
         else if (PersistentData.tutorialStep == 7)
         {
             writer.SetTarget("You'll also want to be able to mine more effectively. Craft sticks, and then craft a pickaxe");
-            nextGoalText.text = "Craft a pickaxe";
             PersistentData.tutorialStep = 8;
         }
         else if (PersistentData.tutorialStep == 8)
         {
+            nextGoalText.text = "Craft a pickaxe";
             int numCrafted = PlayerInventory.Quantity("pickaxe");
             if (numCrafted >= 1)
             {
@@ -90,11 +91,11 @@ public class Tutorial : MonoBehaviour
         else if (PersistentData.tutorialStep == 9)
         {
             writer.SetTarget("Using this pickaxe, you can collect more valuable materials found only underground. Collect 5 metal");
-            nextGoalText.text = "Collect 5 metal";
             PersistentData.tutorialStep = 10;
         }
         else if (PersistentData.tutorialStep == 10)
         {
+            nextGoalText.text = "Collect 5 metal";
             int numCrafted = PlayerInventory.Quantity("metal");
             if (numCrafted >= 5)
             {
@@ -109,21 +110,22 @@ public class Tutorial : MonoBehaviour
         }
         else if (PersistentData.tutorialStep == 12)
         {
+            nextGoalText.text = "Craft a sword";
             int numCrafted = PlayerInventory.Quantity("sword");
             if (numCrafted >= 1)
             {
                 nextGoalText.text = "";
-                PersistentData.tutorialStep = 13;
+                PersistentData.tutorialStep = 14;
             }
         }
         else if (PersistentData.tutorialStep == 14)
         {
             writer.SetTarget("The next important material you'll want is wires. These can usually only be collected from defeated enemies.");
-            nextGoalText.text = "Collect 3 wires";
             PersistentData.tutorialStep = 15;
         }
         else if (PersistentData.tutorialStep == 15)
         {
+            nextGoalText.text = "Collect 3 wires";
             int numCrafted = PlayerInventory.Quantity("wires");
             if (numCrafted >= 3)
             {
@@ -134,11 +136,11 @@ public class Tutorial : MonoBehaviour
         else if (PersistentData.tutorialStep == 16)
         {
             writer.SetTarget("To heal form your battles, you need light and warmth. Craft a torch to heal you");
-            nextGoalText.text = "Craft torches";
             PersistentData.tutorialStep = 17;
         }
         else if (PersistentData.tutorialStep == 17)
         {
+            nextGoalText.text = "Craft torches";
             int numCrafted = PlayerInventory.Quantity("torch");
             if (numCrafted >= 1)
             {
@@ -161,11 +163,12 @@ public class Tutorial : MonoBehaviour
         else if (PersistentData.tutorialStep == 20)
         {
             writer.SetTarget("You can create machines to do work for you. These all require processors");
-            nextGoalText.text = "Craft a processor";
             PersistentData.tutorialStep = 21;
         }
         else if (PersistentData.tutorialStep == 21)
         {
+            nextGoalText.text = "Craft a processor";
+
             int numCrafted = PlayerInventory.Quantity("processor");
             if (numCrafted >= 1)
             {
@@ -176,11 +179,12 @@ public class Tutorial : MonoBehaviour
         else if (PersistentData.tutorialStep == 22)
         {
             writer.SetTarget("Craft an extractor. These will automatically gather resources for you.");
-            nextGoalText.text = "Craft an extractor";
             PersistentData.tutorialStep = 23;
         }
         else if (PersistentData.tutorialStep == 23)
         {
+            nextGoalText.text = "Craft an extractor";
+
             int numCrafted = PlayerInventory.Quantity("extracter");
             if (numCrafted >= 1)
             {
@@ -190,8 +194,36 @@ public class Tutorial : MonoBehaviour
         }
         else if (PersistentData.tutorialStep == 24)
         {
-            writer.SetTarget("Good luck on your journey. If you make it past night five, we'll give you an even bigger challenge");
+            writer.SetTarget("You may have noticed the energy you've been gathering. This can be used to unlock upgrades in your inventory");
             PersistentData.tutorialStep = 25;
+        }
+        else if (PersistentData.tutorialStep == 25)
+        {
+            if (writer.TimeSinceFinished() >= 10)
+            {
+                PersistentData.tutorialStep = 26;
+            }
+        }
+        else if (PersistentData.tutorialStep == 26)
+        {
+            writer.SetTarget("Craft an energy pump. These will automatically gather energy for you.");
+            PersistentData.tutorialStep = 27;
+        }
+        else if (PersistentData.tutorialStep == 27)
+        {
+            nextGoalText.text = "Craft an energy pump";
+
+            int numCrafted = PlayerInventory.Quantity("energy pump");
+            if (numCrafted >= 1)
+            {
+                nextGoalText.text = "";
+                PersistentData.tutorialStep = 28;
+            }
+        }
+        else if (PersistentData.tutorialStep == 28)
+        {
+            writer.SetTarget("Good luck on your journey. If you make it past night five, we'll give you an even bigger challenge");
+            PersistentData.tutorialStep = 29;
         }
     }
 }

@@ -1,8 +1,4 @@
 
 3. Take screenshots/videos of gameplay
 
-5. Increase tutorial length
-
-6. Fix ascending enemies
-
-7. Fix tutorial not showing up when started midway
+6. Fix ascending enemies (Maybe done ?)

@@ -82,7 +82,7 @@ public class ChasingEnemy : Enemy
             jetPackFlames.SetActive(true);
             
         }
-        else if(!Physics.Raycast(transform.position, transform.up*-1))
+        else if(!Physics.Raycast(transform.position, transform.up*-1)&&target.transform.position.y-transform.position.y>-5)
         {
             jumping = true;
             Yvelocity = 1;
