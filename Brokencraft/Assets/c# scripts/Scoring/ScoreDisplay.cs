@@ -6,11 +6,16 @@ public class ScoreDisplay : MonoBehaviour
 {
     private TMP_Text text;
     public bool newLine = false;
+
+    public bool immediatelyUpdate = true;
     // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<TMP_Text>();
-        UpdateHighScores();
+        if (immediatelyUpdate)
+        {
+            UpdateHighScores();
+        }
     }
 
     // Update is called once per frame

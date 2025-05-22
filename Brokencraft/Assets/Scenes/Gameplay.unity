@@ -1980,6 +1980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLine: 1
+  immediatelyUpdate: 0
 --- !u!1 &203616468
 GameObject:
   m_ObjectHideFlags: 0
@@ -17631,6 +17632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   newLine: 0
+  immediatelyUpdate: 1
 --- !u!114 &1296119339
 MonoBehaviour:
   m_ObjectHideFlags: 0

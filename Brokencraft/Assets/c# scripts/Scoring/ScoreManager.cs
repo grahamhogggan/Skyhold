@@ -16,8 +16,8 @@ public class ScoreManager : MonoBehaviour
         if((!Overlord.OverwriteMode)&&File.Exists(savePath))
         {
             ScoreSave scores = JsonUtility.FromJson<ScoreSave>(Encryption.Decrypt(File.ReadAllText(savePath)));
-        totalScore = scores.totalScore;
-        activeScore = scores.activeScore;
+            totalScore = scores.totalScore;
+            activeScore = scores.activeScore;
 
         }
         else
